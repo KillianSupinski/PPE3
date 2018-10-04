@@ -14,6 +14,7 @@ class ctrlInscription extends CI_Controller
                   if(!$_POST['txtNom'] == ""){
                         if (!$_POST['txtMdp'] == "") { // on verifie que le le mot de passe est bien noté
                             if ($_POST['txtMdp2'] == $_POST['txtMdp']) { // on verifie que le mot de passe confirmé correspond
+                                // On declare nos variables pour les mettres ensuite dans un tableau
                                 $login = $this->input->post('txtLogin');
                                 $nom = $this->input->post('txtNom');  
                                 $mdp = $this->input->post('txtMdp');
@@ -30,6 +31,7 @@ class ctrlInscription extends CI_Controller
                 echo "Veuillez rentrer votre login";
             }
         } 
+        // on crée un tableau pour l'inserer dans le model
         $tab = array(
             
             'nomUser' => $nom,

@@ -9,7 +9,7 @@
     <script src="main.js"></script>
 </head>
 <body>
-<form method="POST" action = "index.php/ctrlInscription/getInscription/">
+<form method="POST" action = "<?php echo base_url(); ?>index.php/ctrlInscription/getInscription/">
             
                 <h2>Inscription</h2>
              <br> <br><br> <br>
