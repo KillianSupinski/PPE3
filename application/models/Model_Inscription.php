@@ -1,9 +1,9 @@
 <?php
 class Model_Inscription extends CI_Model
 {
-    public function insertInscription()
+    public function insertInscription($tab)
     {
-        $sql = $this->db->query("insert into user values('', '".$vNom."', '".$vLogin."', '".$vMdp."', '')");
-        return $sql->reslut();
+        $sql = $this->db->insert('user', $tab);
+        return $this->db->insert_id();
     }
 }
