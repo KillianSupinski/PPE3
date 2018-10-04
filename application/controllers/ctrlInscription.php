@@ -18,30 +18,42 @@ class ctrlInscription extends CI_Controller
                                 $login = $this->input->post('txtLogin');
                                 $nom = $this->input->post('txtNom');  
                                 $mdp = $this->input->post('txtMdp');
+                                $tab = array(
+            
+                                    'nomUser' => $nom,
+                                    'login' => $login,
+                                    'mdp' => $mdp,
+                                    
+                                );
+                                $this->load->model('Model_Inscription');
+                                $data = $this->Model_Inscription->insertInscription($tab);
+                                $this->load->view('inscription');
                             } else {
                                 echo "Veuillez confirmer votre mot de passe";
+                                $erreur = "veuillez confirmé votre mot de passe";
+                                $this->load->view('inscription', $erreur);
                             }
                         } else {
                             echo "Veuillez rentrer votre mot de passe";
+                            $erreur = "veuillez rentrer votre mot de passe";
+                            $this->load->view('inscription', $erreur);
                         }
                     }else {
                         echo "Veuillez rentrer votre nom";
+                        $erreur = "veuillez rentrer votre nom";
+                        $this->load->view('inscription', $erreur);
                     }
             } else {
                 echo "Veuillez rentrer votre login";
+                $erreur = "veuillez rentrer votre login";
+                $this->load->view('inscription', $erreur);
             }
-        } 
+        }
+            
+        
         // on crée un tableau pour l'inserer dans le model
-        $tab = array(
-            
-            'nomUser' => $nom,
-            'login' => $login,
-            'mdp' => $mdp,
-            
-        );
-        $this->load->model('Model_Inscription');
-        $data = $this->Model_Inscription->insertInscription($tab);
-        $this->load->view('inscription');
+        
+        
     }
 }
     

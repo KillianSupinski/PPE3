@@ -9,8 +9,12 @@
     <script src="main.js"></script>
 </head>
 <body>
+
 <form method="POST" action = "<?php echo base_url(); ?>index.php/ctrlInscription/getInscription/">
-            
+<?php
+$erreur= "";
+echo $erreur;
+?>
                 <h2>Inscription</h2>
              <br> <br><br> <br>
             <div id="DivInscription" >
