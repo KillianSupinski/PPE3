@@ -29,23 +29,19 @@ class ctrlInscription extends CI_Controller
                                 $this->load->model('Model_Inscription');
                                 $data = $this->Model_Inscription->insertInscription($tab);
                                 $this->load->view('inscription');
-                            } else {
-                                
+                            } else {                               
                                 $erreur = "veuillez confirmé votre mot de passe";
                                 $this->load->view('inscription', $erreur); //envoie du message d'erreur et redirection a la page inscription
                             }
-                        } else {
-                            echo "Veuillez rentrer votre mot de passe";
+                        } else {                          
                             $erreur = "veuillez rentrer votre mot de passe";
                             $this->load->view('inscription', $erreur); //envoie du message d'erreur et redirection a la page inscription
                         }
-                    }else {
-                        
+                    }else {                        
                         $erreur = "veuillez rentrer votre nom";
                         $this->load->view('inscription', $erreur); //envoie du message d'erreur et redirection a la page inscription
                     }
-            } else {
-                
+            } else {                
                 $erreur = "veuillez rentrer votre login";
                 $this->load->view('inscription', $erreur); //envoie du message d'erreur et redirection a la page inscription
             }
