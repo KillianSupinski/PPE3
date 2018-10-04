@@ -30,20 +30,21 @@ class ctrlInscription extends CI_Controller
                                 $data = $this->Model_Inscription->insertInscription($tab);
                                 $this->load->view('inscription');
                             } else {                               
-                                $erreur = "veuillez confirmé votre mot de passe";
-                                $this->load->view('inscription', $erreur); //envoie du message d'erreur et redirection a la page inscription
+                                echo "Veuillez confirmé votre mot de passe";  
+                                $this->load->view('inscription'); //envoie du message d'erreur et redirection a la page inscription
                             }
                         } else {                          
-                            $erreur = "veuillez rentrer votre mot de passe";
-                            $this->load->view('inscription', $erreur); //envoie du message d'erreur et redirection a la page inscription
+                            echo "Veuillez rentrer votre mot de passe";  
+                            $this->load->view('inscription'); //envoie du message d'erreur et redirection a la page inscription
                         }
                     }else {                        
-                        $erreur = "veuillez rentrer votre nom";
-                        $this->load->view('inscription', $erreur); //envoie du message d'erreur et redirection a la page inscription
+                        echo "Veuillez rentrer votre nom";  
+                        $this->load->view('inscription'); //envoie du message d'erreur et redirection a la page inscription
                     }
-            } else {                
-                $erreur = "veuillez rentrer votre login";
-                $this->load->view('inscription', $erreur); //envoie du message d'erreur et redirection a la page inscription
+            } else {    
+                echo "Veuillez rentrer votre login";            
+                
+                $this->load->view('inscription'); //envoie du message d'erreur et redirection a la page inscription
             }
         }       
     }

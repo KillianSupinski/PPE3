@@ -5,16 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
+    <script src="JQuery/jquery-3.1.1.min.js"></script>
+    <link href="<?php echo base_url();?>Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>Bootstrap/css/boostrap-theme.min.css" rel="stylesheet">
 </head>
 <body>
 
-<form method="POST" action = "<?php echo base_url(); ?>index.php/ctrlInscription/getInscription/">
-<?php
-$erreur= "";
-echo $erreur;
-?>
+<form method="POST" action = "<?php echo base_url();?>index.php/ctrlInscription/getInscription/">
                 <h2>Inscription</h2>
              <br> <br><br> <br>
             <div id="DivInscription" >
