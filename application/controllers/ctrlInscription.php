@@ -49,12 +49,7 @@ class ctrlInscription extends CI_Controller
                 $erreur = "veuillez rentrer votre login";
                 $this->load->view('inscription', $erreur); //envoie du message d'erreur et redirection a la page inscription
             }
-        }
-            
-        
-        // on crée un tableau pour l'inserer dans le model
-        
-        
+        }       
     }
 }
     
