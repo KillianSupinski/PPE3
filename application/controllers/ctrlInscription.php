@@ -18,6 +18,7 @@ class ctrlInscription extends CI_Controller
                                 $login = $this->input->post('txtLogin');
                                 $nom = $this->input->post('txtNom');  
                                 $mdp = $this->input->post('txtMdp');
+                                // On defini un tableau pour l'envoyé au model
                                 $tab = array(
             
                                     'nomUser' => $nom,
@@ -29,24 +30,24 @@ class ctrlInscription extends CI_Controller
                                 $data = $this->Model_Inscription->insertInscription($tab);
                                 $this->load->view('inscription');
                             } else {
-                                echo "Veuillez confirmer votre mot de passe";
+                                
                                 $erreur = "veuillez confirmé votre mot de passe";
-                                $this->load->view('inscription', $erreur);
+                                $this->load->view('inscription', $erreur); //envoie du message d'erreur et redirection a la page inscription
                             }
                         } else {
                             echo "Veuillez rentrer votre mot de passe";
                             $erreur = "veuillez rentrer votre mot de passe";
-                            $this->load->view('inscription', $erreur);
+                            $this->load->view('inscription', $erreur); //envoie du message d'erreur et redirection a la page inscription
                         }
                     }else {
-                        echo "Veuillez rentrer votre nom";
+                        
                         $erreur = "veuillez rentrer votre nom";
-                        $this->load->view('inscription', $erreur);
+                        $this->load->view('inscription', $erreur); //envoie du message d'erreur et redirection a la page inscription
                     }
             } else {
-                echo "Veuillez rentrer votre login";
+                
                 $erreur = "veuillez rentrer votre login";
-                $this->load->view('inscription', $erreur);
+                $this->load->view('inscription', $erreur); //envoie du message d'erreur et redirection a la page inscription
             }
         }
             
