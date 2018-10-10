@@ -18,13 +18,18 @@
     <div class="container-fluid">
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
-			
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
 			
 		</div>
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li ><a href="<?php echo base_url(); ?>index.php/ctrl_Accueil/index">Accueil<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>				
+               <li ><a href="<?php echo base_url(); ?>index.php/ctrl_Accueil/index">Accueil<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>				
 				<li><a href="<?php echo base_url(); ?>index.php/ctrl_Accueil/getOffre">Mes offres<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
 				<li ><a href="<?php echo base_url(); ?>index.php/ctrl_Accueil/getDemande">Mes demandes<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
 				<li ><a href="<?php echo base_url(); ?>index.php/ctrl_Accueil/getDeal">Mes deals<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>	
@@ -34,22 +39,6 @@
 </nav>
 <div class="container">
 <div class="main">
-<div id="divOffre">
-<h3>Mes offres</h3>
-    <?php
-          foreach ($lesOffres as $uneOffre) {
-              echo "<div class='col-xl-4 col-lg-4 col-md-6 col-sm-12'>";
-              echo "<div class='our-services-wrapper mb-60'>";
-              echo "<div class='services-inner'>";
-              echo "<div class='our-services-text'>";
-              echo $uneOffre->descriptionOffre.'<br>'.$uneOffre->dateOffre.'<br>';
-              echo '</div>';
-              echo '</div>';
-              echo '</div>';
-              echo '</div>';
-          }
-    ?>
-</div>
 <h3>Mes Demandes</h3>
     <?php
           foreach ($lesDemandes as $uneDemande) {
@@ -63,23 +52,6 @@
               echo '</div>';
               echo '</div>';
           }
-    ?>
-<h3>Mes deals</h3>
-    <?php
-    foreach ($lesInfoDeals as $uneInfoDeal) {
-        echo "<div class='col-xl-4 col-lg-4 col-md-6 col-sm-12'>";
-        echo "<div class='our-services-wrapper mb-60'>";
-        echo "<div class='services-inner'>";
-        echo "<div class='our-services-text'>";
-        echo "<image src='".$uneInfoDeal->photoUser."'> <br>";
-
-        echo $uneInfoDeal->nomUser.'<br>';
-        echo $uneInfoDeal->dateDeal.'<br>'.$uneInfoDeal->noteUser1.' - '.$uneInfoDeal->noteUser2.'<br>';
-        echo '</div>';
-        echo '</div>';
-        echo '</div>';
-        echo '</div>';
-    }
     ?>
 </div>
 </div>
