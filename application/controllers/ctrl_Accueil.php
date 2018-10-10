@@ -9,9 +9,6 @@ class ctrl_Accueil extends CI_Controller
         $data['lesDemandes'] = $this->Model_Demande->getAllDemande();
         $this->load->model('Model_Deal');        
         $data['lesInfoDeals'] = $this->Model_Deal->getAllInfoDeal();
-        $this->load->view('view_Accueil', $data);
-        
-        
-
+        $this->load->view('view_Accueil', $data);  
     }
 }

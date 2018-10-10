@@ -5,7 +5,7 @@ class Model_Offre extends CI_Model
     {
         $sql = $this->db->query("select idOffre ,descriptionOffre, dateOffre 
                                  from offre 
-                                 where idUSer= 2");
+                                 where idUSer= 1");
         return $sql->result();
     }
 }

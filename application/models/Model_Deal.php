@@ -8,7 +8,7 @@ class Model_Deal extends CI_Model
                                 from user, offre, deal
                                 where user.idUser = offre.idUser
                                 AND offre.idOffre = deal.idOffreUser2 
-                                AND idCreateur = 2");
+                                AND idCreateur = 1");
         return $sql->result();
     }
 }
