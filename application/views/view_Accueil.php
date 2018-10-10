@@ -8,7 +8,6 @@
     <script src="<?php echo base_url(); ?>JS/fonction.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script> 
-     
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link href="<?php echo base_url(); ?>css/style.css" rel="stylesheet">
@@ -46,7 +45,16 @@
               echo "<div class='col-xl-4 col-lg-4 col-md-6 col-sm-12'>";
               echo "<div class='our-services-wrapper mb-60'>";
               echo "<div class='services-inner'>";
-
+              echo" <div class='our-services-img'>";
+              echo  "<div class='d-flex justify-content-center h-100'>";
+              echo "<div class='image_outer_container'>";
+              echo "<div class='green_icon'></div>";
+              echo "<div class='image_inner_container'>";
+              echo "<image src='".$uneOffre->photoService."'> <br>";
+              echo '</div>';
+              echo '</div>';
+              echo '</div>';
+              echo '</div>';
               echo "<div class='our-services-text'>";
               echo '<p>'.$uneOffre->descriptionOffre.'<br>'.$uneOffre->dateOffre.'<br></p>';
               echo '</div>';
@@ -62,6 +70,16 @@
               echo "<div class='col-xl-4 col-lg-4 col-md-6 col-sm-12'>";
               echo "<div class='our-services-wrapper mb-60'>";
               echo "<div class='services-inner'>";
+              echo" <div class='our-services-img'>";
+              echo  "<div class='d-flex justify-content-center h-100'>";
+              echo "<div class='image_outer_container'>";
+              echo "<div class='green_icon'></div>";
+              echo "<div class='image_inner_container'>";
+              echo "<image src='".$uneDemande->photoService."'> <br>";
+              echo '</div>';
+              echo '</div>';
+              echo '</div>';
+              echo '</div>';
               echo "<div class='our-services-text'>";
               echo $uneDemande->descriptionDemande.'<br>'.$uneDemande->dateDemande.'<br>';
               echo '</div>';

@@ -44,9 +44,17 @@
         echo "<div class='col-xl-4 col-lg-4 col-md-6 col-sm-12'>";
         echo "<div class='our-services-wrapper mb-60'>";
         echo "<div class='services-inner'>";
-        echo "<div class='our-services-text'>";
+        echo" <div class='our-services-img'>";
+        echo  "<div class='d-flex justify-content-center h-100'>";
+        echo "<div class='image_outer_container'>";
+        echo "<div class='green_icon'></div>";
+        echo "<div class='image_inner_container'>";
         echo "<image src='".$uneInfoDeal->photoUser."'> <br>";
-
+        echo '</div>';
+        echo '</div>';
+        echo '</div>';
+        echo '</div>';
+        echo "<div class='our-services-text'>";
         echo $uneInfoDeal->nomUser.'<br>';
         echo $uneInfoDeal->dateDeal.'<br>'.$uneInfoDeal->noteUser1.' - '.$uneInfoDeal->noteUser2.'<br>';
         echo '</div>';
