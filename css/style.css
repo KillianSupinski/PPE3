@@ -163,9 +163,12 @@ section{
 }
 .our-services-img {
     float: left;
+    
     margin-left: -36px;
     margin-right: 22px;
-    margin-top: 25px;
+    margin-top: 50px;
+    transform: translateY(-50%);
+
 }
 .our-services-text {
     padding-right: 10px;
