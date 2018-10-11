@@ -6,8 +6,8 @@
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="JQuery/jquery-3.1.1.min.js"></script>
-    <link href="<?php echo base_url();?>Bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?php echo base_url();?>Bootstrap/css/boostrap-theme.min.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>Bootstrap/css/boostrap-theme.min.css" rel="stylesheet">
 </head>
 <body>
 <form method="POST" action="<?php echo base_url(); ?>index.php/ctrlLogin/seConnecter/">
@@ -18,7 +18,7 @@
     <label>Mot de passe</label><br/>
     <input type="password" id="idPassword" name="nomPassword" placeholder="Mot de passe" class="placeholder" style="width:180px;"><br/><br/>
     <input type="submit" value="Connexion" name="btnConnexion"> - 
-    <a href="index.php/ctrlInscription" style="text-decoration: none;"><input type="button" value="S'inscrire"></a>
+    <a href="<?php echo base_url(); ?>index.php/ctrlInscription" style="text-decoration: none;"><input type="button" value="S'inscrire"></a>
 </div>
 </form>
 </body>

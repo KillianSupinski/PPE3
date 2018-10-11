@@ -11,6 +11,7 @@
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link href="<?php echo base_url(); ?>css/styleK.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
 <nav class="navbar navbar-inverse sidebar" role="navigation">
@@ -48,7 +49,6 @@
               echo" <div class='our-services-img'>";
               echo  "<div class='d-flex justify-content-center h-100'>";
               echo "<div class='image_outer_container'>";
-              echo "<div class='green_icon'></div>";
               echo "<div class='image_inner_container'>";
               echo "<image src='".$uneOffre->photoService."'> <br>";
               echo '</div>';
@@ -56,14 +56,14 @@
               echo '</div>';
               echo '</div>';
               echo "<div class='our-services-text'>";
-              echo '<p>'.$uneOffre->descriptionOffre.'<br>'.$uneOffre->dateOffre.'<br></p>';
+              echo $uneOffre->descriptionOffre.'<br>'.$uneOffre->dateOffre.'<br>';
               echo '</div>';
               echo '</div>';
               echo '</div>';
               echo '</div>';
           }
     ?>
-
+<br><br><br><br><br><br><br><br>
 <h3>Mes Demandes</h3>
     <?php
           foreach ($lesDemandes as $uneDemande) {
@@ -73,7 +73,6 @@
               echo" <div class='our-services-img'>";
               echo  "<div class='d-flex justify-content-center h-100'>";
               echo "<div class='image_outer_container'>";
-              echo "<div class='green_icon'></div>";
               echo "<div class='image_inner_container'>";
               echo "<image src='".$uneDemande->photoService."'> <br>";
               echo '</div>';
@@ -88,7 +87,9 @@
               echo '</div>';
           }
     ?>
-<h3>Mes deals</h3>
+    <br><br><br><br><br><br><br><br>
+<h3>Mes deals</h3>  
+    
     <?php
     foreach ($lesInfoDeals as $uneInfoDeal) {
         echo "<div class='col-xl-4 col-lg-4 col-md-6 col-sm-12'>";
@@ -97,7 +98,6 @@
         echo" <div class='our-services-img'>";
         echo  "<div class='d-flex justify-content-center h-100'>";
         echo "<div class='image_outer_container'>";
-        echo "<div class='green_icon'></div>";
         echo "<div class='image_inner_container'>";
         echo "<image src='".$uneInfoDeal->photoUser."'> <br>";
         echo '</div>';
@@ -105,8 +105,7 @@
         echo '</div>';
         echo '</div>';
         echo "<div class='our-services-text'>";
-        echo $uneInfoDeal->nomUser.'<br>';
-        echo $uneInfoDeal->dateDeal.'<br>'.$uneInfoDeal->noteUser1.' - '.$uneInfoDeal->noteUser2.'<br>';
+        echo $uneInfoDeal->nomUser.'<br>'.$uneInfoDeal->dateDeal.'<br>'.$uneInfoDeal->noteUser1.' - '.$uneInfoDeal->noteUser2.'<br>';
         echo '</div>';
         echo '</div>';
         echo '</div>';

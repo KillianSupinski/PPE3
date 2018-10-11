@@ -26,7 +26,7 @@ class ctrlInscription extends CI_Controller
                                 );
                                 $this->load->model('Model_Inscription');
                                 $data = $this->Model_Inscription->insertInscription($tab);
-                                $this->load->view('inscription');
+                                $this->load->view('login');
                             } else {
                                 echo 'Veuillez confirmé votre mot de passe';
                                 $this->load->view('inscription'); //envoie du message d'erreur et redirection a la page inscription
