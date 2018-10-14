@@ -4,10 +4,12 @@ class Model_Demande extends CI_Model
 {
     public function getAllDemande()
     {
-        $sql = $this->db->query('select demande.idDemande ,demande.descriptionDemande, demande.dateDemande,service.photoService  
+        $this->load->library('session');
+        $id = $this->session->userdata('infoLog');
+        $sql = $this->db->query("select demande.idDemande ,demande.descriptionDemande, demande.dateDemande,service.photoService  
                                 from demande, service 
                                 where demande.idService=service.idService
-                                AND idUser= 1');
+                                AND idUser='".$id['idUser']."'");
 
         return $sql->result();
     }

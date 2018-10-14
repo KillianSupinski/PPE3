@@ -4,6 +4,8 @@ class ctrl_Accueil extends CI_Controller
 {
     public function index()
     {
+        $this->load->library('session');
+
         $this->load->model('Model_Offre');
         $data['lesOffres'] = $this->Model_Offre->getAllOffre();
         $this->load->model('Model_Demande');

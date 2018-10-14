@@ -4,10 +4,12 @@ class Model_Offre extends CI_Model
 {
     public function getAllOffre()
     {
-        $sql = $this->db->query('select offre.idOffre ,offre.descriptionOffre, offre.dateOffre, service.photoService 
+        $this->load->library('session');
+        $id = $this->session->userdata('infoLog');
+        $sql = $this->db->query("select offre.idOffre ,offre.descriptionOffre, offre.dateOffre, service.photoService 
                                  from offre, service 
                                  where offre.idService=service.idService
-                                 AND idUSer= 1');
+                                 AND idUSer='".$id['idUser']."'");
 
         return $sql->result();
     }

@@ -14,11 +14,31 @@ class ctrlLogin extends CI_Controller
                 if (!$_POST['nomPassword'] == '') {
                     $login = $this->input->post('nomIdentifiant');
                     $mdp = $this->input->post('nomPassword');
+
+                    $tab = array(
+                        'login' => $login,
+                        'mdp' => $mdp,
+                    );
                     $this->load->model('Model_Login');
 
-                    $data = $this->Model_Login->seConnecter($login, $mdp);
-                    if (count($data['login']) != 0) {
-                        $this->load->view('view_Accueil');
+                    $data = $this->Model_Login->seConnecter($tab);
+                    if (count($data) != 0) {
+                        foreach ($data as $row) {
+                            $this->load->library('session');
+                            $session_id = [
+                                'idUser' => $row->idUser,
+                                'login' => $row->login,
+                            ];
+                            $this->session->set_userdata('infoLog', $session_id);
+                        }
+
+                        $this->load->model('Model_Offre');
+                        $data['lesOffres'] = $this->Model_Offre->getAllOffre();
+                        $this->load->model('Model_Demande');
+                        $data['lesDemandes'] = $this->Model_Demande->getAllDemande();
+                        $this->load->model('Model_Deal');
+                        $data['lesInfoDeals'] = $this->Model_Deal->getAllInfoDeal();
+                        $this->load->view('view_Accueil', $data);
                     } else {
                         echo 'Cet utilisateur n/existe pas';
                         $this->load->view('login');
