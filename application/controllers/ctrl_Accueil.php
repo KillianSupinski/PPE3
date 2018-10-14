@@ -4,8 +4,6 @@ class ctrl_Accueil extends CI_Controller
 {
     public function index()
     {
-        $this->load->library('session');
-
         $this->load->model('Model_Offre');
         $data['lesOffres'] = $this->Model_Offre->getAllOffre();
         $this->load->model('Model_Demande');
@@ -34,5 +32,13 @@ class ctrl_Accueil extends CI_Controller
         $this->load->model('Model_Deal');
         $data['lesInfoDeals'] = $this->Model_Deal->getAllInfoDeal();
         $this->load->view('view_Deal', $data);
+    }
+
+    public function logout()
+    {
+        $this->load->library('session');
+        $this->session->unset_userdata('infoLog');
+        session_destroy();
+        $this->load->view('login');
     }
 }
