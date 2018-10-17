@@ -29,7 +29,7 @@ $infoUser = $this->session->userdata('infoLog');
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-            <a class="navbar-brand" href="<?php echo base_url(); ?>index.php/ctrl_Accueil/index"><?php echo $infoUser['login']; ?></a>
+            <a class="navbar-brand" href="<?php echo base_url(); ?>index.php/ctrl_Accueil/index"><?php echo $infoUser['login']; ?> <image width="30"src="<?php echo $infoUser['photoUser']; ?>"></a>
 		</div>
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
@@ -62,6 +62,7 @@ $infoUser = $this->session->userdata('infoLog');
               echo '</div>';
               echo '</div>';
               echo "<div class='our-services-text'>";
+              echo '<h4>'.$uneOffre->nomService.'</h4>';
               echo $uneOffre->descriptionOffre.'<br>'.$uneOffre->dateOffre.'<br>';
               echo '</div>';
               echo '</div>';
@@ -86,6 +87,7 @@ $infoUser = $this->session->userdata('infoLog');
               echo '</div>';
               echo '</div>';
               echo "<div class='our-services-text'>";
+              echo '<h4>'.$uneDemande->nomService.'</h4>';
               echo $uneDemande->descriptionDemande.'<br>'.$uneDemande->dateDemande.'<br>';
               echo '</div>';
               echo '</div>';
@@ -111,6 +113,7 @@ $infoUser = $this->session->userdata('infoLog');
         echo '</div>';
         echo '</div>';
         echo "<div class='our-services-text'>";
+        echo  '<h4>'.$uneInfoDeal->nomUser.'</h4>';
         echo $uneInfoDeal->nomUser.'<br>'.$uneInfoDeal->dateDeal.'<br>'.$uneInfoDeal->noteUser1.' - '.$uneInfoDeal->noteUser2.'<br>';
         echo '</div>';
         echo '</div>';

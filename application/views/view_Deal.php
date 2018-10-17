@@ -28,7 +28,7 @@ $infoUser = $this->session->userdata('infoLog');
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="<?php echo base_url(); ?>index.php/ctrl_Accueil/index"><?php echo $infoUser['login']; ?></a>
+			<a class="navbar-brand" href="<?php echo base_url(); ?>index.php/ctrl_Accueil/index"><?php echo $infoUser['login']; ?> <image width="30"src="<?php echo $infoUser['photoUser']; ?>"></a>
 		
 		</div>
 		<!-- Collect the nav links, forms, and other content for toggling -->
@@ -63,7 +63,7 @@ $infoUser = $this->session->userdata('infoLog');
         echo '</div>';
         echo '</div>';
         echo "<div class='our-services-text'>";
-        echo $uneInfoDeal->nomUser.'<br>';
+        echo  '<h4>'.$uneInfoDeal->nomUser.'</h4>';
         echo $uneInfoDeal->dateDeal.'<br>'.$uneInfoDeal->noteUser1.' - '.$uneInfoDeal->noteUser2.'<br>';
         echo '</div>';
         echo '</div>';
