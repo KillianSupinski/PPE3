@@ -31,7 +31,6 @@ class ctrlLogin extends CI_Controller
                             ];
                             $this->session->set_userdata('infoLog', $session_id);
                         }
-
                         $this->load->model('Model_Offre');
                         $data['lesOffres'] = $this->Model_Offre->getAllOffre();
                         $this->load->model('Model_Demande');
