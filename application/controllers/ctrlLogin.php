@@ -28,6 +28,7 @@ class ctrlLogin extends CI_Controller
                             $session_id = [
                                 'idUser' => $row->idUser,
                                 'login' => $row->login,
+                                'photoUser' => $row->photoUser,
                             ];
                             $this->session->set_userdata('infoLog', $session_id);
                         }
