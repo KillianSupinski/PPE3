@@ -113,8 +113,13 @@ $infoUser = $this->session->userdata('infoLog');
         echo '</div>';
         echo '</div>';
         echo "<div class='our-services-text'>";
+<<<<<<< HEAD
         echo '<h4>'.$uneInfoDeal->nomUser.'</h4>';
         echo  $uneInfoDeal->dateDeal.'<br>'.$uneInfoDeal->noteUser1.' - '.$uneInfoDeal->noteUser2.'<br>';
+=======
+        echo  '<h4>'.$uneInfoDeal->nomUser.'</h4>';
+        echo $uneInfoDeal->nomUser.'<br>'.$uneInfoDeal->dateDeal.'<br>'.$uneInfoDeal->noteUser1.' - '.$uneInfoDeal->noteUser2.'<br>';
+>>>>>>> killianSupinski
         echo '</div>';
         echo '</div>';
         echo '</div>';
