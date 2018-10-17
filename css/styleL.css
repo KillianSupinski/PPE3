@@ -1,7 +1,7 @@
 .titrePage{ /*Style des titres de pages*/
     font-size: 25px; /*Taille de la police*/
     text-align:center; /*Alignement du texte au centre*/
-    font-weight: bold;
+    font-weight: bold; /*Mise en gras du texte*/
     margin:15px auto 25px auto; /*Marges extérieures dans l'ordre haut droite bas gauche */
     font-family: 'Trebuchet MS'; /*Style de la police*/
 }
@@ -25,7 +25,7 @@
     /*Bordures du bloc*/
     border: 1px solid steelblue;
     border-left: 5px solid steelblue;
-    border-radius: 15px 0px 15px 0px;
+    border-radius: 15px 0px 15px 0px; /*Arrondit les bordures*/
     font-family: 'Trebuchet MS'; /*Style de la police*/
     font-size: 14px; /*Taille de la police*/
 }
