@@ -12,13 +12,13 @@ class ctrlInscription extends CI_Controller
         if (isset($_POST['btn'])) {
             if (!$_POST['txtLogin'] == '') { // on verifie que le nom est bien noté
                 if (!$_POST['txtNom'] == '') {
-                    if (!$_POST['txtMdp'] == '') { // on verifie que le le mot de passe est bien noté
+                    if (!$_POST['txtMdp'] == '') { // on verifie que le mot de passe est bien noté
                             if ($_POST['txtMdp2'] == $_POST['txtMdp']) { // on verifie que le mot de passe confirmé correspond
-                                // On declare nos variables pour les mettres ensuite dans un tableau
+                                // On déclare nos variables pour les mettre ensuite dans un tableau
                                 $login = $this->input->post('txtLogin');
                                 $nom = $this->input->post('txtNom');
                                 $mdp = $this->input->post('txtMdp');
-                                // On defini un tableau pour l'envoyé au model
+                                // On definit un tableau pour l'envoyer au model
                                 $tab = array(
                                     'nomUser' => $nom,
                                     'login' => $login,
@@ -28,21 +28,20 @@ class ctrlInscription extends CI_Controller
                                 $data = $this->Model_Inscription->insertInscription($tab);
                                 $this->load->view('login');
                             } else {
-                                echo 'Veuillez confirmé votre mot de passe';
-                                $this->load->view('inscription'); //envoie du message d'erreur et redirection a la page inscription
+                                echo "<div class='sErrorLog'>Veuillez confirmer votre mot de passe</div>";
+                                $this->load->view('inscription'); //envoi du message d'erreur et redirection à la page inscription
                             }
                     } else {
-                        echo 'Veuillez rentrer votre mot de passe';
-                        $this->load->view('inscription'); //envoie du message d'erreur et redirection a la page inscription
+                        echo "<div class='sErrorLog'>Veuillez entrer votre mot de passe</div>";
+                        $this->load->view('inscription'); //envoi du message d'erreur et redirection à la page inscription
                     }
                 } else {
-                    echo 'Veuillez rentrer votre nom';
-                    $this->load->view('inscription'); //envoie du message d'erreur et redirection a la page inscription
+                    echo "<div class='sErrorLog'>Veuillezrentrer votre nom</div>";
+                    $this->load->view('inscription'); //envoi du message d'erreur et redirection à la page inscription
                 }
             } else {
-                echo 'Veuillez rentrer votre login';
-
-                $this->load->view('inscription'); //envoie du message d'erreur et redirection a la page inscription
+                echo "<div class='sErrorLog'>Veuillez entrer votre login</div>";
+                $this->load->view('inscription'); //envoi du message d'erreur et redirection à la page inscription
             }
         }
     }

@@ -8,17 +8,19 @@
     <script src="JQuery/jquery-3.1.1.min.js"></script>
     <link href="<?php echo base_url(); ?>Bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>Bootstrap/css/boostrap-theme.min.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>css/styleL.css" rel="stylesheet">
 </head>
 <body>
 <form method="POST" action="<?php echo base_url(); ?>index.php/ctrlLogin/seConnecter/">
-<div id="DivLogin">
-    <h2>Connexion</h2><br/>
+<div id="affLogin">
+    <div class="titrePage">Connexion</div><br/>
     <label>Identifiant</label><br/>
-    <input type="text" id="idIdentifiant" name="nomIdentifiant" placeholder="Identifiant" class="placeholder" style="width:180px;"><br/><br/>
+    <input type="text" id="idIdentifiant" name="nomIdentifiant" placeholder="Identifiant" class="champsForm"><br/><br/>
     <label>Mot de passe</label><br/>
-    <input type="password" id="idPassword" name="nomPassword" placeholder="Mot de passe" class="placeholder" style="width:180px;"><br/><br/>
-    <input type="submit" value="Connexion" name="btnConnexion"> - 
-    <a href="<?php echo base_url(); ?>index.php/ctrlInscription" style="text-decoration: none;"><input type="button" value="S'inscrire"></a>
+    <input type="password" id="idPassword" name="nomPassword" placeholder="Mot de passe" class="champsForm"><br/><br/>
+    <input type="submit" id="btnLog" value="Connexion" name="btnConnexion"> - 
+    <a href="<?php echo base_url(); ?>index.php/ctrlInscription" style="text-decoration: none;"><input id="btnInsc1" type="button" value="S'inscrire"></a>
+    <br/><br/>
 </div>
 </form>
 </body>
