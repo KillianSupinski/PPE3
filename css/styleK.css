@@ -235,5 +235,10 @@ background: linear-gradient(to bottom, #fcb045, #fd1d1d, #833ab4);
    border-radius: 50%;
    border: 5px solid white;
 }
-
+form {
+    text-align: center;
+    margin:  auto; 
+width:50px;
+height: 200px;
+  }
 
