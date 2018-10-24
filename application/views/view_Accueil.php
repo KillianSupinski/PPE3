@@ -9,16 +9,19 @@
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script> 
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link href="<?php echo base_url(); ?>css/styleK.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <?php
+        include ('ajaxAjoutOffre.php');
+    ?>
 </head>
 <body>
-
-<?php
-$this->load->library('session');
-$infoUser = $this->session->userdata('infoLog');
-?>
+    <?php
+        $this->load->library('session');
+        $infoUser = $this->session->userdata('infoLog');
+    ?>
 <nav class="navbar navbar-inverse sidebar" role="navigation">
     <div class="container-fluid">
 		<!-- Brand and toggle get grouped for better mobile display -->
@@ -46,7 +49,7 @@ $infoUser = $this->session->userdata('infoLog');
 <div class="main">
 <div class="container">
 
-<h3>Mes offres</h3>
+<h3>Mes offres <a href="#offre-form" title="Ajouter une nouvelle offre" rel="modal:open">+</a></h3>
     <?php
           foreach ($lesOffres as $uneOffre) {
               echo "<div class='col-xl-4 col-lg-4 col-md-6 col-sm-12'>";
@@ -70,7 +73,7 @@ $infoUser = $this->session->userdata('infoLog');
           }
     ?>
 <br><br><br><br><br><br><br><br>
-<h3>Mes Demandes</h3>
+<h3>Mes Demandes <a href="#demande-form" title="Ajouter une nouvelle demande" rel="modal:open">+</a></h3>
     <?php
           foreach ($lesDemandes as $uneDemande) {
               echo "<div class='col-xl-4 col-lg-4 col-md-6 col-sm-12'>";
@@ -93,8 +96,8 @@ $infoUser = $this->session->userdata('infoLog');
               echo '</div>';
           }
     ?>
-    <br><br><br><br><br><br><br><br>
-<h3>Mes deals</h3>  
+<br><br><br><br><br><br><br><br>
+<h3>Mes deals <a href="#deal-form" rel="modal:open">+</a></h3> 
     
     <?php
     foreach ($lesInfoDeals as $uneInfoDeal) {

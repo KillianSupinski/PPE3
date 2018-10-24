@@ -1,36 +1,30 @@
+/*Permet au corps du code de prendre toute la hauteur de la page*/
 body,html{
     height: 100%;
 }
-
+/*Barre de navigation*/
 /* remove outer padding */
 .main .row{
     padding: 0px;
     margin: 0px;
 }
-
-/*Remove rounded coners*/
-
+/*Remove rounded corners*/
 nav.sidebar.navbar {
     border-radius: 0px;
 }
-
 nav.sidebar, .main{
     -webkit-transition: margin 200ms ease-out;
     -moz-transition: margin 200ms ease-out;
     -o-transition: margin 200ms ease-out;
     transition: margin 200ms ease-out;
 }
-
 /* Add gap to nav and right windows.*/
 .main{
     padding: 10px 10px 0 10px;
 }
-
 /* .....NavBar: Icon only with coloring/layout.....*/
-
 /*small/medium side display*/
 @media (min-width: 768px) {
-
     /*Allow main to be next to Nav*/
     .main{
         position: absolute;
@@ -38,12 +32,10 @@ nav.sidebar, .main{
         margin-left: 40px;
         float: right;
     }
-
     /*lets nav bar to be showed on mouseover*/
     nav.sidebar:hover + .main{
         margin-left: 200px;
     }
-
     /*Center Brand*/
     nav.sidebar.navbar.sidebar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
         margin-left: 0px;
@@ -54,22 +46,18 @@ nav.sidebar, .main{
         width: 100%;
         margin-left: 0px;
     }
-
     /*Center Icons*/
     nav.sidebar a{
         padding-right: 13px;
     }
-
     /*adds border top to first nav box */
     nav.sidebar .navbar-nav > li:first-child{
         border-top: 1px #e5e5e5 solid;
     }
-
     /*adds border to bottom nav boxes*/
     nav.sidebar .navbar-nav > li{
         border-bottom: 1px #e5e5e5 solid;
     }
-
     /* Colors/style dropdown box*/
     nav.sidebar .navbar-nav .open .dropdown-menu {
         position: static;
@@ -82,17 +70,14 @@ nav.sidebar, .main{
         -webkit-box-shadow: none;
         box-shadow: none;
     }
-
     /*allows nav box to use 100% width*/
     nav.sidebar .navbar-collapse, nav.sidebar .container-fluid{
         padding: 0 0px 0 0px;
     }
-
     /*colors dropdown box text */
     .navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
         color: #777;
     }
-
     /*gives sidebar width/height*/
     nav.sidebar{
         width: 200px;
@@ -102,12 +87,10 @@ nav.sidebar, .main{
         z-index: 8000;
         margin-bottom: 0px;
     }
-
     /*give sidebar 100% width;*/
     nav.sidebar li {
         width: 100%;
     }
-
     /* Move nav to full on mouse over*/
     nav.sidebar:hover{
         margin-left: 0px;
@@ -117,9 +100,7 @@ nav.sidebar, .main{
         opacity: 0;
     }
 }
-
 /* .....NavBar: Fully showing nav bar..... */
-
 @media (min-width: 1330px) {
 
     /*Allow main to be next to Nav*/
@@ -127,7 +108,6 @@ nav.sidebar, .main{
         width: calc(100% - 200px); /*keeps 100% minus nav size*/
         margin-left: 200px;
     }
-
     /*Show all nav*/
     nav.sidebar{
         margin-left: 0px;
@@ -138,12 +118,10 @@ nav.sidebar, .main{
         opacity: 1;
     }
 }
-
 nav.sidebar .navbar-nav .open .dropdown-menu>li>a:hover, nav.sidebar .navbar-nav .open .dropdown-menu>li>a:focus {
     color: #CCC;
     background-color: transparent;
 }
-
 nav:hover .forAnimate{
     opacity: 1;
 }
@@ -151,8 +129,6 @@ section{
     padding-left: 15px;
 }
 /*Fin affichage barre de navigation*/
-
-
 .mb-60 {
     margin-bottom: 60px;
 }
@@ -213,21 +189,18 @@ p {
 html,body{
     height: 100%;
 }
-
-
 .image_outer_container{
    margin-top: auto;
    margin-bottom: auto;
    border-radius: 50%;
    position: relative;
 }
-
 .image_inner_container{
    border-radius: 50%;
    padding: 5px;
-background: #833ab4; 
-background: -webkit-linear-gradient(to bottom, #fcb045, #fd1d1d, #833ab4); 
-background: linear-gradient(to bottom, #fcb045, #fd1d1d, #833ab4);
+   background: #833ab4; 
+   background: -webkit-linear-gradient(to bottom, #fcb045, #fd1d1d, #833ab4); 
+   background: linear-gradient(to bottom, #fcb045, #fd1d1d, #833ab4);
 }
 .image_inner_container img{
    max-height: 60px;
@@ -235,5 +208,9 @@ background: linear-gradient(to bottom, #fcb045, #fd1d1d, #833ab4);
    border-radius: 50%;
    border: 5px solid white;
 }
-
-
+form {
+   text-align: center;
+   margin:  auto; 
+   width:50px;
+   height: 200px;
+}
