@@ -93,7 +93,7 @@
 #btnInsc2:hover{
     background-color: rgb(59, 121, 106);
 }
-#btnValiderMod{
+.btnValiderMod{
     background-color:rgb(175, 110, 84);
     border-radius:5px;
     border: 1px solid rgb(175, 110, 84);
@@ -107,6 +107,6 @@
     -o-transition-duration: 0.3s;
     transition-duration: 0.3s;
 }
-#btnValiderMod:hover{
+.btnValiderMod:hover{
     background-color: rgb(141, 77, 52);
 }
