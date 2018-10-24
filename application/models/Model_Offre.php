@@ -19,7 +19,7 @@ class Model_Offre extends CI_Model
 
         return $sql->result();
     }
-    public function getAllNomServicesOffre()
+    public function getAllNomServices()
     {
         $sql = $this->db->query('select nomService from service');
 

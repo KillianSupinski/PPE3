@@ -13,7 +13,7 @@
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link href="<?php echo base_url(); ?>css/styleK.css" rel="stylesheet">
     <?php
-include ('test.php');
+include ('lesModals.php');
 ?>
 </head>
 <body>

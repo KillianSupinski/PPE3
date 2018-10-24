@@ -19,7 +19,7 @@ class Model_Demande extends CI_Model
 
         return $sql->result();
     }
-    public function getAllNomServicesDemande()
+    public function getAllNomServices()
     {
         $sql = $this->db->query('select nomService from service');
 

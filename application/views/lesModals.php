@@ -27,7 +27,7 @@ foreach ($IdMaxOffres as $unIdOffre)
 <label>Nom du service</label><br>
 <select id="jecpa">
 <?php
-foreach ($lesServices as $unService)
+foreach ($lesServicesOffres as $unService)
 {
     ?>
     <option><?php echo $unService->nomService ?></option>
@@ -57,7 +57,7 @@ foreach ($IdMaxDemandes as $unIdDemande)
 <label>Nom du service</label><br>
 <select id="jecpa2">
 <?php
-foreach ($lesServices as $unService)
+foreach ($lesServicesDemandes as $unService)
 {
     ?>
     <option><?php echo $unService->nomService ?></option>

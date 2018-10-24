@@ -14,7 +14,7 @@
     <link href="<?php echo base_url(); ?>css/styleK.css" rel="stylesheet"></head>
 <body>
 <?php
-include ('test.php');
+include ('lesModals.php');
 ?>
 <nav class="navbar navbar-inverse sidebar" role="navigation">
     <div class="container-fluid">
