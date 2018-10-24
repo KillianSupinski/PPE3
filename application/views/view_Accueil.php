@@ -13,8 +13,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link href="<?php echo base_url(); ?>css/styleK.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>css/styleL.css" rel="stylesheet">
     <?php
-        include ('ajaxAjoutOffre.php');
+        include ('ajaxAjoutOD.php');
+        include ('ajaxModifierOD.php');
     ?>
 </head>
 <body>
@@ -66,6 +68,7 @@
               echo '</div>';
               echo "<div class='our-services-text'>";
               echo $uneOffre->descriptionOffre.'<br>'.$uneOffre->dateOffre.'<br>';
+              echo '<a href="#modOffre-form" title="Modifier cette offre" rel="modal:open">+</a>';
               echo '</div>';
               echo '</div>';
               echo '</div>';
@@ -90,6 +93,7 @@
               echo '</div>';
               echo "<div class='our-services-text'>";
               echo $uneDemande->descriptionDemande.'<br>'.$uneDemande->dateDemande.'<br>';
+              echo '<a href="#modDemande-form" title="Modifier cette offre" rel="modal:open">+</a>';
               echo '</div>';
               echo '</div>';
               echo '</div>';
@@ -115,6 +119,7 @@
         echo '</div>';
         echo "<div class='our-services-text'>";
         echo $uneInfoDeal->nomUser.'<br>'.$uneInfoDeal->dateDeal.'<br>'.$uneInfoDeal->noteUser1.' - '.$uneInfoDeal->noteUser2.'<br>';
+        echo '<a href="#modDeals-form" title="Modifier cette offre" rel="modal:open">+</a>';
         echo '</div>';
         echo '</div>';
         echo '</div>';
