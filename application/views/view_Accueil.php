@@ -18,6 +18,7 @@ include ('test.php');
 ?>
 </head>
 <body>
+    
 <nav class="navbar navbar-inverse sidebar" role="navigation">
     <div class="container-fluid">
 		<!-- Brand and toggle get grouped for better mobile display -->
@@ -94,7 +95,7 @@ include ('test.php');
               echo '</div>';
           }
     ?>
-<h3>Mes deals <a href="#deal-form" rel="modal:open">+</a></h3></h3>
+<h3>Mes deals <a href="#deal-form" title="Ajouter un nouveau deal" rel="modal:open">+</a></h3></h3>
     <?php
     foreach ($lesInfoDeals as $uneInfoDeal) {
         echo "<div class='col-xl-4 col-lg-4 col-md-6 col-sm-12'>";

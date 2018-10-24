@@ -11,4 +11,12 @@ class Model_Demande extends CI_Model
 
         return $sql->result();
     }
+    public function getMaxIdDemande()
+    {
+        $sql = $this->db->query('select max(demande.idDemande) +1 as idDemandeCrea
+                                from demande
+                                where idUser=2');
+
+        return $sql->result();
+    }
 }
