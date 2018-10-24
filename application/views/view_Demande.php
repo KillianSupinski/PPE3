@@ -13,6 +13,9 @@
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link href="<?php echo base_url(); ?>css/styleK.css" rel="stylesheet"></head>
 <body>
+<?php
+include ('test.php');
+?>
 <nav class="navbar navbar-inverse sidebar" role="navigation">
     <div class="container-fluid">
 		<!-- Brand and toggle get grouped for better mobile display -->
@@ -38,7 +41,7 @@
 </nav>
 <div class="main">
 <div class="container">
-<h3>Mes Demandes</h3>
+<h3>Mes Demandes <a href="#demande-form" title="Ajouter une nouvelle demande" rel="modal:open">+</a></h3></h3>
     <?php
           foreach ($lesDemandes as $uneDemande) {
               echo "<div class='col-xl-4 col-lg-4 col-md-6 col-sm-12'>";

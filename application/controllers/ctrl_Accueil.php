@@ -21,6 +21,8 @@ class ctrl_Accueil extends CI_Controller
     {
         $this->load->model('Model_Offre');
         $data['lesOffres'] = $this->Model_Offre->getAllOffre();
+        $data['IdMaxOffres'] = $this->Model_Offre->getMaxIdOffre();
+        $data['lesServicesOffres'] = $this->Model_Offre->getAllNomServicesOffre();
         $this->load->view('view_Offre', $data);
     }
 
@@ -28,6 +30,8 @@ class ctrl_Accueil extends CI_Controller
     {
         $this->load->model('Model_Demande');
         $data['lesDemandes'] = $this->Model_Demande->getAllDemande();
+        $data['IdMaxDemandes'] = $this->Model_Demande->getMaxIdDemande();
+        $data['lesServicesDemandes'] = $this->Model_Demande->getAllNomServicesDemande();
         $this->load->view('view_Demande', $data);
     }
 
