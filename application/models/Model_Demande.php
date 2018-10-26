@@ -21,8 +21,13 @@ class Model_Demande extends CI_Model
     }
     public function getAllNomServices()
     {
-        $sql = $this->db->query('select nomService from service');
+        $sql = $this->db->query('select idService, nomService from service');
 
         return $sql->result();
+    }
+    public function insertNewDemande($newDemande)
+    {
+        $sql = $this->db->insert('demande', $newDemande);
+        return $this->db->insert_id();
     }
 }

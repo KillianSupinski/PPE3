@@ -54,7 +54,7 @@ include ('lesModals.php');
               echo  "<div class='d-flex justify-content-center h-100'>";
               echo "<div class='image_outer_container'>";
               echo "<div class='green_icon'></div>";
-              echo "<div class='image_inner_container'>";
+              echo "<div class='image_inner_container_offre'>";
               echo "<image src='".$uneOffre->photoService."'> <br>";
               echo '</div>';
               echo '</div>';
@@ -70,7 +70,7 @@ include ('lesModals.php');
           }
     ?>
 
-<h3>Mes Demandes <a href="#demande-form" title="Ajouter une nouvelle demande" rel="modal:open">+</a></h3></h3>
+<h3>Mes demandes <a href="#demande-form" title="Ajouter une nouvelle demande" rel="modal:open">+</a></h3></h3>
     <?php
           foreach ($lesDemandes as $uneDemande) {
               echo "<div class='col-xl-4 col-lg-4 col-md-6 col-sm-12'>";
@@ -80,7 +80,7 @@ include ('lesModals.php');
               echo  "<div class='d-flex justify-content-center h-100'>";
               echo "<div class='image_outer_container'>";
               echo "<div class='green_icon'></div>";
-              echo "<div class='image_inner_container'>";
+              echo "<div class='image_inner_container_demande'>";
               echo "<image src='".$uneDemande->photoService."'> <br>";
               echo '</div>';
               echo '</div>';
@@ -104,7 +104,7 @@ include ('lesModals.php');
         echo  "<div class='d-flex justify-content-center h-100'>";
         echo "<div class='image_outer_container'>";
         echo "<div class='green_icon'></div>";
-        echo "<div class='image_inner_container'>";
+        echo "<div class='image_inner_container_deal'>";
         echo "<image src='".$uneInfoDeal->photoUser."'> <br>";
         echo '</div>';
         echo '</div>';

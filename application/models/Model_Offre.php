@@ -21,8 +21,13 @@ class Model_Offre extends CI_Model
     }
     public function getAllNomServices()
     {
-        $sql = $this->db->query('select nomService from service');
+        $sql = $this->db->query('select idService, nomService from service');
 
         return $sql->result();
+    }
+    public function insertNewOffre($newOffre)
+    {
+        $sql = $this->db->insert('offre', $newOffre);
+        return $this->db->insert_id();
     }
 }

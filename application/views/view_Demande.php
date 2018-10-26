@@ -41,7 +41,7 @@ include ('lesModals.php');
 </nav>
 <div class="main">
 <div class="container">
-<h3>Mes Demandes <a href="#demande-form" title="Ajouter une nouvelle demande" rel="modal:open">+</a></h3></h3>
+<h3>Mes demandes <a href="#demande-form" title="Ajouter une nouvelle demande" rel="modal:open">+</a></h3></h3>
     <?php
           foreach ($lesDemandes as $uneDemande) {
               echo "<div class='col-xl-4 col-lg-4 col-md-6 col-sm-12'>";

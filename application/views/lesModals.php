@@ -9,63 +9,66 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>  
-<form id="offre-form" class="modal">
+<form method="GET" id="offre-form" action = "<?php echo base_url();?>index.php/ctrl_Accueil/getNewOffre/" class="modal">
 <?php
 foreach ($IdMaxOffres as $unIdOffre)
 {
 ?>
 <label>Numéro de l'offre</label><br>
-<input type="text" value="<?php echo $unIdOffre->idOffreCrea ?> " disabled><br>
+<input type="text" id='idNum' name="idOffre" value="<?php echo $unIdOffre->idOffreCrea ?> " readonly ><br>
     <?php
 
 }
 ?>
 <label>Description de l'offre</label><br>
-<input type="text" value=""><br>
+<input type="text" id="idDesc" name="descOffre"><br>
 <label>Date de l'offre</label><br>
-<input type="date" value=""><br>
+<input type="date" name="dateOffre"><br>
 <label>Nom du service</label><br>
-<select id="jecpa">
+<select name="idServiceOffre">
 <?php
 foreach ($lesServicesOffres as $unService)
 {
     ?>
-    <option><?php echo $unService->nomService ?></option>
+    <option value="<?php $unService->idService ?>"><?php echo $unService->nomService ?></option>
+
     <?php
 }
 ?>
-</select><br><br>
-<input type="submit" value="validez">
+</select>
+<br><br>
+<input type="submit" name="btnOffre" value="validez">
 </form>
-<form id="demande-form" class="modal">
+
+<form method="GET" id="demande-form" action = "<?php echo base_url();?>index.php/ctrl_Accueil/getNewDemande/" class="modal">
 <?php
 
 foreach ($IdMaxDemandes as $unIdDemande)
 {
     ?>
 <label>Numéro de la demande</label><br>
-<input type="text" value="<?php echo $unIdDemande->idDemandeCrea ?> " disabled><br>
+<input type="text" value="<?php echo $unIdDemande->idDemandeCrea ?> " readonly><br>
     <?php
 
 }
 
 ?>
-<label>Description de la demande</label><br>
-<input type="text" value=""><br>
-<label>Date de la demande</label><br>
-<input type="date" value=""><br>
+<label>Description de l'offre</label><br>
+<input type="text" name="descDemande"><br>
+<label>Date de l'offre</label><br>
+<input type="date" name="dateDemande"><br>
 <label>Nom du service</label><br>
-<select id="jecpa2">
+<select name="idServiceDemande">
 <?php
 foreach ($lesServicesDemandes as $unService)
 {
     ?>
-    <option><?php echo $unService->nomService ?></option>
+    <option value="<?php $unService->idService ?>"><?php echo $unService->nomService ?></option>
     <?php
 }
 ?>
 </select><br><br>
-<input type="submit" value="validez">
+<input type="submit" id="btnDemande" value="validez">
 </form>
 </body>
 </html>
