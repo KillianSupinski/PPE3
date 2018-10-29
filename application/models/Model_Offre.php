@@ -8,7 +8,6 @@ class Model_Offre extends CI_Model
                                  from offre, service 
                                  where offre.idService=service.idService
                                  AND idUSer= 2');
-
         return $sql->result();
     }
     public function getMaxIdOffre()
@@ -22,7 +21,6 @@ class Model_Offre extends CI_Model
     public function getAllNomServices()
     {
         $sql = $this->db->query('select idService, nomService from service');
-
         return $sql->result();
     }
     public function insertNewOffre($newOffre)

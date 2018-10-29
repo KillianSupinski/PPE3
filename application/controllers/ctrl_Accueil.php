@@ -78,7 +78,7 @@ class ctrl_Accueil extends CI_Controller
                         }
                         else
                         {
-                            echo "fdp ou est l'id service";
+                            echo "id service introuvable";
                         }
                     }
                     else 
@@ -110,7 +110,7 @@ class ctrl_Accueil extends CI_Controller
                             $dateD = $this->input->get('dateDemande');
                             $serviceD = $this->input->get('idServiceDemande');
 
-                            $newOffre = array(
+                            $newDemande = array(
                                 'idDemande' => $idD,
                                 'descriptionDemande' => $descD,
                                 'dateDemande' => $dateD,
@@ -118,18 +118,18 @@ class ctrl_Accueil extends CI_Controller
                                 'idUser' => "2",
                             );
                             $this->load->model('Model_Demande');
-                            $data['lesOffres'] = $this->Model_Demande->getAllDemande();
+                            $data['lesDemandes'] = $this->Model_Demande->getAllDemande();
                             $data = $this->model_Demande->insertNewDemande($newDemande);
 
                             $this->load->model('Model_Offre');
-                            $data['lesDemandes'] = $this->model_Offre->getAllOffre();
+                            $data['lesOffres'] = $this->model_Offre->getAllOffre();
                             $this->load->model('Model_Deal');
                             $data['lesInfoDeals'] = $this->Model_Deal->getAllInfoDeal();
                             $this->load->view('view_Accueil');
                         }
                         else
                         {
-                            echo "fdp ou est l'id service";
+                            echo "Id service introuvable";
                         }
                     }
                     else 

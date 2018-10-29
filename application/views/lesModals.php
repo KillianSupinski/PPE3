@@ -47,15 +47,15 @@ foreach ($IdMaxDemandes as $unIdDemande)
 {
     ?>
 <label>Numéro de la demande</label><br>
-<input type="text" value="<?php echo $unIdDemande->idDemandeCrea ?> " readonly><br>
+<input type="text" name="idDemande" value="<?php echo $unIdDemande->idDemandeCrea ?> " readonly><br>
     <?php
 
 }
 
 ?>
-<label>Description de l'offre</label><br>
+<label>Description de la demande</label><br>
 <input type="text" name="descDemande"><br>
-<label>Date de l'offre</label><br>
+<label>Date de la demande</label><br>
 <input type="date" name="dateDemande"><br>
 <label>Nom du service</label><br>
 <select name="idServiceDemande">
