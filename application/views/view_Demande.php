@@ -17,6 +17,7 @@
 <?php
 $this->load->library('session');
 $infoUser = $this->session->userdata('infoLog');
+include 'lesModals.php';
 ?>
 <nav class="navbar navbar-inverse sidebar" role="navigation">
     <div class="container-fluid">
@@ -46,7 +47,7 @@ $infoUser = $this->session->userdata('infoLog');
 </nav>
 <div class="main">
 <div class="container">
-    <h3>Mes Demandes</h3>
+<h3>Mes demandes <a href="#demande-form" title="Ajouter une nouvelle demande" rel="modal:open">+</a></h3></h3>
     <table>
     <td>
     <?php

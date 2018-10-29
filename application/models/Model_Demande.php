@@ -13,4 +13,27 @@ class Model_Demande extends CI_Model
 
         return $sql->result();
     }
+
+    public function getMaxIdDemande()
+    {
+        $sql = $this->db->query('select max(demande.idDemande) +1 as idDemandeCrea
+                                from demande
+                                ');
+
+        return $sql->result();
+    }
+
+    public function getAllNomServices()
+    {
+        $sql = $this->db->query('select idService, nomService from service');
+
+        return $sql->result();
+    }
+
+    public function insertNewDemande($newDemande)
+    {
+        $sql = $this->db->insert('demande', $newDemande);
+
+        return $this->db->insert_id();
+    }
 }
