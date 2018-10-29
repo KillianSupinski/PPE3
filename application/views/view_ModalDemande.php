@@ -17,20 +17,23 @@
     <link href="<?php echo base_url(); ?>css/styleL.css" rel="stylesheet">
 </head>
 <body>
+    <form method="POST" action="<?php echo base_url();?>index.php/ctrl_Accueil/afficherModOffre/">
     <center><h3>Modifier la demande</h3><br/>
             <?php
                 foreach($IdModDemande as $unIdModDemande)
                 {
             ?>
             <label>Numéro de la demande</label><br/>
-            <input type="text" value="<?php echo $unIdModDemande->idDemandeMod?>" disabled>
+            <input type="text" id="<?php echo $unIdModDemande->idDemandeMod?>" disabled>
             <?php
                 }
             ?>
             <label>Date de la demande</label><br/>
-            <input type="date" value="" placeholder="JJ/MM/AAAA"><br/><br/>
-            <label>Description de la demande</label><br/><br/>
-            <input type="button" value="" placeholder="Valider la modification" class="btnValiderMod">
+            <input type="date" id="dateDem" placeholder="JJ/MM/AAAA"><br/><br/>
+            <label>Description de la demande</label><br/>
+            <input type="text" id="descDem" placeholder="Description"><br/><br/>
+            <input type="button" id="btnValiderMod" placeholder="Valider la modification" class="btnValiderMod">
     </center>
+    </form>
 </body>
 </html>
