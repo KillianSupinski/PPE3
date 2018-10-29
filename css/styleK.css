@@ -75,6 +75,7 @@ nav.sidebar, .main{
         position: static;
         float: none;
         width: auto;
+        
         margin-top: 0;
         background-color: transparent;
         border: 0;
@@ -221,18 +222,48 @@ html,body{
    position: relative;
 }
 
-.image_inner_container{
+.image_inner_container_offre{
    border-radius: 50%;
    padding: 5px;
 background: #833ab4; 
 background: -webkit-linear-gradient(to bottom, #fcb045, #fd1d1d, #833ab4); 
 background: linear-gradient(to bottom, #fcb045, #fd1d1d, #833ab4);
 }
-.image_inner_container img{
+.image_inner_container_demande{
+    border-radius: 50%;
+    padding: 5px;
+ background: #9e02ff; 
+ background: -webkit-linear-gradient(to bottom, #01ccff, #2402ff, #9e02ff); 
+ background: linear-gradient(to bottom, #01ccff, #2402ff, #9e02ff);
+ }
+ .image_inner_container_deal{
+    border-radius: 50%;
+    padding: 5px;
+ background: #02ffdd; 
+ background: -webkit-linear-gradient(to bottom, #ffff00, #13ff02, #02ffdd); 
+ background: linear-gradient(to bottom, #ffff00, #13ff02, #02ffdd);
+ }
+.image_inner_container_offre img{
    max-height: 60px;
    width: auto;
    border-radius: 50%;
    border: 5px solid white;
 }
-
-
+.image_inner_container_demande img{
+    max-height: 60px;
+    width: auto;
+    border-radius: 50%;
+    border: 5px solid white;
+ }
+ .image_inner_container_deal img{
+    max-height: 60px;
+    width: auto;
+    border-radius: 50%;
+    border: 5px solid white;
+ }
+form {
+    text-align: center;
+    margin:  auto; 
+width:50px;
+height: 300px;
+  }

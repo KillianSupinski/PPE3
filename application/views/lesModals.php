@@ -28,7 +28,7 @@ foreach ($IdMaxOffres as $unIdOffre) {
 <?php
 foreach ($lesServicesOffres as $unService) {
     ?>
-    <option value="<?php $unService->idService; ?>"><?php echo $unService->nomService; ?></option>
+    <option value="<?php echo $unService->idService; ?>"><?php echo $unService->nomService; ?></option>
 
     <?php
 }
@@ -56,7 +56,7 @@ foreach ($IdMaxDemandes as $unIdDemande) {
 <?php
 foreach ($lesServicesDemandes as $unService) {
     ?>
-    <option value="<?php $unService->idService; ?>"><?php echo $unService->nomService; ?></option>
+    <option value="<?php echo $unService->idService; ?>"><?php echo $unService->nomService; ?></option>
     <?php
 }
 ?>
