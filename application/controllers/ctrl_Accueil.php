@@ -47,6 +47,12 @@ class ctrl_Accueil extends CI_Controller
         $data['lesInfosModOffre'] = $this->Model_Offre->getAllInfosOffre($_GET['idOffre']);
         $this->load->view('view_ModalOffre', $data);
     }
+    public function afficherModDemande()
+    {
+        $this->load->model('Model_Demande');
+        $data['lesInfosModDemandes'] = $this->Model_Offre->getAllInfosDemande($_GET['idDemande']);
+        $this->load->view('view_ModalDemande', $data);
+    }
     public function afficherIdServiceParIdOffre()
     {
         $this->load->model('Model_Offre');

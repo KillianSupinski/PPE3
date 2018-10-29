@@ -17,7 +17,7 @@
     <link href="<?php echo base_url(); ?>css/styleL.css" rel="stylesheet">
 </head>
 <body>
-    <form method="POST" action="<?php echo base_url();?>index.php/ctrl_Accueil/afficherModOffre/">
+    <form method="POST" action="<?php echo base_url();?>index.php/ctrl_Accueil/afficherModDemande/">
     <center><h3>Modifier la demande</h3><br/>
             <?php
                 foreach($IdModDemande as $unIdModDemande)

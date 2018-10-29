@@ -17,6 +17,7 @@
     <link href="<?php echo base_url(); ?>css/styleL.css" rel="stylesheet">
 </head>
 <body>
+<form method="POST" action="<?php echo base_url();?>index.php/ctrl_Accueil/afficherModOffre/">
     <center><h3>Modifier l'offre</h3><br/>
             <?php
             foreach($lesInfosModOffre as $uneInfoModOffre)
@@ -35,5 +36,6 @@
             ?>
             <input type="button" value="Valider la modification" class="btnValiderMod">
     </center>
+</form>
 </body>
 </html>
