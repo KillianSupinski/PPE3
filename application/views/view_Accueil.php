@@ -7,9 +7,7 @@
     <script src="<?php echo base_url(); ?>JQuery/jquery-3.1.1.js"></script>
     <script src="<?php echo base_url(); ?>JS/fonctionK.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script> 
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" /> -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link href="<?php echo base_url(); ?>css/styleK.css" rel="stylesheet">
     <?php
@@ -70,7 +68,7 @@ include ('lesModals.php');
           }
     ?>
 
-<h3>Mes demandes <a href="#demande-form" title="Ajouter une nouvelle demande" rel="modal:open">+</a></h3></h3>
+<h3>Mes demandes <a href="#demande-form" title="Ajouter une nouvelle demande" rel="modal:open">+</a></h3>
     <?php
           foreach ($lesDemandes as $uneDemande) {
               echo "<div class='col-xl-4 col-lg-4 col-md-6 col-sm-12'>";
@@ -94,7 +92,7 @@ include ('lesModals.php');
               echo '</div>';
           }
     ?>
-<h3>Mes deals <a href="#deal-form" title="Ajouter un nouveau deal" rel="modal:open">+</a></h3></h3>
+<h3>Mes deals <a href="#deal-form" title="Ajouter un nouveau deal" rel="modal:open">+</a></h3>
     <?php
     foreach ($lesInfoDeals as $uneInfoDeal) {
         echo "<div class='col-xl-4 col-lg-4 col-md-6 col-sm-12'>";

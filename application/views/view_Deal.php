@@ -51,7 +51,7 @@ include ('lesModals.php');
         echo  "<div class='d-flex justify-content-center h-100'>";
         echo "<div class='image_outer_container'>";
         echo "<div class='green_icon'></div>";
-        echo "<div class='image_inner_container'>";
+        echo "<div class='image_inner_container_deal'>";
         echo "<image src='".$uneInfoDeal->photoUser."'> <br>";
         echo '</div>';
         echo '</div>';
