@@ -18,24 +18,23 @@
 </head>
 <body>
 <form method="POST" action="<?php echo base_url();?>index.php/ctrl_Accueil/afficherModOffre/">
-    <center><h3>Modifier l'offre</h3><br/>
+    <h3>Modifier l'offre</h3><br/>
             <?php
             foreach($lesInfosModOffre as $uneInfoModOffre)
             {
             ?>
             <label>Numéro de l'offre</label><br/>
-            <input type="text" id="" name="inputIdOffre" value="<?php echo $unIdModOffre->idOffreMod ?>" disabled>
+            <input type="text" id="numOffre" name="inputIdOffre" value="<?php echo $unIdModOffre->idOffreMod ?>" disabled>
             <label>Date de l'offre</label><br/>
-            <input type="date" id="" value="JJ/MM/AAAA"><br/><br/>
+            <input type="date" id="dateOffre" value="JJ/MM/AAAA"><br/><br/>
             <label>Description de l'offre</label><br/>
-            <input type="text" id="" value=""><br/><br/>
+            <input type="text" id="txtDescriptionOffre" value=""><br/><br/>
             <label>Nom du service</label><br/>
-            <input type="text" id="" value=""><br><br>
+            <input type="text" id="nomService" value=""><br><br>
             <?php
             }
             ?>
             <input type="button" value="Valider la modification" class="btnValiderMod">
-    </center>
 </form>
 </body>
 </html>

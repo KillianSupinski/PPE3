@@ -17,8 +17,8 @@
     <link href="<?php echo base_url(); ?>css/styleL.css" rel="stylesheet">
 </head>
 <body>
-    <form method="POST" action="<?php echo base_url();?>index.php/ctrl_Accueil/afficherModDemande/">
-    <center><h3>Modifier la demande</h3><br/>
+    <form method="POST" action="<?php echo base_url();?>index.php/ctrl_Accueil/afficherModDemande/" class="modal">
+    <h3>Modifier la demande</h3><br/>
             <?php
                 foreach($IdModDemande as $unIdModDemande)
                 {
@@ -29,11 +29,20 @@
                 }
             ?>
             <label>Date de la demande</label><br/>
-            <input type="date" id="dateDem" placeholder="JJ/MM/AAAA"><br/><br/>
+            <input type="date" id="dateDemande" placeholder="JJ/MM/AAAA"><br/><br/>
             <label>Description de la demande</label><br/>
-            <input type="text" id="descDem" placeholder="Description"><br/><br/>
+            <input type="text" id="txtDescriptionDemande" placeholder="Description"><br/><br/>
+            <label>Nom du service</label>
+            <select name="idServDemandes">
+        <?php
+            foreach ($lesServices as $unService) {
+        ?>
+        <option value="<?php echo $unService->idService; ?>"><?php echo $unService->nomService; ?></option>
+        <?php
+        }
+        ?>
+        </select>
             <input type="button" id="btnValiderMod" placeholder="Valider la modification" class="btnValiderMod">
-    </center>
     </form>
 </body>
 </html>
