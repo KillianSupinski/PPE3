@@ -114,6 +114,7 @@ $infoUser = $this->session->userdata('infoLog');
         echo '</div>';
         echo "<div class='our-services-text'>";
         echo  '<h4>'.$uneInfoDeal->nomUser.'</h4>';
+        echo $uneInfoDeal->nomService.'<br> VS <br>'.$uneInfoDeal->nomService2.'<br>';
         echo $uneInfoDeal->nomUser.'<br>'.$uneInfoDeal->dateDeal.'<br>'.$uneInfoDeal->noteUser1.' - '.$uneInfoDeal->noteUser2.'<br>';
         echo '</div>';
         echo '</div>';
