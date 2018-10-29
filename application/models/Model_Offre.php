@@ -14,7 +14,7 @@ class Model_Offre extends CI_Model
     {
         $sql = $this->db->query('select max(offre.idOffre) +1 as idOffreCrea
                                 from offre
-                                where idUser= 2');
+                                ');
 
         return $sql->result();
     }

@@ -119,10 +119,10 @@ class ctrl_Accueil extends CI_Controller
                             );
                             $this->load->model('Model_Demande');
                             $data['lesDemandes'] = $this->Model_Demande->getAllDemande();
-                            $data = $this->model_Demande->insertNewDemande($newDemande);
+                            $data = $this->Model_Demande->insertNewDemande($newDemande);
 
                             $this->load->model('Model_Offre');
-                            $data['lesOffres'] = $this->model_Offre->getAllOffre();
+                            $data['lesOffres'] = $this->Model_Offre->getAllOffre();
                             $this->load->model('Model_Deal');
                             $data['lesInfoDeals'] = $this->Model_Deal->getAllInfoDeal();
                             $this->load->view('view_Accueil');

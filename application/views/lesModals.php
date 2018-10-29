@@ -68,7 +68,7 @@ foreach ($lesServicesDemandes as $unService)
 }
 ?>
 </select><br><br>
-<input type="submit" id="btnDemande" value="validez">
+<input type="submit" name="btnDemande" value="validez">
 </form>
 </body>
 </html>
