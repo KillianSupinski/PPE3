@@ -15,8 +15,8 @@
     <link href="<?php echo base_url(); ?>css/styleK.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>css/styleL.css" rel="stylesheet">
     <?php
-        include ('ajaxAjoutOD.php');
-        include ('ajaxModifierOD.php');
+        include ('modifierDemande.php');
+        include ('modifierOffre.php');
     ?>
 </head>
 <body>
@@ -53,77 +53,90 @@
 
 <h3>Mes offres <a href="#offre-form" title="Ajouter une nouvelle offre" rel="modal:open">+</a></h3>
     <?php
-          foreach ($lesOffres as $uneOffre) {
-              echo "<div class='col-xl-4 col-lg-4 col-md-6 col-sm-12'>";
-              echo "<div class='our-services-wrapper mb-60'>";
-              echo "<div class='services-inner'>";
-              echo" <div class='our-services-img'>";
-              echo  "<div class='d-flex justify-content-center h-100'>";
-              echo "<div class='image_outer_container'>";
-              echo "<div class='image_inner_container'>";
-              echo "<image src='".$uneOffre->photoService."'> <br>";
-              echo '</div>';
-              echo '</div>';
-              echo '</div>';
-              echo '</div>';
-              echo "<div class='our-services-text'>";
-              echo $uneOffre->descriptionOffre.'<br>'.$uneOffre->dateOffre.'<br>';
-              echo '<a href="#modOffre-form" title="Modifier cette offre" rel="modal:open">+</a>';
-              echo '</div>';
-              echo '</div>';
-              echo '</div>';
-              echo '</div>';
-          }
+    foreach ($lesOffres as $uneOffre) 
+    {
+    ?>
+    <a href='#modOffre-form' title='Modifier cette offre' rel='modal:open' onclick=afficherModOffre(<?php echo $uneOffre->idOffre;?>)'>
+    <div class='col-xl-4 col-lg-4 col-md-6 col-sm-12'>
+        <div class='our-services-wrapper mb-60'>
+            <div class='services-inner'>
+                <div class='our-services-img'>
+                    <div class='d-flex justify-content-center h-100'>
+                        <div class='image_outer_container'>
+                            <div class='image_inner_container'>
+                                <image src="<?php echo $uneOffre->photoService ; ?>"/> <br/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <div class='our-services-text'>
+                        <?php echo $uneOffre->descriptionOffre."<br/>".$uneOffre->dateOffre ; ?><br/>
+                    </div>
+            </div>
+        </div>
+    </div>
+    </a>
+    <?php
+    }
     ?>
 <br><br><br><br><br><br><br><br>
 <h3>Mes Demandes <a href="#demande-form" title="Ajouter une nouvelle demande" rel="modal:open">+</a></h3>
+<?php
+    foreach ($lesDemandes as $uneDemande)
+    {
+    ?>
+    <a href='#modDemande-form' title='Modifier cette demande' rel='modal:open' onclick=afficherModDemande(<?php echo $uneDemande->idDemande;?>)'>
+    <div class='col-xl-4 col-lg-4 col-md-6 col-sm-12'>
+        <div class='our-services-wrapper mb-60'>
+            <div class='services-inner'>
+                <div class='our-services-img'>
+                    <div class='d-flex justify-content-center h-100'>
+                        <div class='image_outer_container'>
+                            <div class='image_inner_container'>
+                                <image src="<?php echo $uneDemande->photoService ; ?>"/> <br/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <div class='our-services-text'>
+                        <?php echo $uneDemande->descriptionDemande."<br/>".$uneDemande->dateDemande ; ?><br/>
+                    </div>
+            </div>
+        </div>
+    </div>
+    </a>
     <?php
-          foreach ($lesDemandes as $uneDemande) {
-              echo "<div class='col-xl-4 col-lg-4 col-md-6 col-sm-12'>";
-              echo "<div class='our-services-wrapper mb-60'>";
-              echo "<div class='services-inner'>";
-              echo" <div class='our-services-img'>";
-              echo  "<div class='d-flex justify-content-center h-100'>";
-              echo "<div class='image_outer_container'>";
-              echo "<div class='image_inner_container'>";
-              echo "<image src='".$uneDemande->photoService."'> <br>";
-              echo '</div>';
-              echo '</div>';
-              echo '</div>';
-              echo '</div>';
-              echo "<div class='our-services-text'>";
-              echo $uneDemande->descriptionDemande.'<br>'.$uneDemande->dateDemande.'<br>';
-              echo '<a href="#modDemande-form" title="Modifier cette offre" rel="modal:open">+</a>';
-              echo '</div>';
-              echo '</div>';
-              echo '</div>';
-              echo '</div>';
-          }
+    }
     ?>
 <br><br><br><br><br><br><br><br>
 <h3>Mes deals <a href="#deal-form" rel="modal:open">+</a></h3> 
-    
+<?php
+    foreach ($lesInfoDeals as $uneInfoDeal)
+    {
+    ?>
+    <a href='#modDeals-form' title='Modifier ce deal' rel='modal:open' onclick()'>
+    <div class='col-xl-4 col-lg-4 col-md-6 col-sm-12'>
+        <div class='our-services-wrapper mb-60'>
+            <div class='services-inner'>
+                <div class='our-services-img'>
+                    <div class='d-flex justify-content-center h-100'>
+                        <div class='image_outer_container'>
+                            <div class='image_inner_container'>
+                                <image src="<?php echo $uneInfoDeal->photoUser ; ?>"/> <br/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <div class='our-services-text'>
+                        <?php echo $uneInfoDeal->nomUser.'<br>'.$uneInfoDeal->dateDeal.
+                        '<br>'.$uneInfoDeal->noteUser1.' - '.$uneInfoDeal->noteUser2.'<br>' ; 
+                        ?><br/>
+                    </div>
+            </div>
+        </div>
+    </div>
+    </a>
     <?php
-    foreach ($lesInfoDeals as $uneInfoDeal) {
-        echo "<div class='col-xl-4 col-lg-4 col-md-6 col-sm-12'>";
-        echo "<div class='our-services-wrapper mb-60'>";
-        echo "<div class='services-inner'>";
-        echo" <div class='our-services-img'>";
-        echo  "<div class='d-flex justify-content-center h-100'>";
-        echo "<div class='image_outer_container'>";
-        echo "<div class='image_inner_container'>";
-        echo "<image src='".$uneInfoDeal->photoUser."'> <br>";
-        echo '</div>';
-        echo '</div>';
-        echo '</div>';
-        echo '</div>';
-        echo "<div class='our-services-text'>";
-        echo $uneInfoDeal->nomUser.'<br>'.$uneInfoDeal->dateDeal.'<br>'.$uneInfoDeal->noteUser1.' - '.$uneInfoDeal->noteUser2.'<br>';
-        echo '<a href="#modDeals-form" title="Modifier cette offre" rel="modal:open">+</a>';
-        echo '</div>';
-        echo '</div>';
-        echo '</div>';
-        echo '</div>';
     }
     ?>
 </div>

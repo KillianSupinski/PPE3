@@ -41,4 +41,16 @@ class ctrl_Accueil extends CI_Controller
         session_destroy();
         $this->load->view('login');
     }
+    public function afficherModOffre()
+    {
+        $this->load->model('Model_Offre');
+        $data['lesInfosModOffre'] = $this->Model_Offre->getAllInfosOffre($_GET['idOffre']);
+        $this->load->view('view_ModalOffre', $data);
+    }
+    public function afficherIdServiceParIdOffre()
+    {
+        $this->load->model('Model_Offre');
+        $data['modOffre'] = $this->Model_Offre->getIdServiceByIdOffre();
+        $this->load->view('view_Accueil', $data);
+    }
 }
