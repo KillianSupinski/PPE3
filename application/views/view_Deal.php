@@ -39,14 +39,15 @@ $infoUser = $this->session->userdata('infoLog');
 				<li ><a href="<?php echo base_url(); ?>index.php/ctrl_Accueil/getDemande">Mes demandes<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
 				<li ><a href="<?php echo base_url(); ?>index.php/ctrl_Accueil/getDeal">Mes deals<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-retweet"></span></a></li>	
                 <li ><a href="<?php echo base_url(); ?>index.php/ctrl_Accueil/logout">Deconnexion<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>	
-
             </ul>
 		</div>
 	</div>
 </nav>
 <div class="main">
 <div class="container">
-<h3>Mes deals</h3>
+    <h3>Mes deals</h3>
+    <table>
+    <td>
     <?php
     foreach ($lesInfoDeals as $uneInfoDeal) {
         echo "<div class='col-xl-4 col-lg-4 col-md-6 col-sm-12'>";
@@ -55,7 +56,6 @@ $infoUser = $this->session->userdata('infoLog');
         echo" <div class='our-services-img'>";
         echo  "<div class='d-flex justify-content-center h-100'>";
         echo "<div class='image_outer_container'>";
-        echo "<div class='green_icon'></div>";
         echo "<div class='image_inner_container'>";
         echo "<image src='".$uneInfoDeal->photoUser."'> <br>";
         echo '</div>';
@@ -64,13 +64,16 @@ $infoUser = $this->session->userdata('infoLog');
         echo '</div>';
         echo "<div class='our-services-text'>";
         echo  '<h4>'.$uneInfoDeal->nomUser.'</h4>';
-        echo $uneInfoDeal->dateDeal.'<br>'.$uneInfoDeal->noteUser1.' - '.$uneInfoDeal->noteUser2.'<br>';
+        echo $uneInfoDeal->nomService.'<br> VS <br>'.$uneInfoDeal->nomService2.'<br>';
+        echo $uneInfoDeal->nomUser.'<br>'.$uneInfoDeal->dateDeal.'<br>'.$uneInfoDeal->noteUser1.' - '.$uneInfoDeal->noteUser2.'<br>';
         echo '</div>';
         echo '</div>';
         echo '</div>';
         echo '</div>';
     }
     ?>
+    </td>
+    </table>
 </div>
 </div>
 </div>

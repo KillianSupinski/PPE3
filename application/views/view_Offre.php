@@ -47,7 +47,9 @@ $infoUser = $this->session->userdata('infoLog');
 <div class="main">
 <div class="container">
 <div id="divOffre">
-<h3>Mes offres</h3>
+    <h3>Mes offres</h3>
+    <table>
+    <td>
     <?php
           foreach ($lesOffres as $uneOffre) {
               echo "<div class='col-xl-4 col-lg-4 col-md-6 col-sm-12'>";
@@ -72,6 +74,8 @@ $infoUser = $this->session->userdata('infoLog');
               echo '</div>';
           }
     ?>
+    </td>
+    </table>
 </div>
 </div>
 </div>
