@@ -30,7 +30,15 @@
             <label>Description de l'offre</label><br/>
             <input type="text" id="txtDescriptionOffre" value=""><br/><br/>
             <label>Nom du service</label><br/>
-            <input type="text" id="nomService" value=""><br><br>
+            <select name="idServOffres">
+                <?php
+                    foreach ($lesServices as $unService) {
+                ?>
+                <option value="<?php echo $unService->idService; ?>"><?php echo $unService->nomService; ?></option>
+                <?php
+                }
+                ?>
+            </select>
             <?php
             }
             ?>

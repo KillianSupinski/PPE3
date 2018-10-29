@@ -32,16 +32,16 @@
             <input type="date" id="dateDemande" placeholder="JJ/MM/AAAA"><br/><br/>
             <label>Description de la demande</label><br/>
             <input type="text" id="txtDescriptionDemande" placeholder="Description"><br/><br/>
-            <label>Nom du service</label>
+            <label>Nom du service</label><br/>
             <select name="idServDemandes">
-        <?php
-            foreach ($lesServices as $unService) {
-        ?>
-        <option value="<?php echo $unService->idService; ?>"><?php echo $unService->nomService; ?></option>
-        <?php
-        }
-        ?>
-        </select>
+                <?php
+                    foreach ($lesServices as $unService) {
+                ?>
+                <option value="<?php echo $unService->idService; ?>"><?php echo $unService->nomService; ?></option>
+                <?php
+                }
+                ?>
+            </select>
             <input type="button" id="btnValiderMod" placeholder="Valider la modification" class="btnValiderMod">
     </form>
 </body>
