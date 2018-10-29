@@ -10,14 +10,17 @@
 </head>
 <body>  
 <form method="GET" id="offre-form" action = "<?php echo base_url(); ?>index.php/ctrl_Accueil/getNewOffre/" class="modal">
+<?php
+$erreur = '';
+ echo $erreur; ?>
 <label>Numéro de l'offre</label><br>
 <?php
 foreach ($IdMaxOffres as $unIdOffre) {
-    ?>
+     ?>
 
 <input type="text" id='idNum' name="idOffre" value="<?php echo $unIdOffre->idOffreCrea; ?> " readonly ><br>
     <?php
-}
+ }
 ?>
 <label>Description de l'offre</label><br>
 <input type="text" id="idDesc" name="descOffre"><br>
