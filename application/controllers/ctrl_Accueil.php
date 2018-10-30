@@ -14,6 +14,7 @@ class ctrl_Accueil extends CI_Controller
         $data['lesServicesDemandes'] = $this->Model_Demande->getAllNomServices();
         $this->load->model('Model_Deal');
         $data['lesInfoDeals'] = $this->Model_Deal->getAllInfoDeal();
+        $data['nomDealService2'] = $this->Model_Deal->getNomServiceDeal2();
         $this->load->view('view_Accueil', $data);
     }
 
@@ -39,6 +40,7 @@ class ctrl_Accueil extends CI_Controller
     {
         $this->load->model('Model_Deal');
         $data['lesInfoDeals'] = $this->Model_Deal->getAllInfoDeal();
+        $data['nomDealService2'] = $this->Model_Deal->getNomServiceDeal2();
         $this->load->view('view_Deal', $data);
     }
 
@@ -73,6 +75,7 @@ class ctrl_Accueil extends CI_Controller
                             $data['lesServicesDemandes'] = $this->Model_Demande->getAllNomServices();
                             $this->load->model('Model_Deal');
                             $data['lesInfoDeals'] = $this->Model_Deal->getAllInfoDeal();
+                            $data['nomDealService2'] = $this->Model_Deal->getNomServiceDeal2();
                             $this->load->view('view_Accueil', $data);
                         } else {
                             echo 'id service introuvable';
@@ -118,6 +121,7 @@ class ctrl_Accueil extends CI_Controller
                             $data['lesServicesOffres'] = $this->Model_Offre->getAllNomServices();
                             $this->load->model('Model_Deal');
                             $data['lesInfoDeals'] = $this->Model_Deal->getAllInfoDeal();
+                            $data['nomDealService2'] = $this->Model_Deal->getNomServiceDeal2();
                             $this->load->view('view_Accueil', $data);
                         } else {
                             echo 'Id service introuvable';

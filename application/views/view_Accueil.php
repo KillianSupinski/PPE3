@@ -35,11 +35,11 @@ include 'lesModals.php';
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li ><a href="<?php echo base_url(); ?>index.php/ctrl_Accueil/index">Accueil<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>				
-				<li><a href="<?php echo base_url(); ?>index.php/ctrl_Accueil/getOffre">Mes offres<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
-				<li ><a href="<?php echo base_url(); ?>index.php/ctrl_Accueil/getDemande">Mes demandes<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
-                <li ><a href="<?php echo base_url(); ?>index.php/ctrl_Accueil/getDeal">Mes deals<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-retweet"></span></a></li>	
-                <li ><a href="<?php echo base_url(); ?>index.php/ctrl_Accueil/logout">Deconnexion<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>	
+            <li ><a href="<?php echo base_url(); ?>index.php/ctrl_Accueil/index">Accueil<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+                <li><a href="<?php echo base_url(); ?>index.php/ctrl_Accueil/getOffre">Mes offres<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-tag"></span></a></li>
+                <li ><a href="<?php echo base_url(); ?>index.php/ctrl_Accueil/getDemande">Mes demandes<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-folder-open"></span></a></li>
+                <li ><a href="<?php echo base_url(); ?>index.php/ctrl_Accueil/getDeal">Mes deals<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-transfer"></span></a></li>
+                <li ><a href="<?php echo base_url(); ?>index.php/ctrl_Accueil/logout">Deconnexion<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-log-out"></span></a></li>	
 			</ul>
 		</div>
 	</div>
@@ -47,7 +47,7 @@ include 'lesModals.php';
 <div class="main">
 <div class="container">
 
-<h3>Mes offres <a href="#offre-form" title="Ajouter une nouvelle offre" rel="modal:open">+</a></h3>
+<h3>Mes offres <a href="#offre-form" title="Ajouter une nouvelle offre" rel="modal:open" style="font-size:17px" class="glyphicon glyphicon-plus-sign"></a></h3>
 <table>
     <td>
     <?php
@@ -104,9 +104,9 @@ include 'lesModals.php';
     </td>
 </table>
 <h3>Mes deals</h3>  
-    <table>
-    <td>
+
     <?php
+    $i = 0;
     foreach ($lesInfoDeals as $uneInfoDeal) {
         echo "<div class='col-xl-4 col-lg-4 col-md-6 col-sm-12'>";
         echo "<div class='our-services-wrapper mb-60'>";
@@ -122,16 +122,19 @@ include 'lesModals.php';
         echo '</div>';
         echo "<div class='our-services-text'>";
         echo  '<h4>'.$uneInfoDeal->nomUser.'</h4>';
-        echo $uneInfoDeal->nomService.'<br> VS <br>'.$uneInfoDeal->nomService2.'<br>';
+        echo $nomDealService2[$i]->nomService;
+        ++$i;
+        echo '<br> VS <br>';
+        echo $uneInfoDeal->nomService;
+        echo '<br><br>';
         echo $uneInfoDeal->nomUser.'<br>'.$uneInfoDeal->dateDeal.'<br>'.$uneInfoDeal->noteUser1.' - '.$uneInfoDeal->noteUser2.'<br>';
         echo '</div>';
         echo '</div>';
         echo '</div>';
         echo '</div>';
     }
+
     ?>
-    </td>
-    </table>
 </div>
 </div>
 </body>
