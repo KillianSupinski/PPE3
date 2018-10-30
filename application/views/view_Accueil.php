@@ -121,10 +121,6 @@ include 'lesModals.php';
         echo '</div>';
         echo '</div>';
         echo "<div class='our-services-text'>";
-<<<<<<< HEAD
-        echo '<h4>'.$uneInfoDeal->nomUser.'</h4>';
-        echo  $uneInfoDeal->dateDeal.'<br>'.$uneInfoDeal->noteUser1.' - '.$uneInfoDeal->noteUser2.'<br>';
-=======
         echo  '<h4>'.$uneInfoDeal->nomUser.'</h4>';
         echo $nomDealService2[$i]->nomService;
         ++$i;
@@ -132,7 +128,6 @@ include 'lesModals.php';
         echo $uneInfoDeal->nomService;
         echo '<br><br>';
         echo $uneInfoDeal->nomUser.'<br>'.$uneInfoDeal->dateDeal.'<br>'.$uneInfoDeal->noteUser1.' - '.$uneInfoDeal->noteUser2.'<br>';
->>>>>>> killianSupinski
         echo '</div>';
         echo '</div>';
         echo '</div>';
