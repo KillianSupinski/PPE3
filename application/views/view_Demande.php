@@ -17,6 +17,7 @@
 <?php
 $this->load->library('session');
 $infoUser = $this->session->userdata('infoLog');
+include 'lesModals.php';
 ?>
 <nav class="navbar navbar-inverse sidebar" role="navigation">
     <div class="container-fluid">
@@ -46,7 +47,9 @@ $infoUser = $this->session->userdata('infoLog');
 </nav>
 <div class="main">
 <div class="container">
-<h3>Mes Demandes</h3>
+<h3>Mes demandes <a href="#demande-form" title="Ajouter une nouvelle demande" rel="modal:open">+</a></h3></h3>
+    <table>
+    <td>
     <?php
           foreach ($lesDemandes as $uneDemande) {
               echo "<div class='col-xl-4 col-lg-4 col-md-6 col-sm-12'>";
@@ -56,7 +59,7 @@ $infoUser = $this->session->userdata('infoLog');
               echo  "<div class='d-flex justify-content-center h-100'>";
               echo "<div class='image_outer_container'>";
               echo "<div class='green_icon'></div>";
-              echo "<div class='image_inner_container'>";
+              echo "<div class='image_inner_container_demande'>";
               echo "<image src='".$uneDemande->photoService."'> <br>";
               echo '</div>';
               echo '</div>';
@@ -71,6 +74,8 @@ $infoUser = $this->session->userdata('infoLog');
               echo '</div>';
           }
     ?>
+    </td>
+    </table>
 </div>
 </div>
 </div>

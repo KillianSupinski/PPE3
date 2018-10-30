@@ -18,6 +18,7 @@
 <?php
 $this->load->library('session');
 $infoUser = $this->session->userdata('infoLog');
+include 'lesModals.php';
 ?>
 <nav class="navbar navbar-inverse sidebar" role="navigation">
     <div class="container-fluid">
@@ -34,11 +35,11 @@ $infoUser = $this->session->userdata('infoLog');
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li ><a href="<?php echo base_url(); ?>index.php/ctrl_Accueil/index">Accueil<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>				
-				<li><a href="<?php echo base_url(); ?>index.php/ctrl_Accueil/getOffre">Mes offres<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
-				<li ><a href="<?php echo base_url(); ?>index.php/ctrl_Accueil/getDemande">Mes demandes<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
-                <li ><a href="<?php echo base_url(); ?>index.php/ctrl_Accueil/getDeal">Mes deals<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-retweet"></span></a></li>	
-                <li ><a href="<?php echo base_url(); ?>index.php/ctrl_Accueil/logout">Deconnexion<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>	
+            <li ><a href="<?php echo base_url(); ?>index.php/ctrl_Accueil/index">Accueil<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+                <li><a href="<?php echo base_url(); ?>index.php/ctrl_Accueil/getOffre">Mes offres<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-tag"></span></a></li>
+                <li ><a href="<?php echo base_url(); ?>index.php/ctrl_Accueil/getDemande">Mes demandes<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-folder-open"></span></a></li>
+                <li ><a href="<?php echo base_url(); ?>index.php/ctrl_Accueil/getDeal">Mes deals<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-transfer"></span></a></li>
+                <li ><a href="<?php echo base_url(); ?>index.php/ctrl_Accueil/logout">Deconnexion<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-log-out"></span></a></li>	
 			</ul>
 		</div>
 	</div>
@@ -46,7 +47,9 @@ $infoUser = $this->session->userdata('infoLog');
 <div class="main">
 <div class="container">
 
-<h3>Mes offres</h3>
+<h3>Mes offres <a href="#offre-form" title="Ajouter une nouvelle offre" rel="modal:open" style="font-size:17px" class="glyphicon glyphicon-plus-sign"></a></h3>
+<table>
+    <td>
     <?php
           foreach ($lesOffres as $uneOffre) {
               echo "<div class='col-xl-4 col-lg-4 col-md-6 col-sm-12'>";
@@ -55,7 +58,7 @@ $infoUser = $this->session->userdata('infoLog');
               echo" <div class='our-services-img'>";
               echo  "<div class='d-flex justify-content-center h-100'>";
               echo "<div class='image_outer_container'>";
-              echo "<div class='image_inner_container'>";
+              echo "<div class='image_inner_container_offre '>";
               echo "<image src='".$uneOffre->photoService."'> <br>";
               echo '</div>';
               echo '</div>';
@@ -70,8 +73,11 @@ $infoUser = $this->session->userdata('infoLog');
               echo '</div>';
           }
     ?>
-<br><br><br><br><br><br><br><br>
-<h3>Mes Demandes</h3>
+    </td>
+</table>
+    <h3>Mes demandes <a href="#demande-form" title="Ajouter une nouvelle demande" rel="modal:open">+</a></h3></h3>
+<table>
+    <td>
     <?php
           foreach ($lesDemandes as $uneDemande) {
               echo "<div class='col-xl-4 col-lg-4 col-md-6 col-sm-12'>";
@@ -80,7 +86,7 @@ $infoUser = $this->session->userdata('infoLog');
               echo" <div class='our-services-img'>";
               echo  "<div class='d-flex justify-content-center h-100'>";
               echo "<div class='image_outer_container'>";
-              echo "<div class='image_inner_container'>";
+              echo "<div class='image_inner_container_demande'>";
               echo "<image src='".$uneDemande->photoService."'> <br>";
               echo '</div>';
               echo '</div>';
@@ -95,10 +101,12 @@ $infoUser = $this->session->userdata('infoLog');
               echo '</div>';
           }
     ?>
-    <br><br><br><br><br><br><br><br>
+    </td>
+</table>
 <h3>Mes deals</h3>  
-    
+
     <?php
+    $i = 0;
     foreach ($lesInfoDeals as $uneInfoDeal) {
         echo "<div class='col-xl-4 col-lg-4 col-md-6 col-sm-12'>";
         echo "<div class='our-services-wrapper mb-60'>";
@@ -106,7 +114,7 @@ $infoUser = $this->session->userdata('infoLog');
         echo" <div class='our-services-img'>";
         echo  "<div class='d-flex justify-content-center h-100'>";
         echo "<div class='image_outer_container'>";
-        echo "<div class='image_inner_container'>";
+        echo "<div class='image_inner_container_deal'>";
         echo "<image src='".$uneInfoDeal->photoUser."'> <br>";
         echo '</div>';
         echo '</div>';
@@ -118,6 +126,11 @@ $infoUser = $this->session->userdata('infoLog');
         echo  $uneInfoDeal->dateDeal.'<br>'.$uneInfoDeal->noteUser1.' - '.$uneInfoDeal->noteUser2.'<br>';
 =======
         echo  '<h4>'.$uneInfoDeal->nomUser.'</h4>';
+        echo $nomDealService2[$i]->nomService;
+        ++$i;
+        echo '<br> VS <br>';
+        echo $uneInfoDeal->nomService;
+        echo '<br><br>';
         echo $uneInfoDeal->nomUser.'<br>'.$uneInfoDeal->dateDeal.'<br>'.$uneInfoDeal->noteUser1.' - '.$uneInfoDeal->noteUser2.'<br>';
 >>>>>>> killianSupinski
         echo '</div>';
@@ -125,9 +138,9 @@ $infoUser = $this->session->userdata('infoLog');
         echo '</div>';
         echo '</div>';
     }
+
     ?>
 </div>
 </div>
-
 </body>
 </html>

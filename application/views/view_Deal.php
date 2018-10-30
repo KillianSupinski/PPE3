@@ -39,15 +39,15 @@ $infoUser = $this->session->userdata('infoLog');
 				<li ><a href="<?php echo base_url(); ?>index.php/ctrl_Accueil/getDemande">Mes demandes<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
 				<li ><a href="<?php echo base_url(); ?>index.php/ctrl_Accueil/getDeal">Mes deals<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-retweet"></span></a></li>	
                 <li ><a href="<?php echo base_url(); ?>index.php/ctrl_Accueil/logout">Deconnexion<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>	
-
             </ul>
 		</div>
 	</div>
 </nav>
 <div class="main">
 <div class="container">
-<h3>Mes deals</h3>
+    <h3>Mes deals</h3>
     <?php
+    $i = 0;
     foreach ($lesInfoDeals as $uneInfoDeal) {
         echo "<div class='col-xl-4 col-lg-4 col-md-6 col-sm-12'>";
         echo "<div class='our-services-wrapper mb-60'>";
@@ -55,16 +55,20 @@ $infoUser = $this->session->userdata('infoLog');
         echo" <div class='our-services-img'>";
         echo  "<div class='d-flex justify-content-center h-100'>";
         echo "<div class='image_outer_container'>";
-        echo "<div class='green_icon'></div>";
-        echo "<div class='image_inner_container'>";
+        echo "<div class='image_inner_container_deal'>";
         echo "<image src='".$uneInfoDeal->photoUser."'> <br>";
         echo '</div>';
         echo '</div>';
         echo '</div>';
         echo '</div>';
         echo "<div class='our-services-text'>";
-        echo $uneInfoDeal->nomUser.'<br>';
-        echo $uneInfoDeal->dateDeal.'<br>'.$uneInfoDeal->noteUser1.' - '.$uneInfoDeal->noteUser2.'<br>';
+        echo  '<h4>'.$uneInfoDeal->nomUser.'</h4>';
+        echo $nomDealService2[$i]->nomService;
+        ++$i;
+        echo '<br> VS <br>';
+        echo $uneInfoDeal->nomService;
+        echo '<br><br>';
+        echo $uneInfoDeal->nomUser.'<br>'.$uneInfoDeal->dateDeal.'<br>'.$uneInfoDeal->noteUser1.' - '.$uneInfoDeal->noteUser2.'<br>';
         echo '</div>';
         echo '</div>';
         echo '</div>';
