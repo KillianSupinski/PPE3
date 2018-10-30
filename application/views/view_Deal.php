@@ -46,9 +46,8 @@ $infoUser = $this->session->userdata('infoLog');
 <div class="main">
 <div class="container">
     <h3>Mes deals</h3>
-    <table>
-    <td>
     <?php
+    $i = 0;
     foreach ($lesInfoDeals as $uneInfoDeal) {
         echo "<div class='col-xl-4 col-lg-4 col-md-6 col-sm-12'>";
         echo "<div class='our-services-wrapper mb-60'>";
@@ -64,7 +63,11 @@ $infoUser = $this->session->userdata('infoLog');
         echo '</div>';
         echo "<div class='our-services-text'>";
         echo  '<h4>'.$uneInfoDeal->nomUser.'</h4>';
-        echo $uneInfoDeal->nomService.'<br> VS <br>'.$uneInfoDeal->nomService2.'<br>';
+        echo $nomDealService2[$i]->nomService;
+        ++$i;
+        echo '<br> VS <br>';
+        echo $uneInfoDeal->nomService;
+        echo '<br><br>';
         echo $uneInfoDeal->nomUser.'<br>'.$uneInfoDeal->dateDeal.'<br>'.$uneInfoDeal->noteUser1.' - '.$uneInfoDeal->noteUser2.'<br>';
         echo '</div>';
         echo '</div>';
@@ -72,8 +75,6 @@ $infoUser = $this->session->userdata('infoLog');
         echo '</div>';
     }
     ?>
-    </td>
-    </table>
 </div>
 </div>
 </div>

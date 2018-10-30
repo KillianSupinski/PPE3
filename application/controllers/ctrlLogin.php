@@ -42,6 +42,7 @@ class ctrlLogin extends CI_Controller
                         $data['lesServicesDemandes'] = $this->Model_Demande->getAllNomServices();
                         $this->load->model('Model_Deal');
                         $data['lesInfoDeals'] = $this->Model_Deal->getAllInfoDeal();
+                        $data['nomDealService2'] = $this->Model_Deal->getNomServiceDeal2();
                         $this->load->view('view_Accueil', $data);
                     } else {
                         echo 'Cet utilisateur n/existe pas';
