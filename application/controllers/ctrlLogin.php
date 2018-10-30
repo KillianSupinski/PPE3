@@ -45,15 +45,15 @@ class ctrlLogin extends CI_Controller
                         $data['nomDealService2'] = $this->Model_Deal->getNomServiceDeal2();
                         $this->load->view('view_Accueil', $data);
                     } else {
-                        echo 'Cet utilisateur n/existe pas';
+                        echo "<div class='sErrorLog'>Cet utilisateur n/existe pas</div>";
                         $this->load->view('login');
                     }
                 } else {
-                    echo 'Veuillez entrer un mot de passe pour vous connecter.';
+                    echo "<div class='sErrorLog'>Veuillez entrer un mot de passe pour vous connecter.</div>";
                     $this->load->view('login');
                 }
             } else {
-                echo 'Veuillez entrer un identifiant pour vous connecter.';
+                echo "<div class='sErrorLog'>Veuillez entrer un identifiant pour vous connecter.</div>";
                 $this->load->view('login');
             }
         }
