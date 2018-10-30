@@ -75,7 +75,7 @@ include 'lesModals.php';
     ?>
     </td>
 </table>
-    <h3>Mes demandes <a href="#demande-form" title="Ajouter une nouvelle demande" rel="modal:open">+</a></h3></h3>
+    <h3>Mes demandes <a href="#demande-form" title="Ajouter une nouvelle demande" rel="modal:open"  style="font-size:17px" class="glyphicon glyphicon-plus-sign"></a></h3></h3>
 <table>
     <td>
     <?php

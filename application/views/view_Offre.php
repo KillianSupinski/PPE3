@@ -48,7 +48,7 @@ include 'lesModals.php';
 <div class="main">
 <div class="container">
 <div id="divOffre">
-<h3>Mes offres <a href="#offre-form" title="Ajouter une nouvelle offre" rel="modal:open">+</a></h3>
+<h3>Mes offres <a href="#offre-form" title="Ajouter une nouvelle offre" rel="modal:open" style="font-size:17px" class="glyphicon glyphicon-plus-sign"></a></h3>
     <table>
     <td>
     <?php
