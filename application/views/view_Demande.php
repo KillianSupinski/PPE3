@@ -8,13 +8,20 @@
     <script src="<?php echo base_url(); ?>JQuery/jquery-3.1.1.js"></script>
     <script src="<?php echo base_url(); ?>JS/fonctionK.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>  
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script> 
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <link href="<?php echo base_url(); ?>css/styleK.css" rel="stylesheet"></head>
+    <link href="<?php echo base_url(); ?>css/styleK.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <body>
 <?php
+<<<<<<< HEAD
 include ('lesModals.php');
+=======
+$this->load->library('session');
+$infoUser = $this->session->userdata('infoLog');
+include 'lesModals.php';
+>>>>>>> origin/master
 ?>
 <nav class="navbar navbar-inverse sidebar" role="navigation">
     <div class="container-fluid">
@@ -26,7 +33,8 @@ include ('lesModals.php');
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			
+			<a class="navbar-brand" href="<?php echo base_url(); ?>index.php/ctrl_Accueil/index"><?php echo $infoUser['login']; ?> <image width="30"src="<?php echo $infoUser['photoUser']; ?>"></a>
+		
 		</div>
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
@@ -34,14 +42,22 @@ include ('lesModals.php');
                <li ><a href="<?php echo base_url(); ?>index.php/ctrl_Accueil/index">Accueil<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>				
 				<li><a href="<?php echo base_url(); ?>index.php/ctrl_Accueil/getOffre">Mes offres<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
 				<li ><a href="<?php echo base_url(); ?>index.php/ctrl_Accueil/getDemande">Mes demandes<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
-				<li ><a href="<?php echo base_url(); ?>index.php/ctrl_Accueil/getDeal">Mes deals<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-retweet"></span></a></li>	
+                <li ><a href="<?php echo base_url(); ?>index.php/ctrl_Accueil/getDeal">Mes deals<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-retweet"></span></a></li>	
+                <li ><a href="<?php echo base_url(); ?>index.php/ctrl_Accueil/logout">Deconnexion<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>	
+
 			</ul>
 		</div>
 	</div>
 </nav>
 <div class="main">
 <div class="container">
+<<<<<<< HEAD
 <h3>Mes demandes <a href="#demande-form" title="Ajouter une nouvelle demande" rel="modal:open">+</a></h3></h3>
+=======
+<h3>Mes demandes <a href="#demande-form" title="Ajouter une nouvelle demande" rel="modal:open" style="font-size:17px" class="glyphicon glyphicon-plus-sign"></a></h3></h3>
+    <table>
+    <td>
+>>>>>>> origin/master
     <?php
           foreach ($lesDemandes as $uneDemande) {
               echo "<div class='col-xl-4 col-lg-4 col-md-6 col-sm-12'>";
@@ -58,6 +74,7 @@ include ('lesModals.php');
               echo '</div>';
               echo '</div>';
               echo "<div class='our-services-text'>";
+              echo '<h4>'.$uneDemande->nomService.'</h4>';
               echo $uneDemande->descriptionDemande.'<br>'.$uneDemande->dateDemande.'<br>';
               echo '</div>';
               echo '</div>';
@@ -65,6 +82,8 @@ include ('lesModals.php');
               echo '</div>';
           }
     ?>
+    </td>
+    </table>
 </div>
 </div>
 </div>

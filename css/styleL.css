@@ -1,0 +1,95 @@
+.titrePage{ /*Style des titres de pages*/
+    font-size: 25px; /*Taille de la police*/
+    text-align:center; /*Alignement du texte au centre*/
+    font-weight: bold;
+    margin:15px auto 25px auto; /*Marges extérieures dans l'ordre haut droite bas gauche */
+    font-family: 'Trebuchet MS'; /*Style de la police*/
+}
+.bodyLogin{ /*Fond de la page de connexion*/
+    background-color: transparent;
+}
+.sErrorLog{ /*Style des alerts*/
+    text-align:center; /*Alignement central du texte*/
+    border:1px solid darkred; /*Bordures du bloc*/
+    background-color: rgb(228, 208, 208); /*Couleur de fond*/
+    padding: 12px 5px 12px 5px; /*Marges intérieures*/ margin:auto; /*Marges extérieures*/
+    width: 350px; /*Largeur du bloc*/
+    font-family: 'Trebuchet MS'; /*Style de la police*/
+    font-size: 13px; /*Taille de la police*/
+}
+#affLogin{
+    margin:35px auto auto auto; /*Marges extérieures dans l'ordre haut droite bas gauche */
+    width: 350px; /*Largeur du bloc*/
+    text-align:center; /*Alignement du texte au centre*/
+    background-color:rgb(239, 248, 255); /*Couleur de fond*/
+    /*Bordures du bloc*/
+    border: 1px solid steelblue;
+    border-left: 5px solid steelblue;
+    border-radius: 15px 0px 15px 0px;
+    font-family: 'Trebuchet MS'; /*Style de la police*/
+    font-size: 14px; /*Taille de la police*/
+}
+#btnLog{
+    background-color:rgb(131, 13, 37); /*Couleur de fond*/
+    /*Bordures du bloc*/
+    border-radius:5px;
+    border: 1px solid rgb(131, 13, 37);
+    box-shadow: 0px 0px 4px 0px black; /*Ombres autour du bloc*/
+    text-align:center; /*Alignement central du texte*/
+    color: white; /*Couleur du texte*/
+    padding: 5px 8px 5px 8px; /*Marges intérieures du bloc*/
+    /*Transition au moment du passage de la souris*/
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+#btnLog:hover{
+    background-color: rgb(168, 42, 42);
+}
+#btnInsc1{
+    background-color:rgb(35, 70, 134);
+    border-radius:5px;
+    border: 1px solid rgb(35, 70, 134);
+    box-shadow: 0px 0px 4px 0px black; /*Ombre autour du bloc*/
+    text-align:center; /*Alignement central du texte*/
+    color: white;
+    padding: 5px 8px 5px 8px; /*Marges intérieures du bloc*/
+    /*Transition au moment du passage de la souris*/
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+#btnInsc1:hover{
+    background-color: rgb(68, 97, 151);
+}
+#affInsc{
+    margin:35px auto auto auto; /*Marges extérieures dans l'ordre haut droite bas gauche */
+    width: 350px; /*Largeur du bloc*/
+    text-align:center; /*Alignement du texte au centre*/
+    background-color:rgb(239, 248, 255); /*Couleur de fond*/
+    /*Bordures du bloc*/
+    border: 1px solid steelblue;
+    border-left: 5px solid steelblue;
+    border-radius: 15px 0px 15px 0px;
+    font-family: 'Trebuchet MS'; /*Style de la police*/
+    font-size: 14px; /*Taille de la police*/
+}
+#btnInsc2{
+    background-color:rgb(49, 105, 91);
+    border-radius:5px;
+    border: 1px solid rgb(49, 105, 91);
+    box-shadow: 0px 0px 4px 0px black; /*Ombre autour du bloc*/
+    text-align:center; /*Alignement central du texte*/
+    color: white;
+    padding: 5px 8px 5px 8px; /*Marges intérieures du bloc*/
+    /*Transition au moment du passage de la souris*/
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+#btnInsc2:hover{
+    background-color: rgb(59, 121, 106);
+}
