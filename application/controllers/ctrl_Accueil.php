@@ -136,6 +136,27 @@ class ctrl_Accueil extends CI_Controller
         }
     }
 
+    public function afficherModOffre()
+    {
+        $this->load->model('Model_Offre');
+        $data['lesInfosModOffre'] = $this->Model_Offre->getAllInfosOffre($_GET['idOffre']);
+        $this->load->view('view_ModalOffre', $data);
+    }
+
+    public function afficherModDemande()
+    {
+        $this->load->model('Model_Demande');
+        $data['lesInfosModDemandes'] = $this->Model_Offre->getAllInfosDemande($_GET['idDemande']);
+        $this->load->view('view_ModalDemande', $data);
+    }
+
+    public function afficherIdServiceParIdOffre()
+    {
+        $this->load->model('Model_Offre');
+        $data['modOffre'] = $this->Model_Offre->getIdServiceByIdOffre();
+        $this->load->view('view_Accueil', $data);
+    }
+
     public function logout()
     {
         $this->load->library('session');
