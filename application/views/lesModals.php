@@ -12,7 +12,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>  
-<form method="GET" id="offre-form" action = "<?php echo base_url(); ?>index.php/ctrl_Accueil/getNewOffre/" class="modal">
+<form method="GET" id="offre-form" action = "<?php echo base_url(); ?>index.php/ctrl_Accueil/getNewOffre/" class="modal form1">
 <label>Numéro de l'offre</label><br>
 <?php
 foreach ($IdMaxOffres as $unIdOffre) {
@@ -41,7 +41,7 @@ foreach ($lesServicesOffres as $unService) {
 <button name="btnOffre" value="validez">Valider <i class="glyphicon glyphicon-ok"></i></button>
 </form>
 
-<form method="GET" id="demande-form" action = "<?php echo base_url(); ?>index.php/ctrl_Accueil/getNewDemande/" class="modal">
+<form method="GET" id="demande-form" action = "<?php echo base_url(); ?>index.php/ctrl_Accueil/getNewDemande/" class="modal form1">
 <?php
 foreach ($IdMaxDemandes as $unIdDemande) {
     ?>

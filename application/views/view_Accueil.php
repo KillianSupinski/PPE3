@@ -6,7 +6,6 @@
     <title>Accueil</title>
     <script src="<?php echo base_url(); ?>JQuery/jquery-3.1.1.js"></script>
     <script src="<?php echo base_url(); ?>JS/fonctionK.js"></script>
-    <script src="<?php echo base_url(); ?>JS/fonction.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script> 
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 
@@ -20,8 +19,6 @@
 $this->load->library('session');
 $infoUser = $this->session->userdata('infoLog');
 include 'lesModals.php';
-include 'modifierDemande.php';
-include 'modifierOffre.php';
 include 'nav.php';
 ?>
 
@@ -94,7 +91,7 @@ include 'nav.php';
     ?>
     </tr>
 </table>
-<h3>Mes deals</h3>
+<h3>Mes deals <a href="<?php echo base_url(); ?>index.php/ctrl_Accueil/afficherCreaDeal/" title="Ajouter un nouveau deal"  style="font-size:17px" class="glyphicon glyphicon-plus-sign"></a></h3>
 <table width = 100%>
     <tr>  
     <?php
