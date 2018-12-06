@@ -38,3 +38,25 @@ function afficherModDemande(idDemande)
     }
     );
 }
+function RechercherDealCrea(test)
+{
+    
+    $.ajax
+    (
+        {
+        type:"GET",
+        url:"rechercherDealService/",
+        data:"termeR="+test,
+        success:function(data)
+        {
+            $('#divUserD').empty();
+            $('#divUserD').append(data);
+        },
+        error:function()
+        {
+            alert("Veuillez ecrire un service");
+        }
+    }
+    );
+    var i=0;
+}

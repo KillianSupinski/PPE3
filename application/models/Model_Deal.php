@@ -34,11 +34,11 @@ class Model_Deal extends CI_Model
     {
         $this->load->library('session');
         $id = $this->session->userdata('infoLog');
-        $sql = $this->db->query("SELECT u.idUser, u.nomUser, s.nomService
-        FROM user as u
-        INNER JOIN offre as o ON u.idUser = o.idUser
-        INNER JOIN service s ON o.idService = s.idService
-        WHERE s.nomService like '".$terme."'");
+        $sql = $this->db->query("SELECT user.idUser, user.nomUser, user.photoUser
+                                 FROM user
+                                 INNER JOIN offre  ON user.idUser = offre.idUser
+                                 INNER JOIN service ON offre.idService = service.idService
+                                 WHERE service.nomService = '".$terme."'");
 
         return $sql->result();
     }

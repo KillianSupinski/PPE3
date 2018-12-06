@@ -175,9 +175,9 @@ class ctrl_Accueil extends CI_Controller
 
     public function rechercherDealService()
     {
-        $terme = $this->input->get('terme');
         $this->load->model('Model_Deal');
-        $this->Model_Deal->getServiceRecherche($terme);
+        $data['lesUsersD'] = $this->Model_Deal->getServiceRecherche($_GET['termeR']);
+        $this->load->view('view_DealUser', $data);
     }
 
     public function logout()
