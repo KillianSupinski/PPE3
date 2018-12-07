@@ -186,6 +186,8 @@ class ctrl_Accueil extends CI_Controller
         $data['DemandeUserDeal'] = $this->Model_Demande->getDemandeUserDeal($_GET['idUser']);
         $this->load->model('Model_Offre');
         $data['OffreUserDeal'] = $this->Model_Offre->getOffreUserDeal($_GET['idUser']);
+        $this->load->model('Model_Deal');
+        $data['nomUsers'] = $this->Model_Deal->InfoUserClique($_GET['idUser']);
         $this->load->view('view_InfoUserDeal', $data);
     }
 

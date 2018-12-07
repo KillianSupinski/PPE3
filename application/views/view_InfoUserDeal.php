@@ -10,8 +10,10 @@
 </head>
 <body>
     <div class="fright">
-
-<h1 class="center"> Mes offres </h1>
+<?php
+$i = 0;
+?>
+<h1 class="center"> Les offres de <?php echo $nomUsers[$i]->nomUser; ?> </h1>
     <?php
     foreach ($OffreUserDeal as $uneOffre) {
         ?>
@@ -34,7 +36,7 @@
     }
     ?>
 <table>
-<h1 class="center"> Mes demandes</h1>
+<h1 class="center"> Les demandes de <?php echo $nomUsers[$i]->nomUser; ?></h1>
 <?php
     foreach ($DemandeUserDeal as $uneDemande) {
         ?>

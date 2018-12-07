@@ -43,4 +43,11 @@ class Model_Deal extends CI_Model
 
         return $sql->result();
     }
+
+    public function InfoUserClique($idUser)
+    {
+        $sql = $this->db->query('select nomUser, idUser from user where idUser='.$idUser);
+
+        return $sql->result();
+    }
 }
