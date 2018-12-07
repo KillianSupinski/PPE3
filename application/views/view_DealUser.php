@@ -13,13 +13,14 @@
     <title>Page Title</title>
 </head>
 <body>
+    <div>
     <table>
         <tr>
     <?php
         foreach ($lesUsersD as $uneInfoUserD) {
             ?>
             <td>
-                <div onlick="">
+                <div onclick="AfficherInfoUserDeal(<?php echo $uneInfoUserD->idUser; ?>)">
                     <image width="50"src="<?php echo $uneInfoUserD->photoUser; ?>"><br>
                     <?php echo $uneInfoUserD->nomUser; ?>
                 </div>
@@ -29,6 +30,6 @@
     ?>
         </tr>
     </table>
-    
+    </div>
 </body>
 </html>

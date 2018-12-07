@@ -49,6 +49,7 @@ function RechercherDealCrea(test)
         data:"termeR="+test,
         success:function(data)
         {
+            $('#divInfoUserD').empty();
             $('#divUserD').empty();
             $('#divUserD').append(data);
         },
@@ -67,16 +68,16 @@ function AfficherInfoUserDeal(idUser)
     (
         {
         type:"GET",
-        url:"index.php/ctrl_Accueil/AfficherInfoUserD/",
+        url:"AfficherInfoUserD/",
         data:"idUser="+idUser,
         success:function(data)
         {
             $('#divInfoUserD').empty();
-            $('#divInfoUserD').append(data);
+            $('#divInfoUserD').append(data);    
         },
         error:function()
         {
-            alert("Veuillez ecrire un service");
+            alert("Probleme SQL");
         }
     }
     );

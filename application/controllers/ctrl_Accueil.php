@@ -182,8 +182,10 @@ class ctrl_Accueil extends CI_Controller
 
     public function AfficherInfoUserD()
     {
-        $this->load->model('Model_Deal');
-        $data['InfoUserDeal'] = $this->Model_Deal->getInfoUserDeal($_GET['idUser']);
+        $this->load->model('Model_Demande');
+        $data['DemandeUserDeal'] = $this->Model_Demande->getDemandeUserDeal($_GET['idUser']);
+        $this->load->model('Model_Offre');
+        $data['OffreUserDeal'] = $this->Model_Offre->getOffreUserDeal($_GET['idUser']);
         $this->load->view('view_InfoUserDeal', $data);
     }
 
