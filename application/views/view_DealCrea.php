@@ -96,6 +96,7 @@
     <div class="fright"></div>
         <h1>droite</h1>
         <div id="divUserD"></div>
+        <div id="divInfoUserD"></div>
     </div>
     </div>
 </div>

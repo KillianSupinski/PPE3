@@ -43,4 +43,11 @@ class Model_Deal extends CI_Model
 
         return $sql->result();
     }
+
+    public function getInfoUserDeal($idUser)
+    {
+        $sql = $this->db->query('');
+
+        return $sql->result();
+    }
 }
