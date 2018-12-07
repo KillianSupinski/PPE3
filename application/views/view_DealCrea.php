@@ -45,10 +45,10 @@
                     <input type="search" id="nomDeal" name="txtTerme">
                     <button id="btnD" onclick="RechercherDealCrea(($('#nomDeal').val()))">Valider</button>
                 <h1 class="center"> Mes demandes</h1>
+                <table>
     <?php
     foreach ($lesDemandes as $uneDemande) {
         ?>
-        <tr>
         <div class='services-inner'>
                 <div class='our-services-img'>
                     <div class='d-flex justify-content-center h-100'>
@@ -64,11 +64,10 @@
                      <?php echo $uneDemande->descriptionDemande.'<br/>'.$uneDemande->dateDemande; ?><br/>
                     </div>
             </div>
-        </tr>
      <?php
     }
     ?>
-</table>
+    </table>
     <h1 class="center"> Mes offres </h1>
     <?php
     foreach ($lesOffres as $uneOffre) {
@@ -93,7 +92,7 @@
     }
     ?>
     </div>
-    <div class="fright"></div>
+    <div class="fright center"></div>
         <h1>droite</h1>
         <div id="divUserD"></div>
         <div id="divInfoUserD"></div>

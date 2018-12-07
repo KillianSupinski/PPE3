@@ -10,34 +10,8 @@
 </head>
 <body>
     <div class="fright">
-<h1 class="center"> Mes demandes</h1>
-<table>
-    
-<?php
-    foreach ($DemandeUserDeal as $uneDemande) {
-        ?>
 
-        <div class='services-inner'>
-                <div class='our-services-img'>
-                    <div class='d-flex justify-content-center h-100'>
-                        <div class='image_outer_container'>
-                            <div class='image_inner_container_demande'>
-                                <image src="<?php echo $uneDemande->photoService; ?>"/> <br/>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                    <div class='our-services-text'>
-                    <h4><?php echo $uneDemande->nomService; ?></h4>
-                     <?php echo $uneDemande->descriptionDemande.'<br/>'.$uneDemande->dateDemande; ?><br/>
-                    </div>
-            </div>
-        </tr>
-     <?php
-    }
-    ?>
-</table>
-    <h1 class="center"> Mes offres </h1>
+<h1 class="center"> Mes offres </h1>
     <?php
     foreach ($OffreUserDeal as $uneOffre) {
         ?>
@@ -59,6 +33,32 @@
     <?php
     }
     ?>
+<table>
+<h1 class="center"> Mes demandes</h1>
+<?php
+    foreach ($DemandeUserDeal as $uneDemande) {
+        ?>
+        <div class='services-inner'>
+                <div class='our-services-img'>
+                    <div class='d-flex justify-content-center h-100'>
+                        <div class='image_outer_container'>
+                            <div class='image_inner_container_demande'>
+                                <image src="<?php echo $uneDemande->photoService; ?>"/> <br/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <div class='our-services-text'>
+                    <h4><?php echo $uneDemande->nomService; ?></h4>
+                     <?php echo $uneDemande->descriptionDemande.'<br/>'.$uneDemande->dateDemande; ?><br/>
+                    </div>
+            </div>
+        </tr>
+     <?php
+    }
+    ?>
+</table>
+    
     </div>
 </body>
 </html>
