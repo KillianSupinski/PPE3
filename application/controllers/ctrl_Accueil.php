@@ -180,6 +180,13 @@ class ctrl_Accueil extends CI_Controller
         $this->load->view('view_DealUser', $data);
     }
 
+    public function AfficherInfoUserD()
+    {
+        $this->load->model('Model_Deal');
+        $data['infoUserD'] = $this->Model_Deal->getInfoUserDeal($_GET['idUser']);
+        $this->load->view('view_InfoUserDeal', $data);
+    }
+
     public function logout()
     {
         $this->load->library('session');

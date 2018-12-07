@@ -38,7 +38,8 @@ class Model_Deal extends CI_Model
                                  FROM user
                                  INNER JOIN offre  ON user.idUser = offre.idUser
                                  INNER JOIN service ON offre.idService = service.idService
-                                 WHERE service.nomService like '".$terme."%'");
+                                 WHERE service.nomService like '%".$terme."%'
+                                 GROUP BY user.idUser");
 
         return $sql->result();
     }

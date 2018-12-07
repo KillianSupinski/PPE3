@@ -13,18 +13,22 @@
     <title>Page Title</title>
 </head>
 <body>
-    <h1 class="center">test</h1>
-    <div>
+    <table>
+        <tr>
     <?php
         foreach ($lesUsersD as $uneInfoUserD) {
             ?>
-            <div width="300">
-            <image width="50"src="<?php echo $uneInfoUserD->photoUser; ?>"><br>
-            <?php echo $uneInfoUserD->nomUser; ?>
-            </div>
+            <td>
+                <div onlick="">
+                    <image width="50"src="<?php echo $uneInfoUserD->photoUser; ?>"><br>
+                    <?php echo $uneInfoUserD->nomUser; ?>
+                </div>
+            </td>
             <?php
         }
     ?>
-    </div>
+        </tr>
+    </table>
+    
 </body>
 </html>

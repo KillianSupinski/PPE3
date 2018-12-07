@@ -60,3 +60,25 @@ function RechercherDealCrea(test)
     );
     var i=0;
 }
+function AfficherInfoUserDeal(idUser)
+{
+    
+    $.ajax
+    (
+        {
+        type:"GET",
+        url:"index.php/ctrl_Accueil/AfficherInfoUserD/",
+        data:"idUser="+idUser,
+        success:function(data)
+        {
+            $('#divInfoUserD').empty();
+            $('#divInfoUserD').append(data);
+        },
+        error:function()
+        {
+            alert("Veuillez ecrire un service");
+        }
+    }
+    );
+    var i=0;
+}
