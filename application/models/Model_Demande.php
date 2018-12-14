@@ -69,4 +69,14 @@ class Model_Demande extends CI_Model
             set descriptionDemande = '".$tab['txtDescriptionDemande']."'
             where idUser ='".$id['idUser']."'");
     }
+
+    public function getDemandeUserDeal($idUser)
+    {
+        $sql = $this->db->query('select demande.idDemande ,demande.descriptionDemande, demande.dateDemande,service.photoService, service.nomService  
+        from demande, service 
+        where demande.idService=service.idService
+        AND idUser='.$idUser);
+
+        return $sql->result();
+    }
 }

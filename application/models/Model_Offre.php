@@ -9,7 +9,7 @@ class Model_Offre extends CI_Model
         $sql = $this->db->query("select offre.idOffre ,offre.descriptionOffre, offre.dateOffre, service.photoService, service.nomService 
                                  from offre, service 
                                  where offre.idService=service.idService
-                                 AND idUSer='".$id['idUser']."'");
+                                 AND idUser='".$id['idUser']."'");
 
         return $sql->result();
     }
@@ -68,5 +68,15 @@ class Model_Offre extends CI_Model
         $sql = $this->db->query("update demande
             set descriptionDemande = '".$tab['txtDescriptionOffre']."'
             where idUser ='".$id['idUser']."'");
+    }
+
+    public function getOffreUserDeal($idUser)
+    {
+        $sql = $this->db->query('select offre.idOffre ,offre.descriptionOffre, offre.dateOffre, service.photoService, service.nomService 
+        from offre, service 
+        where offre.idService=service.idService
+        AND idUSer='.$idUser);
+
+        return $sql->result();
     }
 }

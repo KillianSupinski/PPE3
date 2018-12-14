@@ -157,6 +157,40 @@ class ctrl_Accueil extends CI_Controller
         $this->load->view('view_Accueil', $data);
     }
 
+    public function afficherCreaDeal()
+    {
+        $this->load->model('Model_Demande');
+        $data['lesDemandes'] = $this->Model_Demande->getAllDemande();
+        $data['IdMaxDemandes'] = $this->Model_Demande->getMaxIdDemande();
+        $data['lesServicesDemandes'] = $this->Model_Demande->getAllNomServices();
+        $this->load->model('Model_Offre');
+        $data['lesOffres'] = $this->Model_Offre->getAllOffre();
+        $data['IdMaxOffres'] = $this->Model_Offre->getMaxIdOffre();
+        $data['lesServicesOffres'] = $this->Model_Offre->getAllNomServices();
+        $this->load->model('Model_Deal');
+        $data['lesInfoDeals'] = $this->Model_Deal->getAllInfoDeal();
+        $data['nomDealService2'] = $this->Model_Deal->getNomServiceDeal2();
+        $this->load->view('view_DealCrea', $data);
+    }
+
+    public function rechercherDealService()
+    {
+        $this->load->model('Model_Deal');
+        $data['lesUsersD'] = $this->Model_Deal->getServiceRecherche($_GET['termeR']);
+        $this->load->view('view_DealUser', $data);
+    }
+
+    public function AfficherInfoUserD()
+    {
+        $this->load->model('Model_Demande');
+        $data['DemandeUserDeal'] = $this->Model_Demande->getDemandeUserDeal($_GET['idUser']);
+        $this->load->model('Model_Offre');
+        $data['OffreUserDeal'] = $this->Model_Offre->getOffreUserDeal($_GET['idUser']);
+        $this->load->model('Model_Deal');
+        $data['nomUsers'] = $this->Model_Deal->InfoUserClique($_GET['idUser']);
+        $this->load->view('view_InfoUserDeal', $data);
+    }
+
     public function logout()
     {
         $this->load->library('session');

@@ -261,11 +261,18 @@ background: linear-gradient(to bottom, #fcb045, #fd1d1d, #833ab4);
     border-radius: 50%;
     border: 5px solid white;
  }
-form {
+.form1 {
     text-align: center;
     margin:  auto; 
-width:50px;
-height: 300px;
+    width:300px;
+    height: 300px;
   }
-
-  a { color:black; }
+  .fleft{
+    float: left;
+  }
+  .fright{
+    float: right;
+  }
+.center {
+    text-align: center;
+}
