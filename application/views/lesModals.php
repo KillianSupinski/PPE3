@@ -3,12 +3,7 @@
 <head>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
-<meta charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title></title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body>  
 <form method="GET" id="offre-form" action = "<?php echo base_url(); ?>index.php/ctrl_Accueil/getNewOffre/" class="modal">
 
 <label>Numéro de l'offre</label><br>
@@ -64,5 +59,3 @@ foreach ($lesServicesDemandes as $unService) {
 </select><br><br>
 <input type="submit" name="btnDemande" value="validez">
 </form>
-</body>
-</html>
