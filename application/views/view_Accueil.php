@@ -20,10 +20,6 @@ $infoUser = $this->session->userdata('infoLog');
 include 'lesModals.php';
 include 'nav.php';
 ?>
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/master
 <div class="main">
 <div class="container">
 
@@ -101,7 +97,7 @@ include 'nav.php';
     foreach ($lesInfoDeals as $uneInfoDeal) {
         echo "<div class='col-xl-4 col-lg-4 col-md-6 col-sm-12'>";
         echo "<div class='our-services-wrapper mb-60'>";
-        echo "<div class='services-inner'>";
+        echo "<div class='services-inner val".$uneInfoDeal->idEtat."'>";
         echo" <div class='our-services-img'>";
         echo  "<div class='d-flex justify-content-center h-100'>";
         echo "<div class='image_outer_container'>";
