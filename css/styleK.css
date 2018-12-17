@@ -266,14 +266,6 @@ background: linear-gradient(to bottom, #fcb045, #fd1d1d, #833ab4);
     width:300px;
     height: 300px;
   }
-<<<<<<< HEAD
-.val1 {
-    background-color: red;
-}
-.val2 {
-    background-color: green;
-}
-=======
   .fleft{
     float: left;
   }
@@ -283,4 +275,9 @@ background: linear-gradient(to bottom, #fcb045, #fd1d1d, #833ab4);
 .center {
     text-align: center;
 }
->>>>>>> origin/master
+.val1 {
+    background-color: red;
+}
+.val2 {
+    background-color: green;
+}

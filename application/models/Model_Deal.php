@@ -29,25 +29,4 @@ class Model_Deal extends CI_Model
 
         return $sql->result();
     }
-
-    public function getServiceRecherche($terme)
-    {
-        $this->load->library('session');
-        $id = $this->session->userdata('infoLog');
-        $sql = $this->db->query("SELECT user.idUser, user.nomUser, user.photoUser
-                                 FROM user
-                                 INNER JOIN offre  ON user.idUser = offre.idUser
-                                 INNER JOIN service ON offre.idService = service.idService
-                                 WHERE service.nomService like '%".$terme."%'
-                                 GROUP BY user.idUser");
-
-        return $sql->result();
-    }
-
-    public function InfoUserClique($idUser)
-    {
-        $sql = $this->db->query('select nomUser, idUser from user where idUser='.$idUser);
-
-        return $sql->result();
-    }
 }

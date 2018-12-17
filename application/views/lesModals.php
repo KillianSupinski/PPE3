@@ -3,11 +3,6 @@
 <head>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
-<<<<<<< HEAD
-</head>
-<form method="GET" id="offre-form" action = "<?php echo base_url(); ?>index.php/ctrl_Accueil/getNewOffre/" class="modal">
-
-=======
 <meta charset="utf-8" />
 <script src="<?php echo base_url(); ?>JQuery/jquery-3.1.1.js"></script>
 <script src="<?php echo base_url(); ?>JS/fonctionK.js"></script>
@@ -18,7 +13,6 @@
 </head>
 <body>  
 <form method="GET" id="offre-form" action = "<?php echo base_url(); ?>index.php/ctrl_Accueil/getNewOffre/" class="modal form1">
->>>>>>> origin/master
 <label>Numéro de l'offre</label><br>
 <?php
 foreach ($IdMaxOffres as $unIdOffre) {

@@ -22,10 +22,6 @@ $infoUser = $this->session->userdata('infoLog');
 include 'lesModals.php';
 include 'nav.php';
 ?>
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/master
 <div class="main">
 <div class="container">
 <h3>Mes demandes <a href="#demande-form" title="Ajouter une nouvelle demande" rel="modal:open" style="font-size:17px" class="glyphicon glyphicon-plus-sign"></a></h3></h3>
