@@ -34,4 +34,47 @@ class Model_Demande extends CI_Model
 
         return $this->db->insert_id();
     }
+
+    public function getIdServiceByIdDemande()
+    {
+        $sql = $this->db->query("select demande.idDemande, service.idService
+        from demande, service
+        where demande.idService = service.idService
+        and idDemande='".$idDemande['idDemande']."'");
+    }
+
+    public function getIdDemandeMod()
+    {
+        $sql = $this->db->query("select idDemande as idDemandeMod
+        from demande
+        where idDemande='".$id['idDemande']."'");
+
+        return $sql->result();
+    }
+
+    public function getAllInfosDemande($idDemande)
+    {
+        $sql = $this->db->query('select demande.idDemande, demande.descriptionDemande, demande.dateDemande, service.nomService
+        from demande, service
+        where idDemande ='.$idDemande);
+
+        return $sql->result();
+    }
+
+    public function updateDemande()
+    {
+        $sql = $this->db->query("update demande
+            set descriptionDemande = '".$tab['txtDescriptionDemande']."'
+            where idUser ='".$id['idUser']."'");
+    }
+
+    public function getDemandeUserDeal($idUser)
+    {
+        $sql = $this->db->query('select demande.idDemande ,demande.descriptionDemande, demande.dateDemande,service.photoService, service.nomService  
+        from demande, service 
+        where demande.idService=service.idService
+        AND idUser='.$idUser);
+
+        return $sql->result();
+    }
 }

@@ -3,17 +3,30 @@
 <head>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+<<<<<<< HEAD
 </head>
 <form method="GET" id="offre-form" action = "<?php echo base_url(); ?>index.php/ctrl_Accueil/getNewOffre/" class="modal">
 
+=======
+<meta charset="utf-8" />
+<script src="<?php echo base_url(); ?>JQuery/jquery-3.1.1.js"></script>
+<script src="<?php echo base_url(); ?>JS/fonctionK.js"></script>
+<script src="<?php echo base_url(); ?>JS/fonction.js"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>  
+<form method="GET" id="offre-form" action = "<?php echo base_url(); ?>index.php/ctrl_Accueil/getNewOffre/" class="modal form1">
+>>>>>>> origin/master
 <label>Numéro de l'offre</label><br>
 <?php
 foreach ($IdMaxOffres as $unIdOffre) {
-     ?>
+    ?>
 
 <input type="text" id='idNum' name="idOffre" value="<?php echo $unIdOffre->idOffreCrea; ?> " readonly ><br>
     <?php
- }
+}
 ?>
 <label>Description de l'offre</label><br>
 <input type="text" id="idDesc" name="descOffre"><br>
@@ -31,10 +44,10 @@ foreach ($lesServicesOffres as $unService) {
 ?>
 </select>
 <br><br>
-<input type="submit" name="btnOffre" value="validez">
+<button name="btnOffre" value="validez">Valider <i class="glyphicon glyphicon-ok"></i></button>
 </form>
 
-<form method="GET" id="demande-form" action = "<?php echo base_url(); ?>index.php/ctrl_Accueil/getNewDemande/" class="modal">
+<form method="GET" id="demande-form" action = "<?php echo base_url(); ?>index.php/ctrl_Accueil/getNewDemande/" class="modal form1">
 <?php
 foreach ($IdMaxDemandes as $unIdDemande) {
     ?>
@@ -57,5 +70,5 @@ foreach ($lesServicesDemandes as $unService) {
 }
 ?>
 </select><br><br>
-<input type="submit" name="btnDemande" value="validez">
+<button name="btnDemande" value="validez">Valider <i class="glyphicon glyphicon-ok"></i></button>
 </form>

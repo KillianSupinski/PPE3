@@ -20,67 +20,82 @@ $infoUser = $this->session->userdata('infoLog');
 include 'lesModals.php';
 include 'nav.php';
 ?>
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 <div class="main">
 <div class="container">
 
 <h3>Mes offres <a href="#offre-form" title="Ajouter une nouvelle offre" rel="modal:open" style="font-size:17px" class="glyphicon glyphicon-plus-sign"></a></h3>
-<table>
-    <td>
+<table width = 100%>
+    <tr>
     <?php
-          foreach ($lesOffres as $uneOffre) {
-              echo "<div class='col-xl-4 col-lg-4 col-md-6 col-sm-12'>";
-              echo "<div class='our-services-wrapper mb-60'>";
-              echo "<div class='services-inner'>";
-              echo" <div class='our-services-img'>";
-              echo  "<div class='d-flex justify-content-center h-100'>";
-              echo "<div class='image_outer_container'>";
-              echo "<div class='image_inner_container_offre '>";
-              echo "<image src='".$uneOffre->photoService."'> <br>";
-              echo '</div>';
-              echo '</div>';
-              echo '</div>';
-              echo '</div>';
-              echo "<div class='our-services-text'>";
-              echo '<h4>'.$uneOffre->nomService.'</h4>';
-              echo $uneOffre->descriptionOffre.'<br>'.$uneOffre->dateOffre.'<br>';
-              echo '</div>';
-              echo '</div>';
-              echo '</div>';
-              echo '</div>';
-          }
-    ?>
-    </td>
-</table>
-    <h3>Mes demandes <a href="#demande-form" title="Ajouter une nouvelle demande" rel="modal:open"  style="font-size:17px" class="glyphicon glyphicon-plus-sign"></a></h3></h3>
-<table>
-    <td>
-    <?php
-          foreach ($lesDemandes as $uneDemande) {
-              echo "<div class='col-xl-4 col-lg-4 col-md-6 col-sm-12'>";
-              echo "<div class='our-services-wrapper mb-60'>";
-              echo "<div class='services-inner'>";
-              echo" <div class='our-services-img'>";
-              echo  "<div class='d-flex justify-content-center h-100'>";
-              echo "<div class='image_outer_container'>";
-              echo "<div class='image_inner_container_demande'>";
-              echo "<image src='".$uneDemande->photoService."'> <br>";
-              echo '</div>';
-              echo '</div>';
-              echo '</div>';
-              echo '</div>';
-              echo "<div class='our-services-text'>";
-              echo '<h4>'.$uneDemande->nomService.'</h4>';
-              echo $uneDemande->descriptionDemande.'<br>'.$uneDemande->dateDemande.'<br>';
-              echo '</div>';
-              echo '</div>';
-              echo '</div>';
-              echo '</div>';
-          }
-    ?>
-    </td>
-</table>
-<h3>Mes deals</h3>  
+    foreach ($lesOffres as $uneOffre) {
+        ?>
+    <a href='#modOffre-form' title='Modifier cette offre' rel='modal:open' onclick="afficherModOffre('<?php echo $uneOffre->idOffre; ?>')">
+    <div class='col-xl-4 col-lg-4 col-md-6 col-sm-12'>
+        <div class='our-services-wrapper mb-60'>
+            <div class='services-inner'>
+                <div class='our-services-img'>
+                    <div class='d-flex justify-content-center h-100'>
+                        <div class='image_outer_container'>
+                            <div class='image_inner_container_offre '>
+                                <image src="<?php echo $uneOffre->photoService; ?>"/> <br/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <div class='our-services-text'>
+                        <h4><?php echo $uneOffre->nomService; ?></h4>
+                        <?php echo $uneOffre->descriptionOffre.'<br/>'.$uneOffre->dateOffre; ?><br/>
+                    </div>
+            </div>
+        </div>
+    </div>
+    </a>
 
+    <?php
+    }
+    ?>
+    </tr>
+    </table>
+
+    <h3>Mes demandes <a href="#demande-form" title="Ajouter une nouvelle demande" rel="modal:open"  style="font-size:17px" class="glyphicon glyphicon-plus-sign"></a></h3></h3>
+    <table width = 100%>
+    <tr>
+    <?php
+    foreach ($lesDemandes as $uneDemande) {
+        ?>
+     <a href='#modDemande-form' title='Modifier cette demande' rel='modal:open' onclick=afficherModDemande(<?php echo $uneDemande->idDemande; ?>)>
+    <div class='col-xl-4 col-lg-4 col-md-6 col-sm-12'>
+        <div class='our-services-wrapper mb-60'>
+            <div class='services-inner'>
+                <div class='our-services-img'>
+                    <div class='d-flex justify-content-center h-100'>
+                        <div class='image_outer_container'>
+                            <div class='image_inner_container_demande'>
+                                <image src="<?php echo $uneDemande->photoService; ?>"/> <br/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <div class='our-services-text'>
+                    <h4><?php echo $uneDemande->nomService; ?></h4>
+                     <?php echo $uneDemande->descriptionDemande.'<br/>'.$uneDemande->dateDemande; ?><br/>
+                    </div>
+            </div>
+        </div>
+    </div>
+    </a>
+    <?php
+    }
+    ?>
+    </tr>
+</table>
+<h3>Mes deals <a href="<?php echo base_url(); ?>index.php/ctrl_Accueil/afficherCreaDeal/" title="Ajouter un nouveau deal"  style="font-size:17px" class="glyphicon glyphicon-plus-sign"></a></h3>
+<table width = 100%>
+    <tr>  
     <?php
     $i = 0;
     foreach ($lesInfoDeals as $uneInfoDeal) {
@@ -109,8 +124,9 @@ include 'nav.php';
         echo '</div>';
         echo '</div>';
     }
-
     ?>
+    </tr>
+</table>
 </div>
 </div>
 </body>
