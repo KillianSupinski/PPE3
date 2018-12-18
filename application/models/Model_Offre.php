@@ -79,4 +79,24 @@ class Model_Offre extends CI_Model
 
         return $sql->result();
     }
+
+    public function compareOffreCreaDeal($idOffre) // recup idService pour le comparer
+    {
+        $sql = $this->db->query("select offre.idOffre, service.idService
+        from offre, service
+        where offre.idService = service.idService
+        and idOffre='".$idOffre."'");
+
+        return $sql->result();
+    }
+
+    public function compareOffreUserDeal($idOffre) // recup idService pour le comparer
+    {
+        $sql = $this->db->query("select offre.idOffre, service.idService
+        from offre, service
+        where offre.idService = service.idService
+        and idOffre='".$idOffre."'");
+
+        return $sql->result();
+    }
 }

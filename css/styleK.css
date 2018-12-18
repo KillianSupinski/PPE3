@@ -283,3 +283,6 @@ background: linear-gradient(to bottom, #fcb045, #fd1d1d, #833ab4);
     position:sticky;
     top: 0;
 }
+.red{
+    background-color: red;
+}

@@ -56,6 +56,5 @@ class Model_Deal extends CI_Model
         $this->load->library('session');
         $id = $this->session->userdata('infoLog');
         $sql = $this->db->query("insert into deal values('', CURRENT_DATE, '0', ".$idDemandeCrea.', '.$idOffreUser.", '2', '1', ".$id['idUser'].')');
-        $sql = $this->db->query("insert into deal values('', CURRENT_DATE, '0', ".$idOffreCrea.', '.$idDemandeUser.", '2', '1', ".$idUser.')');
     }
 }

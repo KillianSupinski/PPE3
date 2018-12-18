@@ -100,11 +100,10 @@ function clickDivDemandeCrea(idDemandeC)
         data:"idDemandeCreas="+idDemandeC,
         success:function(data)
         {
-            alert("idDemandeC ="+idDemanceCrea);
+            
         },
         error:function()
         {
-            alert("Probleme SQL");
         }
     }
     );
@@ -123,7 +122,6 @@ function clickDivOffreCrea(idOffreC, idUserR)
         data:"idOffreCreas="+idOffreC,
         success:function(data)
         {
-            alert("idOffreC ="+idOffreCrea);
         },
         error:function()
         {
@@ -151,7 +149,6 @@ function clickDivDemandeUser(idDemandeU, idUserR)
         },
         error:function()
         {
-            alert("Probleme SQL");
         }
     }
     );
@@ -169,7 +166,6 @@ function clickDivOffreUser(idOffreU)
         data:"idOffreUsers="+idOffreU,
         success:function(data)
         {
-            alert("idOffreU ="+idOffreUser);
         },
         error:function()
         {

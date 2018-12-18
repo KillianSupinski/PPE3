@@ -79,4 +79,24 @@ class Model_Demande extends CI_Model
 
         return $sql->result();
     }
+
+    public function compareDemandeCreaDeal($idDemande) // recup idService pour le comparer
+    {
+        $sql = $this->db->query("select demande.idDemande, service.idService
+        from demande, service
+        where demande.idService = service.idService
+        and idDemande='".$idDemande."'");
+
+        return $sql->result();
+    }
+
+    public function compareDemandeUserDeal($idDemande) // recup idService pour le comparer
+    {
+        $sql = $this->db->query("select demande.idDemande, service.idService
+        from demande, service
+        where demande.idService = service.idService
+        and idDemande='".$idDemande."'");
+
+        return $sql->result();
+    }
 }
