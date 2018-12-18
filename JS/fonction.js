@@ -122,10 +122,7 @@ function clickDivOffreCrea(idOffreC, idUserR)
         data:"idOffreCreas="+idOffreC,
         success:function(data)
         {
-<<<<<<< HEAD
-=======
       
->>>>>>> origin/master
         },
         error:function()
         {
@@ -170,10 +167,7 @@ function clickDivOffreUser(idOffreU)
         data:"idOffreUsers="+idOffreU,
         success:function(data)
         {
-<<<<<<< HEAD
-=======
             
->>>>>>> origin/master
         },
         error:function()
         {
