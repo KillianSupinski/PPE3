@@ -294,27 +294,6 @@ background: linear-gradient(to bottom, #fcb045, #fd1d1d, #833ab4);
   -o-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
-.contact {
-  background: #F9F9F9;
-  padding: 25px;
-  margin: 150px 0;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-}
-
-.contact-h3 {
-  display: block;
-  font-size: 30px;
-  font-weight: 300;
-  margin-bottom: 10px;
-}
-
-.contact-h4 {
-  margin: 5px 0 15px;
-  display: block;
-  font-size: 13px;
-  font-weight: 400;
-}
-
 fieldset {
   border: medium none !important;
   margin: 0 0 10px;
@@ -332,18 +311,11 @@ fieldset {
   padding: 10px;
 }
 
-.contact-text:hover,
-.contact-textarea:hover {
+.contact-text:hover {
   -webkit-transition: border-color 0.3s ease-in-out;
   -moz-transition: border-color 0.3s ease-in-out;
   transition: border-color 0.3s ease-in-out;
   border: 1px solid rgb(141, 141, 141);
-}
-
-#contact textarea {
-  height: 100px;
-  max-width: 100%;
-  resize: none;
 }
 
 .contact-submit {
@@ -386,12 +358,6 @@ fieldset {
 .contact-cancel:active {
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
   }
-#contact input:focus,
-#contact textarea:focus {
-  outline: 0;
-  border: 1px solid #aaa;
-}
-
 ::-webkit-input-placeholder {
   color: #888;
 }
