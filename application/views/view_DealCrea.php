@@ -25,7 +25,7 @@
                         var nomDeal = ($("#txtTerme").val());
                     }  
                 ) 
-            }      
+            }
         );
     </script>
 </head>
@@ -46,7 +46,7 @@
     foreach ($lesDemandes as $uneDemande) {
         ?>
         <div>
-            <div class='services-inner' id="idDemandeC" name="" value="<?php echo $uneDemande->idDemande; ?>">
+            <div class='services-inner' id="idDemandeC" onclick="clickDivDemandeCrea('<?php echo $uneDemande->idDemande; ?>')">
                 <div class='our-services-img'>
                     <div class='d-flex justify-content-center h-100'>
                         <div class='image_outer_container'>
@@ -91,7 +91,7 @@
     ?>
     </div>
     <div class="fright center"></div>
-        <input type="submit" value="Creation d'un deal" class="sticky">
+        <input type="submit" value="Creation d'un deal" class="sticky" onclick="clickBtnValiderCrea()">
         <div id="divUserD"></div>
         <div id="divInfoUserD"></div>
     </div>

@@ -197,6 +197,12 @@ class ctrl_Accueil extends CI_Controller
         $this->load->model('Model_Deal');
     }
 
+    public function CreationDeals()
+    {
+        $this->load->model('Model_Deal');
+        $this->Model_Deal->insertDeal($_GET['idDemandeCrea'], $_GET['idOffreCrea'], $_GET['idDemandeUser'], $_GET['idOffreUser'], $_GET['idUser']);
+    }
+
     public function logout()
     {
         $this->load->library('session');

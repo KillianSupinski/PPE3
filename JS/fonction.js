@@ -83,17 +83,114 @@ function AfficherInfoUserDeal(idUser)
     );
     var i=0;
 }
+
+var idDemandeCrea;
+var idOffreCrea;
+var idDemandeUser;
+var idOffreUser;
+var idUser;
 function clickDivDemandeCrea(idDemandeC)
 {
+     idDemandeCrea = idDemandeC;
     $.ajax
     (
         {
         type:"GET",
         url:"CreationDeal/",
-        data:"idDemandeCrea="+idDemandeC+"&idOffreCrea="+idOffreC+"&idDemandeUser="+idDemandeU+"&idOffreUser="+idOffreU,
+        data:"idDemandeCreas="+idDemandeC,
         success:function(data)
         {
-            $('#divClickOffreCrea').css("background-color","red");
+            alert("idDemandeC ="+idDemanceCrea);
+        },
+        error:function()
+        {
+            alert("Probleme SQL");
+        }
+    }
+    );
+    var i=0;
+}
+
+function clickDivOffreCrea(idOffreC, idUserR)
+{
+    idOffreCrea = idOffreC;
+    idUser = idUserR;
+    $.ajax
+    (
+        {
+        type:"GET",
+        url:"CreationDeal/",
+        data:"idOffreCreas="+idOffreC,
+        success:function(data)
+        {
+            alert("idOffreC ="+idOffreCrea);
+        },
+        error:function()
+        {
+            alert("Probleme SQL");
+        }
+    }
+    );
+    var i=0;
+}
+
+function clickDivDemandeUser(idDemandeU, idUserR)
+{
+    idDemandeUser = idDemandeU;
+    idUser = idUserR;
+    $.ajax
+    (
+        {
+        type:"GET",
+        url:"CreationDeal/",
+        data:"idDemandeUsers="+idDemandeU,
+        success:function(data)
+        {
+            alert("idDemandeU ="+idUserR);
+            
+        },
+        error:function()
+        {
+            alert("Probleme SQL");
+        }
+    }
+    );
+    var i=0;
+}
+
+function clickDivOffreUser(idOffreU)
+{
+    idOffreUser = idOffreU;
+    $.ajax
+    (
+        {
+        type:"GET",
+        url:"CreationDeal/",
+        data:"idOffreUsers="+idOffreU,
+        success:function(data)
+        {
+            alert("idOffreU ="+idOffreUser);
+        },
+        error:function()
+        {
+            alert("Probleme SQL");
+        }
+    }
+    );
+    var i=0;
+}
+
+function clickBtnValiderCrea()
+{
+    $.ajax
+    (
+        {
+        type:"GET",
+        url:"CreationDeals/",
+        data:"idDemandeCrea="+idDemandeCrea+"&idOffreCrea="+idOffreCrea+"&idDemandeUser="+idDemandeUser+"&idOffreUser="+idOffreUser+"&idUser="+idUser,
+        success:function(data)
+        {
+            alert("Creation d'un deal Reussi");
         },
         error:function()
         {
