@@ -196,7 +196,7 @@ section{
     width: 35px;
 }
 .our-services-wrapper:hover .services-inner {
-    background: #fff none repeat scroll 0 0;
+    background: rgb(180, 180, 180) none repeat scroll 0 0;
     border: 2px solid transparent;
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
 }
@@ -264,7 +264,7 @@ background: linear-gradient(to bottom, #fcb045, #fd1d1d, #833ab4);
     text-align: center;
     margin:  auto; 
     width:300px;
-    height: 300px;
+    height: 600px;
   }
   .fleft{
     float: left;
@@ -272,9 +272,6 @@ background: linear-gradient(to bottom, #fcb045, #fd1d1d, #833ab4);
   .fright{
     float: right;
   }
-.center {
-    text-align: center;
-}
 .val1 {
     background-color: orangered;
 }
@@ -284,4 +281,129 @@ background: linear-gradient(to bottom, #fcb045, #fd1d1d, #833ab4);
 .center {
     margin: auto;
     width: 60%;
+}
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+.contact {
+  background: #F9F9F9;
+  padding: 25px;
+  margin: 150px 0;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.contact-h3 {
+  display: block;
+  font-size: 30px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+.contact-h4 {
+  margin: 5px 0 15px;
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+fieldset {
+  border: medium none !important;
+  margin: 0 0 10px;
+  min-width: 100%;
+  padding: 0;
+  width: 100%;
+}
+
+.contact-text,
+.contact-textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  background: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+}
+
+.contact-text:hover,
+.contact-textarea:hover {
+  -webkit-transition: border-color 0.3s ease-in-out;
+  -moz-transition: border-color 0.3s ease-in-out;
+  transition: border-color 0.3s ease-in-out;
+  border: 1px solid rgb(141, 141, 141);
+}
+
+#contact textarea {
+  height: 100px;
+  max-width: 100%;
+  resize: none;
+}
+
+.contact-submit {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  background: #4CAF50;
+  color: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+  font-size: 15px;
+}
+.contact-cancel {
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    background: red;
+    color: #FFF;
+    margin: 0 0 5px;
+    padding: 10px;
+    font-size: 15px;
+  }
+
+.contact-submit:hover {
+  background: #43A047;
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+.contact-cancel:hover {
+    background: rgb(214, 51, 51);
+    -webkit-transition: background 0.3s ease-in-out;
+    -moz-transition: background 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+.contact-submit:active {
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+.contact-cancel:active {
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+  }
+#contact input:focus,
+#contact textarea:focus {
+  outline: 0;
+  border: 1px solid #aaa;
+}
+
+::-webkit-input-placeholder {
+  color: #888;
+}
+
+:-moz-placeholder {
+  color: #888;
+}
+
+::-moz-placeholder {
+  color: #888;
+}
+
+:-ms-input-placeholder {
+  color: #888;
 }
