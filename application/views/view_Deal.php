@@ -23,13 +23,7 @@ include 'nav.php';
 ?>
 <div class="main">
 <div class="container">
-<<<<<<< HEAD
-    <h3>Mes deals</h3>
-    <table width = 100%>
-    <tr>
-=======
     <h3>Mes deals <a href="<?php echo base_url(); ?>index.php/ctrl_Accueil/afficherCreaDeal/" title="Ajouter un nouveau deal"  style="font-size:17px" class="glyphicon glyphicon-plus-sign"></a></h3>
->>>>>>> killianSupinski
     <?php
     $i = 0;
     foreach ($lesInfoDeals as $uneInfoDeal) {
