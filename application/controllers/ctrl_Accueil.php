@@ -157,7 +157,7 @@ class ctrl_Accueil extends CI_Controller
         $this->load->view('view_Accueil', $data);
     }
 
-    public function afficherCreaDeal()
+    public function afficherCreaDeal() // On affiche les information de l'utilisateur connecté dans la vue DealCrea
     {
         $this->load->model('Model_Demande');
         $data['lesDemandes'] = $this->Model_Demande->getAllDemande();
@@ -173,7 +173,7 @@ class ctrl_Accueil extends CI_Controller
         $this->load->view('view_DealCrea', $data);
     }
 
-    public function rechercherDealService()
+    public function rechercherDealService() // On effectue la recherche des utilisateur en fonction des services noté
     {
         $this->load->model('Model_Deal');
         $data['lesUsersD'] = $this->Model_Deal->getServiceRecherche($_GET['termeR']);
@@ -181,6 +181,7 @@ class ctrl_Accueil extends CI_Controller
     }
 
     public function AfficherInfoUserD()
+    // On affiche les info de l'utilisateur clické trouvé par la recherche de l'utilisateur
     {
         $this->load->model('Model_Demande');
         $data['DemandeUserDeal'] = $this->Model_Demande->getDemandeUserDeal($_GET['idUser']);
@@ -189,6 +190,17 @@ class ctrl_Accueil extends CI_Controller
         $this->load->model('Model_Deal');
         $data['nomUsers'] = $this->Model_Deal->InfoUserClique($_GET['idUser']);
         $this->load->view('view_InfoUserDeal', $data);
+    }
+
+    public function CreationDeal()
+    {
+        $this->load->model('Model_Deal');
+    }
+
+    public function CreationDeals()
+    {
+        $this->load->model('Model_Deal');
+        $this->Model_Deal->insertDeal($_GET['idDemandeCrea'], $_GET['idOffreCrea'], $_GET['idDemandeUser'], $_GET['idOffreUser'], $_GET['idUser']);
     }
 
     public function logout()

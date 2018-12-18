@@ -19,18 +19,14 @@
             function()
             {
                 $("#btnD").click
-                (
-                    
+                ( 
                     function()
                     {  
-                        
                         var nomDeal = ($("#txtTerme").val());
-                        
-                    }
-                )
+                    }  
+                ) 
             }
         );
-        
     </script>
 </head>
 <body>
@@ -49,7 +45,8 @@
     <?php
     foreach ($lesDemandes as $uneDemande) {
         ?>
-        <div class='services-inner'>
+        <div>
+            <div class='services-inner' id="idDemandeC" onclick="clickDivDemandeCrea('<?php echo $uneDemande->idDemande; ?>')">
                 <div class='our-services-img'>
                     <div class='d-flex justify-content-center h-100'>
                         <div class='image_outer_container'>
@@ -64,6 +61,7 @@
                      <?php echo $uneDemande->descriptionDemande.'<br/>'.$uneDemande->dateDemande; ?><br/>
                     </div>
             </div>
+        </div>
      <?php
     }
     ?>
@@ -72,7 +70,7 @@
     <?php
     foreach ($lesOffres as $uneOffre) {
         ?>
-            <div class='services-inner'>
+            <div id="divClickOffreCrea" class='services-inner' onclick="clickDivOffreCrea('<?php echo $uneOffre->idOffre; ?>')">
                 <div class='our-services-img'>
                     <div class='d-flex justify-content-center h-100'>
                         <div class='image_outer_container'>
@@ -93,7 +91,7 @@
     ?>
     </div>
     <div class="fright center"></div>
-        <h1>droite</h1>
+        <input type="submit" value="Creation d'un deal" class="sticky" onclick="clickBtnValiderCrea()">
         <div id="divUserD"></div>
         <div id="divInfoUserD"></div>
     </div>
