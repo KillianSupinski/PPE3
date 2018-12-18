@@ -321,18 +321,6 @@ fieldset {
   border: 1px solid rgb(141, 141, 141);
 }
 
-<<<<<<< HEAD
-#contact textarea {
-  height: 100px;
-  max-width: 100%;
-  resize: none;
-}
-.sticky{
-    position:sticky;
-    top: 0;
-}
-=======
->>>>>>> origin/SteveP
 .contact-submit {
   cursor: pointer;
   width: 100%;
@@ -388,8 +376,6 @@ fieldset {
 :-ms-input-placeholder {
   color: #888;
 }
-<<<<<<< HEAD
-=======
 .sticky{
     position:sticky;
     top: 0;
@@ -426,4 +412,3 @@ fieldset {
 {
     background-color: rgb(180, 180, 180);
 }
->>>>>>> origin/SteveP
