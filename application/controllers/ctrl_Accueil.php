@@ -199,19 +199,13 @@ class ctrl_Accueil extends CI_Controller
 
     public function CreationDeals() // creation d'un deal
     {
-        if (!$_GET['idDemandeCrea'] == '' && !$_GET['idOffreCrea'] == '' && !$_GET['idDemandeUser'] == '' && !$_GET['idOffreUser'] == '') {
-            $this->load->model('Model_Demande');
-            $data['demandeCrea'] = $this->Model_Demande->compareDemandeCreaDeal($_GET['idDemandeCrea']);
-            $data['demandeUser'] = $this->Model_Demande->compareDemandeUserDeal($_GET['idDemandeUser']);
-            $this->load->model('Model_Offre');
-            $data['OffreCrea'] = $this->Model_Offre->compareOffreCreaDeal($_GET['idOffreCrea']);
-            $data['OffreUser'] = $this->Model_Offre->compareOffreCreaDeal($_GET['idOffreCrea']);
-            $i = 0;
-            if ($demandeCrea[$i]->idService == $OffreUser[$i]->idService && $OffreCrea[$i]->idService == $demandeUser[$i]->idService) {
-                $this->load->model('Model_Deal');
-                $this->Model_Deal->insertDeal($_GET['idDemandeCrea'], $_GET['idOffreCrea'], $_GET['idDemandeUser'], $_GET['idOffreUser'], $_GET['idUser']);
-            }
-        }
+        $this->load->model('Model_Demande');
+        $idOffreCrea = $_GET['idOffreCrea'];
+        $idOffreUser = $_GET['idOffreUser'];
+        $idDemandeCrea = $_GET['idDemandeCrea'];
+        $idDemandeUser = $_GET['idDemandeUser'];
+        $this->load->model('Model_Deal');
+        $this->Model_Deal->insertDeal($idDemandeCrea, $idOffreCrea, $idDemandeUser, $idOffreUser);
     }
 
     public function logout()

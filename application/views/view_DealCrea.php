@@ -47,7 +47,7 @@
     foreach ($lesDemandes as $uneDemande) {
         ?>
         <div>
-            <div class='services-inner neutreD' id="idDemandeC" onclick="clickDivDemandeCrea('<?php echo $uneDemande->idDemande; ?>')">
+            <div class='services-inner neutreD' id="idDemandeC" onclick="clickDivDemandeCrea('<?php echo $uneDemande->idDemande; ?>','<?php echo $uneDemande->idService; ?>')">
                 <div class='our-services-img'>
                     <div class='d-flex justify-content-center h-100'>
                         <div class='image_outer_container'>
@@ -77,7 +77,7 @@
     <?php
     foreach ($lesOffres as $uneOffre) {
         ?>
-            <div id="divClickOffreCrea" class='services-inner neutreO' onclick="clickDivOffreCrea('<?php echo $uneOffre->idOffre; ?>')">
+            <div id="divClickOffreCrea" class='services-inner neutreO' onclick="clickDivOffreCrea('<?php echo $uneOffre->idOffre; ?>','<?php echo $uneOffre->idService; ?>')">
                 <div class='our-services-img'>
                     <div class='d-flex justify-content-center h-100'>
                         <div class='image_outer_container'>

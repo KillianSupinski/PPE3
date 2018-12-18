@@ -88,10 +88,15 @@ var idDemandeCrea;
 var idOffreCrea;
 var idDemandeUser;
 var idOffreUser;
+var idServiceDemandeCrea;
+var idServiceDemandeUser;
+var idServiceOffreCrea;
+var idServiceOffreUser;
 var idUser;
-function clickDivDemandeCrea(idDemandeC)
+function clickDivDemandeCrea(idDemandeC, idServDemandeCrea)
 {
      idDemandeCrea = idDemandeC;
+     idServiceDemandeCrea = idServDemandeCrea;
     $.ajax
     (
         {
@@ -110,10 +115,10 @@ function clickDivDemandeCrea(idDemandeC)
     var i=0;
 }
 
-function clickDivOffreCrea(idOffreC, idUserR)
+function clickDivOffreCrea(idOffreC, idServOffreCrea)
 {
     idOffreCrea = idOffreC;
-    idUser = idUserR;
+    idServiceOffreCrea = idServOffreCrea;
     $.ajax
     (
         {
@@ -133,10 +138,10 @@ function clickDivOffreCrea(idOffreC, idUserR)
     var i=0;
 }
 
-function clickDivDemandeUser(idDemandeU, idUserR)
+function clickDivDemandeUser(idDemandeU, idServDemandeUser)
 {
     idDemandeUser = idDemandeU;
-    idUser = idUserR;
+    idServiceDemandeUser = idServDemandeUser;
     $.ajax
     (
         {
@@ -156,9 +161,10 @@ function clickDivDemandeUser(idDemandeU, idUserR)
     var i=0;
 }
 
-function clickDivOffreUser(idOffreU)
+function clickDivOffreUser(idOffreU, idServOffreUser)
 {
     idOffreUser = idOffreU;
+    idServiceOffreUser = idServOffreUser;
     $.ajax
     (
         {
@@ -180,21 +186,38 @@ function clickDivOffreUser(idOffreU)
 
 function clickBtnValiderCrea()
 {
-    $.ajax
-    (
+    //On verifie que les services sois identique DemandeCrea/OffreUser et OffreCrea/DemandeUser
+    if(idServiceDemandeCrea == idServiceOffreUser && idServiceOffreCrea == idServiceDemandeUser)
         {
-        type:"GET",
-        url:"CreationDeals/",
-        data:"idDemandeCrea="+idDemandeCrea+"&idOffreCrea="+idOffreCrea+"&idDemandeUser="+idDemandeUser+"&idOffreUser="+idOffreUser+"&idUser="+idUser,
-        success:function(data)
-        {
-            alert("Creation d'un deal Reussi");
-        },
-        error:function()
-        {
-            alert("Probleme SQL");
+            //On verifie que les demandes et offres ne sois pas identique
+            if(idDemandeCrea != idOffreUser && idOffreCrea != idDemandeUser)
+            {
+        
+            $.ajax
+            (
+            {
+                type:"GET",
+                url:"CreationDeals/",
+                data:"idDemandeCrea="+idDemandeCrea+"&idOffreCrea="+idOffreCrea+"&idDemandeUser="+idDemandeUser
+                +"&idOffreUser="+idOffreUser,
+                success:function(data)
+                {
+                    alert("Creation d'un deal Reussi");
+             },
+             error:function()
+             {
+                 alert("Probleme SQL");
+            }
+            }
+            );
+            }
+            else{ 
+            alert("Les demandes et offres doivent etre differentes")
+            }
+        }else{
+            alert("Les services doivent etres identiques")
+        //alert("servDemandeCrea="+idServiceDemandeCrea+"servOffreUser="+idServiceOffreUser
+            //+"servOffreCrea="+idServiceOffreCrea+"servDemandeUser="+idServiceDemandeUser)
         }
-    }
-    );
-    var i=0;
+    
 }

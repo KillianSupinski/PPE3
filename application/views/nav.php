@@ -15,14 +15,8 @@
 			<ul class="nav navbar-nav">
             <li ><a href="<?php echo base_url(); ?>index.php/ctrl_Accueil/index">Accueil<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
                 <li><a href="<?php echo base_url(); ?>index.php/ctrl_Accueil/getOffre">Mes offres<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-tag"></span></a></li>
-                <li ><a href="<?php echo base_url(); ?>index.php/ctrl_Accueil/getDemande">Mes demandes<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-folder-open"></span></a></li>
-				<li class="dropdown">
-					<a  class="dropdown-toggle" data-toggle="dropdown">Mes deals<span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-transfer"></span></a>
-					<ul class="dropdown-menu forAnimate" role="menu">
-						<li><a href="<?php echo base_url(); ?>index.php/ctrl_Accueil/getDeal">Mes Deals</a></li>
-						<li><a href="<?php echo base_url(); ?>index.php/ctrl_Accueil/afficherCreaDeal">Creer un Deal</a></li>
-				</ul>	
-				</li>
+				<li ><a href="<?php echo base_url(); ?>index.php/ctrl_Accueil/getDemande">Mes demandes<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-folder-open"></span></a></li>
+				<li><a href="<?php echo base_url(); ?>index.php/ctrl_Accueil/getDeal">Mes Deals<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-transfer"></span></a></li>
                 <li ><a href="<?php echo base_url(); ?>index.php/ctrl_Accueil/logout">Deconnexion<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-log-out"></span></a></li>	
 			</ul>
 		</div>

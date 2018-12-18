@@ -6,13 +6,14 @@ class Model_Demande extends CI_Model
     {
         $this->load->library('session');
         $id = $this->session->userdata('infoLog');
-        $sql = $this->db->query("select demande.idDemande ,demande.descriptionDemande, demande.dateDemande,service.photoService, service.nomService  
+        $sql = $this->db->query("select demande.idDemande ,demande.descriptionDemande, demande.dateDemande,service.photoService, service.nomService, service.idService  
                                 from demande, service 
                                 where demande.idService=service.idService
                                 AND idUser='".$id['idUser']."'");
 
         return $sql->result();
     }
+
     public function getMaxIdDemande()
     {
         $sql = $this->db->query('select max(demande.idDemande) +1 as idDemandeCrea
@@ -21,6 +22,7 @@ class Model_Demande extends CI_Model
 
         return $sql->result();
     }
+
     public function getAllNomServices()
     {
         $sql = $this->db->query('select idService, nomService from service');
@@ -70,7 +72,7 @@ class Model_Demande extends CI_Model
 
     public function getDemandeUserDeal($idUser)
     {
-        $sql = $this->db->query('select demande.idDemande ,demande.descriptionDemande, demande.dateDemande,service.photoService, service.nomService  
+        $sql = $this->db->query('select demande.idDemande ,demande.descriptionDemande, demande.dateDemande,service.photoService, service.nomService, service.idService  
         from demande, service 
         where demande.idService=service.idService
         AND idUser='.$idUser);

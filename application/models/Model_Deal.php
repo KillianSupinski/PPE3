@@ -30,6 +30,7 @@ class Model_Deal extends CI_Model
 
         return $sql->result();
     }
+
     public function getServiceRecherche($terme)
     {
         $this->load->library('session');
@@ -51,10 +52,10 @@ class Model_Deal extends CI_Model
         return $sql->result();
     }
 
-    public function insertDeal($idDemandeCrea, $idOffreCrea, $idDemandeUser, $idOffreUser, $idUser)
+    public function insertDeal($idDemandeCrea, $idOffreCrea, $idDemandeUser, $idOffreUser)
     {
         $this->load->library('session');
         $id = $this->session->userdata('infoLog');
-        $sql = $this->db->query("insert into deal values('', CURRENT_DATE, '0', ".$idDemandeCrea.', '.$idOffreUser.", '2', '1', ".$id['idUser'].')');
+        $sql = $this->db->query("insert into deal values('', CURRENT_DATE, '0', '0', ".$idDemandeCrea.', '.$idOffreUser.",'1', ".$id['idUser'].')');
     }
 }

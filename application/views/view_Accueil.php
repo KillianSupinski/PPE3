@@ -89,7 +89,7 @@ include 'nav.php';
     ?>
     </tr>
 </table>
-<h3>Mes deals <a href="<?php echo base_url(); ?>index.php/ctrl_Accueil/afficherCreaDeal/" title="Ajouter un nouveau deal"  style="font-size:17px" class="glyphicon glyphicon-plus-sign"></a></h3>
+<h3>Mes deals <a href="<?php echo base_url(); ?>index.php/ctrl_Accueil/afficherCreaDeal" title="Ajouter un nouveau deal"  style="font-size:17px" class="glyphicon glyphicon-plus-sign"></a></h3>
 <table width = 100%>
     <tr>  
     <?php

@@ -24,7 +24,7 @@ $idUser = $nomUsers[$i]->idUser;
     <?php
     foreach ($OffreUserDeal as $uneOffre) {
         ?>
-            <div class='services-inner neutreO2' onclick="clickDivOffreUser('<?php echo $uneOffre->idOffre; ?>')">
+            <div class='services-inner neutreO2' onclick="clickDivOffreUser('<?php echo $uneOffre->idOffre; ?>','<?php echo $uneOffre->idService; ?>')">
                 <div class='our-services-img'>
                     <div class='d-flex justify-content-center h-100'>
                         <div class='image_outer_container'>
@@ -53,7 +53,7 @@ $idUser = $nomUsers[$i]->idUser;
 <?php
     foreach ($DemandeUserDeal as $uneDemande) {
         ?>
-        <div class='services-inner neutreD2' onclick="clickDivDemandeUser('<?php echo $uneDemande->idDemande; ?>',' <?php echo $idUser; ?>')">
+        <div class='services-inner neutreD2' onclick="clickDivDemandeUser('<?php echo $uneDemande->idDemande; ?>','<?php echo $uneDemande->idService; ?>')">
                 <div class='our-services-img'>
                     <div class='d-flex justify-content-center h-100'>
                         <div class='image_outer_container'>
