@@ -29,7 +29,7 @@ include 'nav.php';
     foreach ($lesInfoDeals as $uneInfoDeal) {
         echo "<div class='col-xl-4 col-lg-4 col-md-6 col-sm-12'>";
         echo "<div class='our-services-wrapper mb-60'>";
-        echo "<div class='services-inner'>";
+        echo "<div class='services-inner val".$uneInfoDeal->idEtat."' >"; // Intérieur du carré
         echo" <div class='our-services-img'>";
         echo  "<div class='d-flex justify-content-center h-100'>";
         echo "<div class='image_outer_container'>";

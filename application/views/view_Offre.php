@@ -22,7 +22,6 @@ $infoUser = $this->session->userdata('infoLog');
 include 'lesModals.php';
 include 'nav.php';
 ?>
-
 <div class="main">
 <div class="container">
 <div id="divOffre">

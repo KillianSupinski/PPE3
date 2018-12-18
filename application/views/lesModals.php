@@ -13,21 +13,29 @@
 </head>
 <body>  
 <form method="GET" id="offre-form" action = "<?php echo base_url(); ?>index.php/ctrl_Accueil/getNewOffre/" class="modal form1">
+<h3 align="center">Création de votre offre</h3>
+<fieldset>
 <label>Numéro de l'offre</label><br>
 <?php
 foreach ($IdMaxOffres as $unIdOffre) {
     ?>
 
-<input type="text" id='idNum' name="idOffre" value="<?php echo $unIdOffre->idOffreCrea; ?> " readonly ><br>
+<input type="text" class="contact-text" id='idNum' name="idOffre" value="<?php echo $unIdOffre->idOffreCrea; ?> " readonly >
     <?php
 }
 ?>
+</fieldset>
+<fieldset>
 <label>Description de l'offre</label><br>
-<input type="text" id="idDesc" name="descOffre"><br>
+<input type="text" class="contact-text" id="idDesc" name="descOffre" placeholder="Description de votre offre" required>
+</fieldset>
+<fieldset>
 <label>Date de l'offre</label><br>
-<input type="date" name="dateOffre"><br>
+<input type="date" class="contact-text" name="dateOffre" required>
+</fieldset>
+<fieldset>
 <label>Nom du service</label><br>
-<select name="idServiceOffre">
+<select class="contact-text" name="idServiceOffre">
 <?php
 foreach ($lesServicesOffres as $unService) {
     ?>
@@ -37,25 +45,38 @@ foreach ($lesServicesOffres as $unService) {
 }
 ?>
 </select>
-<br><br>
-<button name="btnOffre" value="validez">Valider <i class="glyphicon glyphicon-ok"></i></button>
+</fieldset><br>
+<fieldset>
+<button name="btnOffre" class="contact-submit" type="submit" value="validez">Valider</button>
+</fieldset>
+<fieldset>
+<a rel="modal:close"><button type="button" class="contact-cancel" >Annuler<i class="glyphicon glyphicon-cross"></i></button></a>
+</fieldset>
 </form>
 
 <form method="GET" id="demande-form" action = "<?php echo base_url(); ?>index.php/ctrl_Accueil/getNewDemande/" class="modal form1">
 <?php
 foreach ($IdMaxDemandes as $unIdDemande) {
     ?>
+<h3 align="center">Création de votre demande</h3>
+<fieldset>
 <label>Numéro de la demande</label><br>
-<input type="text" name="idDemande" value="<?php echo $unIdDemande->idDemandeCrea; ?> " readonly><br>
+<input type="text" class="contact-text" name="idDemande" value="<?php echo $unIdDemande->idDemandeCrea; ?> " readonly>
     <?php
 }
 ?>
+</fieldset>
+<fieldset>
 <label>Description de la demande</label><br>
-<input type="text" name="descDemande"><br>
+<input type="text" placeholder="Description de votre demande" class="contact-text" name="descDemande" required>
+</fieldset>
+<fieldset>
 <label>Date de la demande</label><br>
-<input type="date" name="dateDemande"><br>
+<input type="date" class="contact-text" name="dateDemande" required>
+</fieldset>
+<fieldset>
 <label>Nom du service</label><br>
-<select name="idServiceDemande">
+<select class="contact-text" name="idServiceDemande">
 <?php
 foreach ($lesServicesDemandes as $unService) {
     ?>
@@ -63,8 +84,12 @@ foreach ($lesServicesDemandes as $unService) {
     <?php
 }
 ?>
-</select><br><br>
-<button name="btnDemande" value="validez">Valider <i class="glyphicon glyphicon-ok"></i></button>
+</select>
+</fieldset><br>
+<fieldset>
+<button name="btnOffre" class="contact-submit" type="submit" value="validez">Valider</button>
+</fieldset>
+<fieldset>
+<a rel="modal:close"><button type="button" class="contact-cancel" >Annuler<i class="glyphicon glyphicon-cross"></i></button></a>
+</fieldset>
 </form>
-</body>
-</html>
