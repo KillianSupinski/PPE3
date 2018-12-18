@@ -37,6 +37,7 @@ nav.sidebar, .main{
         width: calc(100% - 40px); /*keeps 100% minus nav size*/
         margin-left: 40px;
         float: right;
+        
     }
 
     /*lets nav bar to be showed on mouseover*/
@@ -75,7 +76,7 @@ nav.sidebar, .main{
         position: static;
         float: none;
         width: auto;
-        
+
         margin-top: 0;
         background-color: transparent;
         border: 0;
@@ -99,6 +100,7 @@ nav.sidebar, .main{
         height: 100%;
         margin-left: -160px;
         float: left;
+        position: fixed;
         z-index: 8000;
         margin-bottom: 0px;
     }
@@ -132,6 +134,7 @@ nav.sidebar, .main{
     nav.sidebar{
         margin-left: 0px;
         float: left;
+        position: fixed;
     }
     /*Show hidden items on nav*/
     nav.sidebar .forAnimate{
@@ -275,4 +278,8 @@ background: linear-gradient(to bottom, #fcb045, #fd1d1d, #833ab4);
   }
 .center {
     text-align: center;
+}
+.sticky{
+    position:sticky;
+    top: 0;
 }

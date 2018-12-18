@@ -83,3 +83,23 @@ function AfficherInfoUserDeal(idUser)
     );
     var i=0;
 }
+function clickDivDemandeCrea(idDemandeC)
+{
+    $.ajax
+    (
+        {
+        type:"GET",
+        url:"CreationDeal/",
+        data:"idDemandeCrea="+idDemandeC+"&idOffreCrea="+idOffreC+"&idDemandeUser="+idDemandeU+"&idOffreUser="+idOffreU,
+        success:function(data)
+        {
+            $('#divClickOffreCrea').css("background-color","red");
+        },
+        error:function()
+        {
+            alert("Probleme SQL");
+        }
+    }
+    );
+    var i=0;
+}

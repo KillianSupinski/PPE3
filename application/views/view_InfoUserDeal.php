@@ -17,7 +17,7 @@ $i = 0;
     <?php
     foreach ($OffreUserDeal as $uneOffre) {
         ?>
-            <div class='services-inner'>
+            <div class='services-inner' onclick="">
                 <div class='our-services-img'>
                     <div class='d-flex justify-content-center h-100'>
                         <div class='image_outer_container'>
@@ -60,7 +60,6 @@ $i = 0;
     }
     ?>
 </table>
-    
     </div>
 </body>
 </html>
