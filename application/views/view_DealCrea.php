@@ -47,13 +47,19 @@
     foreach ($lesDemandes as $uneDemande) {
         ?>
         <div>
-            <div class='services-inner' id="idDemandeC" onclick="clickDivDemandeCrea('<?php echo $uneDemande->idDemande; ?>')">
+            <div class='services-inner neutreD' id="idDemandeC" onclick="clickDivDemandeCrea('<?php echo $uneDemande->idDemande; ?>')">
                 <div class='our-services-img'>
                     <div class='d-flex justify-content-center h-100'>
                         <div class='image_outer_container'>
                             <div class='image_inner_container_demande'>
                                 <image src="<?php echo $uneDemande->photoService; ?>"/> <br/>
                             </div>
+                            <script>
+                                $(".neutreD").on("click", function() {
+                                    $(".neutreD").removeClass('selectD')
+                                $(this).addClass("selectD");
+                                }); 
+                            </script>
                         </div>
                     </div>
                 </div>
@@ -71,13 +77,19 @@
     <?php
     foreach ($lesOffres as $uneOffre) {
         ?>
-            <div id="divClickOffreCrea" class='services-inner' onclick="clickDivOffreCrea('<?php echo $uneOffre->idOffre; ?>')">
+            <div id="divClickOffreCrea" class='services-inner neutreO' onclick="clickDivOffreCrea('<?php echo $uneOffre->idOffre; ?>')">
                 <div class='our-services-img'>
                     <div class='d-flex justify-content-center h-100'>
                         <div class='image_outer_container'>
                             <div class='image_inner_container_offre '>
                                 <image src="<?php echo $uneOffre->photoService; ?>"/> <br/>
                             </div>
+                            <script>
+                                $(".neutreO").on("click", function() {
+                                    $(".neutreO").removeClass('selectO')
+                                $(this).addClass("selectO");
+                                }); 
+                            </script>
                         </div>
                     </div>
                 </div>
@@ -98,5 +110,7 @@
     </div>
     </div>
 </div>
+
 </body>
+
 </html>
