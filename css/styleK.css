@@ -199,7 +199,7 @@ section{
     width: 35px;
 }
 .our-services-wrapper:hover .services-inner {
-    background: #fff none repeat scroll 0 0;
+    background: rgb(180, 180, 180) none repeat scroll 0 0;
     border: 2px solid transparent;
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
 }
@@ -224,7 +224,6 @@ html,body{
    border-radius: 50%;
    position: relative;
 }
-
 .image_inner_container_offre{
    border-radius: 50%;
    padding: 5px;
@@ -268,7 +267,7 @@ background: linear-gradient(to bottom, #fcb045, #fd1d1d, #833ab4);
     text-align: center;
     margin:  auto; 
     width:300px;
-    height: 300px;
+    height: 600px;
   }
   .fleft{
     float: left;
@@ -276,13 +275,146 @@ background: linear-gradient(to bottom, #fcb045, #fd1d1d, #833ab4);
   .fright{
     float: right;
   }
+.val1 {
+    background-color: orangered;
+}
+.val2 {
+    background-color: green;
+}
 .center {
-    text-align: center;
+    margin: auto;
+    width: 60%;
+}
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+fieldset {
+  border: medium none !important;
+  margin: 0 0 10px;
+  min-width: 100%;
+  padding: 0;
+  width: 100%;
+}
+
+.contact-text,
+.contact-textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  background: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+}
+
+.contact-text:hover {
+  -webkit-transition: border-color 0.3s ease-in-out;
+  -moz-transition: border-color 0.3s ease-in-out;
+  transition: border-color 0.3s ease-in-out;
+  border: 1px solid rgb(141, 141, 141);
+}
+
+.contact-submit {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  background: #4CAF50;
+  color: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+  font-size: 15px;
+}
+.contact-cancel {
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    background: red;
+    color: #FFF;
+    margin: 0 0 5px;
+    padding: 10px;
+    font-size: 15px;
+  }
+
+.contact-submit:hover {
+  background: #43A047;
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+.contact-cancel:hover {
+    background: rgb(214, 51, 51);
+    -webkit-transition: background 0.3s ease-in-out;
+    -moz-transition: background 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+.contact-submit:active {
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+.contact-cancel:active {
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+  }
+::-webkit-input-placeholder {
+  color: #888;
+}
+
+:-moz-placeholder {
+  color: #888;
+}
+
+::-moz-placeholder {
+  color: #888;
+}
+
+:-ms-input-placeholder {
+  color: #888;
 }
 .sticky{
     position:sticky;
     top: 0;
 }
+<<<<<<< HEAD
 .red{
     background-color: red;
 }
+=======
+.neutreO
+{
+    background-color: white;
+}
+.selectO
+{
+    background-color: rgb(180, 180, 180);
+}
+.neutreD
+{
+    background-color: white;
+}
+.selectD
+{
+    background-color: rgb(180, 180, 180);
+}
+.neutreO2
+{
+    background-color: white;
+}
+.selectO2
+{
+    background-color: rgb(180, 180, 180);
+}
+.neutreD2
+{
+    background-color: white;
+}
+.selectD2
+{
+    background-color: rgb(180, 180, 180);
+}
+>>>>>>> origin/master

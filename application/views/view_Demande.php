@@ -7,6 +7,7 @@
     
     <script src="<?php echo base_url(); ?>JQuery/jquery-3.1.1.js"></script>
     <script src="<?php echo base_url(); ?>JS/fonctionK.js"></script>
+    <script src="<?php echo base_url(); ?>JS/fonction.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script> 
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 
@@ -21,10 +22,11 @@ $infoUser = $this->session->userdata('infoLog');
 include 'lesModals.php';
 include 'nav.php';
 ?>
-
 <div class="main">
 <div class="container">
 <h3>Mes demandes <a href="#demande-form" title="Ajouter une nouvelle demande" rel="modal:open" style="font-size:17px" class="glyphicon glyphicon-plus-sign"></a></h3></h3>
+<table width = 100%>
+    <tr>
     <?php
           foreach ($lesDemandes as $uneDemande) {
               echo "<div class='col-xl-4 col-lg-4 col-md-6 col-sm-12'>";
@@ -49,6 +51,8 @@ include 'nav.php';
               echo '</div>';
           }
     ?>
+    </tr>
+</table>
 </div>
 </div>
 </div>

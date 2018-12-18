@@ -122,6 +122,10 @@ function clickDivOffreCrea(idOffreC, idUserR)
         data:"idOffreCreas="+idOffreC,
         success:function(data)
         {
+<<<<<<< HEAD
+=======
+      
+>>>>>>> origin/master
         },
         error:function()
         {
@@ -144,7 +148,7 @@ function clickDivDemandeUser(idDemandeU, idUserR)
         data:"idDemandeUsers="+idDemandeU,
         success:function(data)
         {
-            alert("idDemandeU ="+idUserR);
+            
             
         },
         error:function()
@@ -166,6 +170,10 @@ function clickDivOffreUser(idOffreU)
         data:"idOffreUsers="+idOffreU,
         success:function(data)
         {
+<<<<<<< HEAD
+=======
+            
+>>>>>>> origin/master
         },
         error:function()
         {
