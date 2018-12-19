@@ -1,15 +1,16 @@
 function afficherModOffre(idOffre)
+// Gère la fenêtre de modification de l'offre
 {
     $.ajax
     (
         {
         type: 'get',
-        url: "afficherModOffre/",
+        url: "index.php/ctrl_Accueil/afficherModOffre",
         data:"idOffre="+idOffre,
         success:function(data)
         {
-            $('#offreModif-form').modal("show");
-
+            $('#divModalOffre').empty();
+            $('#divModalOffre').append(data);
         },
         error:function()
         {
@@ -18,24 +19,82 @@ function afficherModOffre(idOffre)
     }
     );
 }
+function modificationOffre(event)
+// Gère la modification de l'offre-même
+{
+    var idServiceOff = $('#modLOffre')[0].value;
+    var descModifOffre = $('#descriOffre')[0].value;
+    $.ajax
+    (
+        {
+            type: "post",
+            url: "modificationOffre",
+            data: {
+                idService: idServiceOff,
+                descOffre: descModifOffre,
+                idOffre: idOff
+            },
+            success:function(modOffAlert)
+            {
+                location.reload();
+            },
+            error:function()
+            {
+                alert("La modification de l'offre a rencontré une erreur.")
+            }
+        }
+    );
+}
 function afficherModDemande(idDemande)
+// Gère la fenêtre de modification de la demande
 {
     $.ajax
     (
         {
         type: 'get',
         url: "index.php/ctrl_Accueil/afficherModDemande",
-        data:"idDemande="+idDemande,
+        data:{
+            idDemande: idDemande,
+            descDemande: descDemande,
+            idService: idService,
+        },
         success:function(data)
         {
-            $('#divModalDemande').empty();
-            $('#divModalDemande').append(data);
+            $('#modifDemande').empty();
+            $('#modifDemande').append(data);
+            $('#modalDemande').modal();
         },
         error:function()
         {
             alert("Impossible de modifier la demande");
         }
     }
+    );
+}
+function modificationDemande(event)
+// Gère la modification de la demande-même
+{
+    var idServiceDem = $('#modLaDemande')[0].value;
+    var descModifDemande = $('#descriDemande')[0].value;
+    $.ajax
+    (
+        {
+            type: "post",
+            url: "modificationDemande",
+            data: {
+                idService: idServiceDem,
+                descDemande: descModifDemande,
+                idDemande: idDem
+            },
+            success:function(modDemAlert)
+            {
+                location.reload();
+            },
+            error:function()
+            {
+                alert("La modification de la demande a rencontré une erreur.")
+            }
+        }
     );
 }
 function RechercherDealCrea(test)

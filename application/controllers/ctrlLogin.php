@@ -1,12 +1,10 @@
 <?php
-
 class ctrlLogin extends CI_Controller
 {
     public function index()
     {
         $this->load->view('login');
     }
-
     public function seConnecter()
     {
         if (isset($_POST['btnConnexion'])) {
@@ -14,13 +12,11 @@ class ctrlLogin extends CI_Controller
                 if (!$_POST['nomPassword'] == '') {
                     $login = $this->input->post('nomIdentifiant');
                     $mdp = $this->input->post('nomPassword');
-
                     $tab = array(
                         'login' => $login,
                         'mdp' => $mdp,
                     );
                     $this->load->model('Model_Login');
-
                     $data = $this->Model_Login->seConnecter($tab);
                     if (count($data) != 0) {
                         foreach ($data as $row) {
@@ -45,15 +41,15 @@ class ctrlLogin extends CI_Controller
                         $data['nomDealService2'] = $this->Model_Deal->getNomServiceDeal2();
                         $this->load->view('view_Accueil', $data);
                     } else {
-                        echo "<div class='sErrorLog'>Cet utilisateur n/existe pas</div>";
+                        echo 'Cet utilisateur n/existe pas';
                         $this->load->view('login');
                     }
                 } else {
-                    echo "<div class='sErrorLog'>Veuillez entrer un mot de passe pour vous connecter.</div>";
+                    echo 'Veuillez entrer un mot de passe pour vous connecter.';
                     $this->load->view('login');
                 }
             } else {
-                echo "<div class='sErrorLog'>Veuillez entrer un identifiant pour vous connecter.</div>";
+                echo 'Veuillez entrer un identifiant pour vous connecter.';
                 $this->load->view('login');
             }
         }

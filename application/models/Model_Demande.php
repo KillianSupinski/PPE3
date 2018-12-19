@@ -3,6 +3,7 @@
 class Model_Demande extends CI_Model
 {
     public function getAllDemande()
+    // Récupération de toutes les demandes pour les afficher dans la page d'accueil
     {
         $this->load->library('session');
         $id = $this->session->userdata('infoLog');
@@ -63,6 +64,17 @@ class Model_Demande extends CI_Model
         return $sql->result();
     }
 
+    public function getAllInfosDemandes()
+    // Récupérer toutes les informations sur la demande
+    {
+        $sql = $this->db->query('select idDemande, descriptionDemande, dateDemande, nomService
+        from demande, service
+        where idUser='.$this->session->idUser.' 
+        and demande.idService=service.idService');
+
+        return $sql->result();
+    }
+
     public function updateDemande()
     {
         $sql = $this->db->query("update demande
@@ -80,7 +92,7 @@ class Model_Demande extends CI_Model
         return $sql->result();
     }
 
-    public function compareDemandeCreaDeal($idDemande) // recup idService pour le comparer
+    public function compareDemandeCreaDeal($idDemande) // recup idService pour le comparer/ non necessaire
     {
         $sql = $this->db->query("select demande.idDemande, service.idService
         from demande, service
@@ -90,7 +102,7 @@ class Model_Demande extends CI_Model
         return $sql->result();
     }
 
-    public function compareDemandeUserDeal($idDemande) // recup idService pour le comparer
+    public function compareDemandeUserDeal($idDemande) // recup idService pour le comparer / non necessaire
     {
         $sql = $this->db->query("select demande.idDemande, service.idService
         from demande, service

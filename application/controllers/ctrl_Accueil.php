@@ -136,24 +136,44 @@ class ctrl_Accueil extends CI_Controller
         }
     }
 
-    public function afficherModOffre()
-    {
-        $this->load->model('Model_Offre');
-        $data['lesOffresz'] = $this->Model_Offre->getAllInfosOffre($_GET['idOffre']);
-        $this->load->view('modifierOffre', $data);
-    }
-
-    public function afficherModDemande()
-    {
-        $this->load->model('Model_Demande');
-        $data['lesInfosModDemandes'] = $this->Model_Offre->getAllInfosDemande($_GET['idDemande']);
-        $this->load->view('view_ModalDemande', $data);
-    }
-
     public function afficherIdServiceParIdOffre()
     {
         $this->load->model('Model_Offre');
         $data['modOffre'] = $this->Model_Offre->getIdServiceByIdOffre();
+        $this->load->view('view_Accueil', $data);
+    }
+
+    public function afficherModDemande()
+    {
+        $this->load->library('session');
+        $this->load->model('Model_Demande');
+        $data['lesServicesDemandes'] = $this->Model_Demande->getAllNomServices();
+        $data['laDemande'] = $this->Model_Demande->getAllInfosDemandes($idDemande);
+        $this->load->view('modifierDemande', $data);
+    }
+
+    public function afficherModOffre()
+    {
+        $this->load->library('session');
+        $this->load->model('Model_Offre');
+        $data['lesServicesOffres'] = $this->Model_Offre->getAllNomServices();
+        $data['lOffre'] = $this->Model_Offre->getAllInfosOffres($idOffre);
+        $this->load->view('modifierOffre', $data);
+    }
+
+    public function ModifierLaDemande()
+    {
+        $this->load->library('session');
+        $this->load->model('Model_Demande');
+        $data['modifications'] = $this->Model_Demande->updateDemande(); // modifie la demande de l'utilisateur
+        $this->load->view('view_Accueil', $data);
+    }
+
+    public function ModifierLOffre()
+    {
+        $this->load->library('session');
+        $this->load->model('Model_Offre');
+        $data['modifications'] = $this->Model_Offre->updateOffre(); // modifie l'offre de l'utilisateur
         $this->load->view('view_Accueil', $data);
     }
 
