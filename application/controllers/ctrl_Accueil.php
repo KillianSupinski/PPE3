@@ -1,4 +1,5 @@
 <?php
+
 class ctrl_Accueil extends CI_Controller
 {
     public function index()
@@ -13,8 +14,10 @@ class ctrl_Accueil extends CI_Controller
         $data['lesServicesDemandes'] = $this->Model_Demande->getAllNomServices();
         $this->load->model('Model_Deal');
         $data['lesInfoDeals'] = $this->Model_Deal->getAllInfoDeal();
+        $data['nomDealService2'] = $this->Model_Deal->getNomServiceDeal2();
         $this->load->view('view_Accueil', $data);
     }
+
     public function getOffre()
     {
         $this->load->model('Model_Offre');
@@ -23,6 +26,7 @@ class ctrl_Accueil extends CI_Controller
         $data['lesServicesOffres'] = $this->Model_Offre->getAllNomServices();
         $this->load->view('view_Offre', $data);
     }
+
     public function getDemande()
     {
         $this->load->model('Model_Demande');
@@ -31,12 +35,15 @@ class ctrl_Accueil extends CI_Controller
         $data['lesServicesDemandes'] = $this->Model_Demande->getAllNomServices();
         $this->load->view('view_Demande', $data);
     }
+
     public function getDeal()
     {
         $this->load->model('Model_Deal');
         $data['lesInfoDeals'] = $this->Model_Deal->getAllInfoDeal();
+        $data['nomDealService2'] = $this->Model_Deal->getNomServiceDeal2();
         $this->load->view('view_Deal', $data);
     }
+
     public function getNewOffre()
     {
         if (isset($_GET['btnOffre'])) {
@@ -68,6 +75,7 @@ class ctrl_Accueil extends CI_Controller
                             $data['lesServicesDemandes'] = $this->Model_Demande->getAllNomServices();
                             $this->load->model('Model_Deal');
                             $data['lesInfoDeals'] = $this->Model_Deal->getAllInfoDeal();
+                            $data['nomDealService2'] = $this->Model_Deal->getNomServiceDeal2();
                             $this->load->view('view_Accueil', $data);
                         } else {
                             echo 'id service introuvable';
@@ -81,6 +89,7 @@ class ctrl_Accueil extends CI_Controller
             }
         }
     }
+
     public function getNewDemande()
     {
         if (isset($_GET['btnDemande'])) {
@@ -112,12 +121,13 @@ class ctrl_Accueil extends CI_Controller
                             $data['lesServicesOffres'] = $this->Model_Offre->getAllNomServices();
                             $this->load->model('Model_Deal');
                             $data['lesInfoDeals'] = $this->Model_Deal->getAllInfoDeal();
+                            $data['nomDealService2'] = $this->Model_Deal->getNomServiceDeal2();
                             $this->load->view('view_Accueil', $data);
                         } else {
                             echo 'Id service introuvable';
                         }
                     } else {
-                        echo 'Veuillez selectionner une date';
+                        echo 'Veuillez sélectionner une date';
                     }
                 } else {
                     echo 'Veuillez décrire votre demande';
@@ -125,22 +135,40 @@ class ctrl_Accueil extends CI_Controller
             }
         }
     }
-    public function afficherModOffre()
-    {
-        $this->load->model('Model_Offre');
-        $data['lesInfosModOffre'] = $this->Model_Offre->getAllInfosOffre($_GET['idOffre']);
-        $this->load->view('view_ModalOffre', $data);
-    }
-    public function afficherModDemande()
-    {
-        $this->load->model('Model_Demande');
-        $data['lesInfosModDemandes'] = $this->Model_Offre->getAllInfosDemande($_GET['idDemande']);
-        $this->load->view('view_ModalDemande', $data);
-    }
+
     public function afficherIdServiceParIdOffre()
     {
         $this->load->model('Model_Offre');
         $data['modOffre'] = $this->Model_Offre->getIdServiceByIdOffre();
+        $this->load->view('view_Accueil', $data);
+    }
+
+    public function afficherModDemande()
+    {
+        $this->load->library('session');
+        $this->load->model('Model_Demande');
+        $data['lesServicesDemandes'] = $this->Model_Demande->getAllNomServices();
+        $data['laDemande']=$this->Model_Demande->getAllInfosDemande($idDemande);
+        $this->load->view('modifierDemande',$data);
+    }
+    public function afficherModOffre()
+    {
+        $this->load->library('session');
+        $this->load->model('Model_Offre');
+        $data['lesServicesOffres'] = $this->Model_Offre->getAllNomServices();
+        $data['lOffre']=$this->Model_Offre->getAllInfosOffre($idOffre);
+        $this->load->view('modifierOffre', $data);
+    }
+    public function ModifierLaDemande(){
+        $this->load->library("session");
+        $this->load->model("Model_Demande");
+        $data['modifications']=$this->Model_Demande->updateDemande(); // modifie la demande de l'utilisateur
+        $this->load->view('view_Accueil', $data);
+    }
+    public function ModifierLOffre(){
+        $this->load->library("session");
+        $this->load->model("Model_Offre");
+        $data['modifications']=$this->Model_Offre->updateOffre(); // modifie l'offre de l'utilisateur
         $this->load->view('view_Accueil', $data);
     }
     public function logout()
