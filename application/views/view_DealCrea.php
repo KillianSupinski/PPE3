@@ -40,7 +40,6 @@
             <div class="fleft">
                     <input type="search" id="nomDeal" name="txtTerme">
                     <button id="btnD" onclick="RechercherDealCrea(($('#nomDeal').val()))">Valider</button>
-               
                     <h1 class="center"> Mes demandes</h1>
                 <table>
     <?php

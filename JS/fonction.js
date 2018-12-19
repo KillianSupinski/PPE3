@@ -4,12 +4,12 @@ function afficherModOffre(idOffre)
     (
         {
         type: 'get',
-        url: "index.php/ctrl_Accueil/afficherModOffre",
+        url: "afficherModOffre/",
         data:"idOffre="+idOffre,
         success:function(data)
         {
-            $('#divModalOffre').empty();
-            $('#divModalOffre').append(data);
+            $('#offreModif-form').modal("show");
+
         },
         error:function()
         {

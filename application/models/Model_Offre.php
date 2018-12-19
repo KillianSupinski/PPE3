@@ -56,9 +56,9 @@ class Model_Offre extends CI_Model
 
     public function getAllInfosOffre($idOffre)
     {
-        $sql = $this->db->query('select offre.idOffre, offre.descriptionOffre, offre.dateOffre, service.nomService
+        $sql = $this->db->query("select offre.idOffre, offre.descriptionOffre, offre.dateOffre, service.nomService
         from offre, service
-        where idOffre ='.$idOffre);
+        where idOffre ='".$idOffre."'");
 
         return $sql->result();
     }

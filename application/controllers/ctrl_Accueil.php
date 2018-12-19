@@ -139,8 +139,8 @@ class ctrl_Accueil extends CI_Controller
     public function afficherModOffre()
     {
         $this->load->model('Model_Offre');
-        $data['lesInfosModOffre'] = $this->Model_Offre->getAllInfosOffre($_GET['idOffre']);
-        $this->load->view('view_ModalOffre', $data);
+        $data['lesOffresz'] = $this->Model_Offre->getAllInfosOffre($_GET['idOffre']);
+        $this->load->view('modifierOffre', $data);
     }
 
     public function afficherModDemande()
@@ -194,7 +194,7 @@ class ctrl_Accueil extends CI_Controller
 
     public function CreationDeal()
     {
-        $this->load->model('Model_Deal');
+        $this->load->model('Model_Deal'); //supp
     }
 
     public function CreationDeals() // creation d'un deal
