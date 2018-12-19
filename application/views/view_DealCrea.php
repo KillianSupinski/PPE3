@@ -37,15 +37,18 @@
     ?>
     <div class="main">
         <div class="container">
-            <div class="fleft">
+            
+                
                     <input type="search" id="nomDeal" name="txtTerme">
                     <button id="btnD" onclick="RechercherDealCrea(($('#nomDeal').val()))">Valider</button>
                     <h1 class="center"> Mes demandes</h1>
+                    <div class="fleft">
                 <table>
+                    
     <?php
+
     foreach ($lesDemandes as $uneDemande) {
         ?>
-        <div>
             <div class='services-inner neutreD' id="idDemandeC" onclick="clickDivDemandeCrea('<?php echo $uneDemande->idDemande; ?>','<?php echo $uneDemande->idService; ?>')">
                 <div class='our-services-img'>
                     <div class='d-flex justify-content-center h-100'>
@@ -67,7 +70,6 @@
                      <?php echo $uneDemande->descriptionDemande.'<br/>'.$uneDemande->dateDemande; ?><br/>
                     </div>
             </div>
-        </div>
      <?php
     }
     ?>
@@ -102,12 +104,15 @@
     }
     ?>
     </div>
-    <div class="fright center"></div>
+    <div class="fright">
+        <div class="center">
         <input type="submit" value="Creation d'un deal" class="sticky" onclick="clickBtnValiderCrea()">
         <div id="divUserD"></div>
         <div id="divInfoUserD"></div>
+        </div>
     </div>
     </div>
+</div>
 </div>
 
 </body>

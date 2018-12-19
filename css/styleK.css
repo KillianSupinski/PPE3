@@ -271,9 +271,15 @@ background: linear-gradient(to bottom, #fcb045, #fd1d1d, #833ab4);
   }
   .fleft{
     float: left;
+    width:100px;
+    top: 0;
+    position:absolute;
   }
   .fright{
     float: right;
+    width:100;
+    padding-right:50px;
+
   }
 .val1 {
     background-color: orangered;
@@ -282,8 +288,8 @@ background: linear-gradient(to bottom, #fcb045, #fd1d1d, #833ab4);
     background-color: green;
 }
 .center {
-    margin: auto;
-    width: 60%;
+    margin:0 auto;
+    width:100px;
 }
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
 * {
