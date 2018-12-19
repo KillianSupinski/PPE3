@@ -92,7 +92,7 @@ foreach ($lesServicesDemandes as $unService) {
 </select>
 </fieldset><br>
 <fieldset>
-<button name="btnOffre" class="contact-submit" type="submit" value="validez">Valider</button>
+<button name="btnDemande" class="contact-submit" type="submit" value="validez">Valider</button>
 </fieldset>
 <fieldset>
 <a rel="modal:close"><button type="button" class="contact-cancel" >Annuler<i class="glyphicon glyphicon-cross"></i></button></a>
