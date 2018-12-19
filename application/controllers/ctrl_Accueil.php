@@ -199,13 +199,8 @@ class ctrl_Accueil extends CI_Controller
 
     public function CreationDeals() // creation d'un deal
     {
-        $this->load->model('Model_Demande');
-        $idOffreCrea = $_GET['idOffreCrea'];
-        $idOffreUser = $_GET['idOffreUser'];
-        $idDemandeCrea = $_GET['idDemandeCrea'];
-        $idDemandeUser = $_GET['idDemandeUser'];
         $this->load->model('Model_Deal');
-        $this->Model_Deal->insertDeal($idDemandeCrea, $idOffreCrea, $idDemandeUser, $idOffreUser);
+        $this->Model_Deal->insertDeal($_GET['idDemandeCrea'], $_GET['idOffreCrea'], $_GET['idDemandeUser'], $_GET['idOffreUser']);
     }
 
     public function logout()
